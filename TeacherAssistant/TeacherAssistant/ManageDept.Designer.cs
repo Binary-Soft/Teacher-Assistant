@@ -38,6 +38,9 @@ namespace TeacherAssistant
             this.Add_New_Intake_Number_bottom = new System.Windows.Forms.Button();
             this.Reset_All = new System.Windows.Forms.Button();
             this.Intake = new System.Windows.Forms.DataGridView();
+            this.Show_Section_No = new System.Windows.Forms.ComboBox();
+            this.Show_Section = new System.Windows.Forms.Label();
+            this.Add_New_Section = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.ShowDeptName)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Intake)).BeginInit();
             this.SuspendLayout();
@@ -76,7 +79,7 @@ namespace TeacherAssistant
             // 
             this.ShowDeptName.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.ShowDeptName.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.ShowDeptName.Location = new System.Drawing.Point(72, 84);
+            this.ShowDeptName.Location = new System.Drawing.Point(75, 84);
             this.ShowDeptName.Name = "ShowDeptName";
             this.ShowDeptName.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.ShowDeptName.Size = new System.Drawing.Size(276, 221);
@@ -131,12 +134,44 @@ namespace TeacherAssistant
             this.Intake.Size = new System.Drawing.Size(276, 150);
             this.Intake.TabIndex = 14;
             this.Intake.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.Intake_CellClick);
+            this.Intake.DefaultValuesNeeded += new System.Windows.Forms.DataGridViewRowEventHandler(this.Intake_DefaultValuesNeeded);
+            // 
+            // Show_Section_No
+            // 
+            this.Show_Section_No.FormattingEnabled = true;
+            this.Show_Section_No.Location = new System.Drawing.Point(529, 413);
+            this.Show_Section_No.Name = "Show_Section_No";
+            this.Show_Section_No.Size = new System.Drawing.Size(281, 21);
+            this.Show_Section_No.TabIndex = 15;
+            // 
+            // Show_Section
+            // 
+            this.Show_Section.AutoSize = true;
+            this.Show_Section.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Show_Section.Location = new System.Drawing.Point(523, 358);
+            this.Show_Section.Name = "Show_Section";
+            this.Show_Section.Size = new System.Drawing.Size(105, 31);
+            this.Show_Section.TabIndex = 16;
+            this.Show_Section.Text = "Section";
+            // 
+            // Add_New_Section
+            // 
+            this.Add_New_Section.Location = new System.Drawing.Point(529, 517);
+            this.Add_New_Section.Name = "Add_New_Section";
+            this.Add_New_Section.Size = new System.Drawing.Size(175, 23);
+            this.Add_New_Section.TabIndex = 17;
+            this.Add_New_Section.Text = "Add New Section";
+            this.Add_New_Section.UseVisualStyleBackColor = true;
+            this.Add_New_Section.Click += new System.EventHandler(this.Add_New_Section_Click);
             // 
             // ManageDept
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1225, 658);
+            this.Controls.Add(this.Add_New_Section);
+            this.Controls.Add(this.Show_Section);
+            this.Controls.Add(this.Show_Section_No);
             this.Controls.Add(this.Intake);
             this.Controls.Add(this.Reset_All);
             this.Controls.Add(this.Add_New_Intake_Number_bottom);
@@ -166,5 +201,8 @@ namespace TeacherAssistant
         private System.Windows.Forms.Button Add_New_Intake_Number_bottom;
         private System.Windows.Forms.Button Reset_All;
         private System.Windows.Forms.DataGridView Intake;
+        private System.Windows.Forms.ComboBox Show_Section_No;
+        private System.Windows.Forms.Label Show_Section;
+        private System.Windows.Forms.Button Add_New_Section;
     }
 }
