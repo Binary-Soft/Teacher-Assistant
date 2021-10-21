@@ -34,9 +34,12 @@ namespace TeacherAssistant
             this.EditDepartment = new System.Windows.Forms.Button();
             this.ShowDeptName = new System.Windows.Forms.DataGridView();
             this.AddDeptName = new System.Windows.Forms.TextBox();
-            this.Intake = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
+            this.Add_New_Intake_Number_bottom = new System.Windows.Forms.Button();
+            this.Reset_All = new System.Windows.Forms.Button();
+            this.Intake = new System.Windows.Forms.DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.ShowDeptName)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Intake)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -57,7 +60,7 @@ namespace TeacherAssistant
             this.AddNewDepart.TabIndex = 3;
             this.AddNewDepart.Text = "Add New Department";
             this.AddNewDepart.UseVisualStyleBackColor = true;
-            this.AddNewDepart.Click += new System.EventHandler(this.button1_Click);
+            this.AddNewDepart.Click += new System.EventHandler(this.AddNewDepart_Click);
             // 
             // EditDepartment
             // 
@@ -67,7 +70,7 @@ namespace TeacherAssistant
             this.EditDepartment.TabIndex = 4;
             this.EditDepartment.Text = "Edit Department";
             this.EditDepartment.UseVisualStyleBackColor = true;
-            this.EditDepartment.Click += new System.EventHandler(this.button1_Click_1);
+            this.EditDepartment.Click += new System.EventHandler(this.EditDepartment_Click);
             // 
             // ShowDeptName
             // 
@@ -76,9 +79,10 @@ namespace TeacherAssistant
             this.ShowDeptName.Location = new System.Drawing.Point(72, 84);
             this.ShowDeptName.Name = "ShowDeptName";
             this.ShowDeptName.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.ShowDeptName.Size = new System.Drawing.Size(276, 262);
+            this.ShowDeptName.Size = new System.Drawing.Size(276, 221);
             this.ShowDeptName.TabIndex = 5;
-            this.ShowDeptName.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            this.ShowDeptName.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.ShowDeptName_CellClick);
+            this.ShowDeptName.DefaultValuesNeeded += new System.Windows.Forms.DataGridViewRowEventHandler(this.ShowDeptName_DefaultValuesNeeded);
             // 
             // AddDeptName
             // 
@@ -87,32 +91,56 @@ namespace TeacherAssistant
             this.AddDeptName.Size = new System.Drawing.Size(237, 20);
             this.AddDeptName.TabIndex = 6;
             // 
-            // Intake
-            // 
-            this.Intake.FormattingEnabled = true;
-            this.Intake.Location = new System.Drawing.Point(75, 425);
-            this.Intake.Name = "Intake";
-            this.Intake.Size = new System.Drawing.Size(121, 21);
-            this.Intake.TabIndex = 7;
-            this.Intake.SelectedIndexChanged += new System.EventHandler(this.Intake_SelectedIndexChanged);
-            // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(66, 377);
+            this.label2.Location = new System.Drawing.Point(69, 322);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(89, 31);
+            this.label2.Size = new System.Drawing.Size(131, 31);
             this.label2.TabIndex = 8;
-            this.label2.Text = "Intake";
+            this.label2.Text = "Intake No";
+            // 
+            // Add_New_Intake_Number_bottom
+            // 
+            this.Add_New_Intake_Number_bottom.Location = new System.Drawing.Point(206, 332);
+            this.Add_New_Intake_Number_bottom.Name = "Add_New_Intake_Number_bottom";
+            this.Add_New_Intake_Number_bottom.Size = new System.Drawing.Size(175, 23);
+            this.Add_New_Intake_Number_bottom.TabIndex = 10;
+            this.Add_New_Intake_Number_bottom.Text = "Add New Intake Number";
+            this.Add_New_Intake_Number_bottom.UseVisualStyleBackColor = true;
+            this.Add_New_Intake_Number_bottom.Click += new System.EventHandler(this.Add_New_Intake_Number_bottom_Click);
+            // 
+            // Reset_All
+            // 
+            this.Reset_All.Location = new System.Drawing.Point(604, 40);
+            this.Reset_All.Name = "Reset_All";
+            this.Reset_All.Size = new System.Drawing.Size(75, 23);
+            this.Reset_All.TabIndex = 11;
+            this.Reset_All.Text = "Reset";
+            this.Reset_All.UseVisualStyleBackColor = true;
+            this.Reset_All.Click += new System.EventHandler(this.Reset_All_Click);
+            // 
+            // Intake
+            // 
+            this.Intake.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.Intake.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.Intake.Location = new System.Drawing.Point(75, 370);
+            this.Intake.Name = "Intake";
+            this.Intake.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.Intake.Size = new System.Drawing.Size(276, 150);
+            this.Intake.TabIndex = 14;
+            this.Intake.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.Intake_CellClick);
             // 
             // ManageDept
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1225, 658);
-            this.Controls.Add(this.label2);
             this.Controls.Add(this.Intake);
+            this.Controls.Add(this.Reset_All);
+            this.Controls.Add(this.Add_New_Intake_Number_bottom);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.AddDeptName);
             this.Controls.Add(this.ShowDeptName);
             this.Controls.Add(this.EditDepartment);
@@ -122,6 +150,7 @@ namespace TeacherAssistant
             this.Text = "Manage Department";
             this.Load += new System.EventHandler(this.ManageDept_Load);
             ((System.ComponentModel.ISupportInitialize)(this.ShowDeptName)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Intake)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -133,7 +162,9 @@ namespace TeacherAssistant
         private System.Windows.Forms.Button EditDepartment;
         private System.Windows.Forms.DataGridView ShowDeptName;
         private System.Windows.Forms.TextBox AddDeptName;
-        private System.Windows.Forms.ComboBox Intake;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button Add_New_Intake_Number_bottom;
+        private System.Windows.Forms.Button Reset_All;
+        private System.Windows.Forms.DataGridView Intake;
     }
 }

@@ -34,3 +34,38 @@ K:\TeacherAssistant\TeacherAssistant\bin\Debug\System.Numerics.Vectors.xml
 K:\TeacherAssistant\TeacherAssistant\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
 K:\TeacherAssistant\TeacherAssistant\obj\Debug\TeacherAssistant.csproj.CopyComplete
 K:\TeacherAssistant\TeacherAssistant\obj\Debug\TeacherAssistant.ManageDept.resources
+D:\CSE- 200\CSE-200-2nd-Semester\TeacherAssistant\TeacherAssistant\bin\Debug\TeacherAssistant.exe.config
+D:\CSE- 200\CSE-200-2nd-Semester\TeacherAssistant\TeacherAssistant\bin\Debug\TeacherAssistant.exe
+D:\CSE- 200\CSE-200-2nd-Semester\TeacherAssistant\TeacherAssistant\bin\Debug\TeacherAssistant.pdb
+D:\CSE- 200\CSE-200-2nd-Semester\TeacherAssistant\TeacherAssistant\bin\Debug\BouncyCastle.Crypto.dll
+D:\CSE- 200\CSE-200-2nd-Semester\TeacherAssistant\TeacherAssistant\bin\Debug\Google.Protobuf.dll
+D:\CSE- 200\CSE-200-2nd-Semester\TeacherAssistant\TeacherAssistant\bin\Debug\K4os.Compression.LZ4.dll
+D:\CSE- 200\CSE-200-2nd-Semester\TeacherAssistant\TeacherAssistant\bin\Debug\K4os.Compression.LZ4.Streams.dll
+D:\CSE- 200\CSE-200-2nd-Semester\TeacherAssistant\TeacherAssistant\bin\Debug\K4os.Hash.xxHash.dll
+D:\CSE- 200\CSE-200-2nd-Semester\TeacherAssistant\TeacherAssistant\bin\Debug\MySql.Data.dll
+D:\CSE- 200\CSE-200-2nd-Semester\TeacherAssistant\TeacherAssistant\bin\Debug\System.Buffers.dll
+D:\CSE- 200\CSE-200-2nd-Semester\TeacherAssistant\TeacherAssistant\bin\Debug\System.Memory.dll
+D:\CSE- 200\CSE-200-2nd-Semester\TeacherAssistant\TeacherAssistant\bin\Debug\System.Numerics.Vectors.dll
+D:\CSE- 200\CSE-200-2nd-Semester\TeacherAssistant\TeacherAssistant\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+D:\CSE- 200\CSE-200-2nd-Semester\TeacherAssistant\TeacherAssistant\bin\Debug\Ubiety.Dns.Core.dll
+D:\CSE- 200\CSE-200-2nd-Semester\TeacherAssistant\TeacherAssistant\bin\Debug\Zstandard.Net.dll
+D:\CSE- 200\CSE-200-2nd-Semester\TeacherAssistant\TeacherAssistant\bin\Debug\Google.Protobuf.pdb
+D:\CSE- 200\CSE-200-2nd-Semester\TeacherAssistant\TeacherAssistant\bin\Debug\Google.Protobuf.xml
+D:\CSE- 200\CSE-200-2nd-Semester\TeacherAssistant\TeacherAssistant\bin\Debug\K4os.Compression.LZ4.xml
+D:\CSE- 200\CSE-200-2nd-Semester\TeacherAssistant\TeacherAssistant\bin\Debug\K4os.Compression.LZ4.Streams.xml
+D:\CSE- 200\CSE-200-2nd-Semester\TeacherAssistant\TeacherAssistant\bin\Debug\K4os.Hash.xxHash.xml
+D:\CSE- 200\CSE-200-2nd-Semester\TeacherAssistant\TeacherAssistant\bin\Debug\MySql.Data.xml
+D:\CSE- 200\CSE-200-2nd-Semester\TeacherAssistant\TeacherAssistant\bin\Debug\System.Buffers.xml
+D:\CSE- 200\CSE-200-2nd-Semester\TeacherAssistant\TeacherAssistant\bin\Debug\System.Memory.xml
+D:\CSE- 200\CSE-200-2nd-Semester\TeacherAssistant\TeacherAssistant\bin\Debug\System.Numerics.Vectors.xml
+D:\CSE- 200\CSE-200-2nd-Semester\TeacherAssistant\TeacherAssistant\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+D:\CSE- 200\CSE-200-2nd-Semester\TeacherAssistant\TeacherAssistant\obj\Debug\TeacherAssistant.csproj.AssemblyReference.cache
+D:\CSE- 200\CSE-200-2nd-Semester\TeacherAssistant\TeacherAssistant\obj\Debug\TeacherAssistant.Form1.resources
+D:\CSE- 200\CSE-200-2nd-Semester\TeacherAssistant\TeacherAssistant\obj\Debug\TeacherAssistant.ManageDept.resources
+D:\CSE- 200\CSE-200-2nd-Semester\TeacherAssistant\TeacherAssistant\obj\Debug\TeacherAssistant.Registration_Form.resources
+D:\CSE- 200\CSE-200-2nd-Semester\TeacherAssistant\TeacherAssistant\obj\Debug\TeacherAssistant.Admin_Profile.resources
+D:\CSE- 200\CSE-200-2nd-Semester\TeacherAssistant\TeacherAssistant\obj\Debug\TeacherAssistant.Properties.Resources.resources
+D:\CSE- 200\CSE-200-2nd-Semester\TeacherAssistant\TeacherAssistant\obj\Debug\TeacherAssistant.csproj.GenerateResource.cache
+D:\CSE- 200\CSE-200-2nd-Semester\TeacherAssistant\TeacherAssistant\obj\Debug\TeacherAssistant.csproj.CoreCompileInputs.cache
+D:\CSE- 200\CSE-200-2nd-Semester\TeacherAssistant\TeacherAssistant\obj\Debug\TeacherAssistant.exe
+D:\CSE- 200\CSE-200-2nd-Semester\TeacherAssistant\TeacherAssistant\obj\Debug\TeacherAssistant.pdb

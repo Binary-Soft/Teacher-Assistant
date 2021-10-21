@@ -1,0 +1,15 @@
+{
+  "version": "0.2.1",
+  "tasks": [
+    {
+      "taskLabel": "task-Login Form",
+      "appliesTo": "Login Form.cs",
+      "type": "launch"
+    },
+    {
+      "taskLabel": "task-packages",
+      "appliesTo": "packages.config",
+      "type": "launch"
+    }
+  ]
+}
