@@ -27,5 +27,12 @@ namespace TeacherAssistant
 
             obj.ShowDialog();
         }
+
+        private void Add_New_Student_Click(object sender, EventArgs e)
+        {
+            AddNewStudent obj = new AddNewStudent();
+
+            obj.ShowDialog();
+        }
     }
 }

@@ -69,3 +69,4 @@ D:\CSE- 200\CSE-200-2nd-Semester\TeacherAssistant\TeacherAssistant\obj\Debug\Tea
 D:\CSE- 200\CSE-200-2nd-Semester\TeacherAssistant\TeacherAssistant\obj\Debug\TeacherAssistant.csproj.CoreCompileInputs.cache
 D:\CSE- 200\CSE-200-2nd-Semester\TeacherAssistant\TeacherAssistant\obj\Debug\TeacherAssistant.exe
 D:\CSE- 200\CSE-200-2nd-Semester\TeacherAssistant\TeacherAssistant\obj\Debug\TeacherAssistant.pdb
+D:\CSE- 200\CSE-200-2nd-Semester\TeacherAssistant\TeacherAssistant\obj\Debug\TeacherAssistant.AddNewStudent.resources

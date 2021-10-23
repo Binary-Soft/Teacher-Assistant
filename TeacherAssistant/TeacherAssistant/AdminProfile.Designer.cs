@@ -30,6 +30,7 @@ namespace TeacherAssistant
         private void InitializeComponent()
         {
             this.AddDept = new System.Windows.Forms.Button();
+            this.Add_New_Student = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // AddDept
@@ -42,11 +43,22 @@ namespace TeacherAssistant
             this.AddDept.UseVisualStyleBackColor = true;
             this.AddDept.Click += new System.EventHandler(this.AddDept_Click);
             // 
+            // Add_New_Student
+            // 
+            this.Add_New_Student.Location = new System.Drawing.Point(243, 143);
+            this.Add_New_Student.Name = "Add_New_Student";
+            this.Add_New_Student.Size = new System.Drawing.Size(203, 73);
+            this.Add_New_Student.TabIndex = 1;
+            this.Add_New_Student.Text = "Add Student";
+            this.Add_New_Student.UseVisualStyleBackColor = true;
+            this.Add_New_Student.Click += new System.EventHandler(this.Add_New_Student_Click);
+            // 
             // Admin_Profile
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.Add_New_Student);
             this.Controls.Add(this.AddDept);
             this.Name = "Admin_Profile";
             this.Text = "Admin Profile";
@@ -58,5 +70,6 @@ namespace TeacherAssistant
         #endregion
 
         private System.Windows.Forms.Button AddDept;
+        private System.Windows.Forms.Button Add_New_Student;
     }
 }
