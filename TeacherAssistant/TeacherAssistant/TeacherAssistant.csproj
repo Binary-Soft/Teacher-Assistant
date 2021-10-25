@@ -96,6 +96,12 @@
       <DependentUpon>AddNewStudent.cs</DependentUpon>
     </Compile>
     <Compile Include="DataBase.cs" />
+    <Compile Include="InstructorRegistration.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InstructorRegistration.Designer.cs">
+      <DependentUpon>InstructorRegistration.cs</DependentUpon>
+    </Compile>
     <Compile Include="Login Form.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -124,6 +130,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="AddNewStudent.resx">
       <DependentUpon>AddNewStudent.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InstructorRegistration.resx">
+      <DependentUpon>InstructorRegistration.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Login Form.resx">
       <DependentUpon>Login Form.cs</DependentUpon>

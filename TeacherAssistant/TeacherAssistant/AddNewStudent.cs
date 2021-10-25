@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
 
+
 namespace TeacherAssistant
 {
     public partial class AddNewStudent : Form
@@ -70,7 +71,7 @@ namespace TeacherAssistant
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message, "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show(ex.Message, "Warning!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
 
 
@@ -135,38 +136,57 @@ namespace TeacherAssistant
 
             if(is_Valid(name, stu_id, semester, email, department_name, intake, section, phone, address, year) == true)
             {
-                string dept_Id = Get_Department_ID(department_name);
-                MySqlConnection connect = new MySqlConnection(DataBase.Connect_String());
-                connect.Open();
+                string query = "SELECT department.ID AS Dept_ID FROM department WHERE department.Dept_Name='" + department_name + "'";
 
-                MessageBox.Show(name +"  "+ stu_id + "  " + semester + "  " + email + "  " + department_name + dept_Id + "  " + intake + "  " + section + "  " + phone + "  " + address + "  " + year);
-                string query = "INSERT INTO students (`Student_ID`, `Name`, `Email`, `Dept_ID`, `Intake`, `Section`, `Phone_No`, `Address`, `Years`, `Semester`) " +
+                string dept_Id = Get_Department_ID(query);
+                
+
+                query = "INSERT INTO students (`Student_ID`, `Name`, `Email`, `Dept_ID`, `Intake`, `Section`, `Phone_No`, `Address`, `Years`, `Semester`) " +
                     "VALUES('" + stu_id + "', '" + name + "', '" + email + "', '" + dept_Id + "', '" + intake + "', '" + section + "', '" + phone + "', '" + address + "', '" + year + "', '" + semester + "')";
 
-                MySqlCommand command = connect.CreateCommand();
-                command.CommandText = query;
-
-                try
+                if(Student_Info_Save_To_Database(query) == true)
                 {
-                    command.ExecuteNonQuery();
                     MessageBox.Show("Save Successfull.", "Saved!", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
-                catch (Exception ex)
+                else
                 {
-                    MessageBox.Show(ex.Message, "Warning!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBox.Show("Information Save Failed. Please Try Again.", "Failed!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
-                connect.Close();
             }
 
-
         }
-        private string Get_Department_ID(string department_name)
+
+
+        public bool Student_Info_Save_To_Database(string query)
         {
             MySqlConnection connect = new MySqlConnection(DataBase.Connect_String());
             connect.Open();
 
-            string query = "SELECT department.ID AS ID FROM department WHERE department.Dept_Name='" + department_name + "'";
-            
+
+            MySqlCommand command = connect.CreateCommand();
+            command.CommandText = query;
+
+            try
+            {
+                command.ExecuteNonQuery();
+                connect.Close();
+                return true;
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Warning!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            connect.Close();
+
+            return false;
+        }
+
+
+        public string Get_Department_ID(string query)
+        {
+            MySqlConnection connect = new MySqlConnection(DataBase.Connect_String());
+            connect.Open();
             
             try
             {
@@ -176,7 +196,7 @@ namespace TeacherAssistant
                 {
                 }
 
-                string Dept_ID = dataReader.GetString("ID");
+                string Dept_ID = dataReader.GetString("Dept_ID");
                 connect.Close();
                 return Dept_ID;
             }
@@ -249,7 +269,7 @@ namespace TeacherAssistant
             }
             else if (stu_id != string.Empty && email != string.Empty && phone != string.Empty)
             {
-                if(Student_ID_Email_PhoneNo_Is_Unic(stu_id, email, phone) == false)
+                if(Student_ID_Email_PhoneNo_Is_Unique(stu_id, email, phone) == false)
                 {
                     return false;
                 }
@@ -258,7 +278,7 @@ namespace TeacherAssistant
             return true;
         }
 
-        private bool Student_ID_Email_PhoneNo_Is_Unic(string stu_id, string email, string phone)
+        private bool Student_ID_Email_PhoneNo_Is_Unique(string stu_id, string email, string phone)
         {
             string query = "SELECT COUNT(students.Student_ID) AS Tota_Student_ID from students WHERE students.Student_ID=" + stu_id;
             bool STU_ID = This_Student_Info_Already_Exist(query, "Tota_Student_ID");
@@ -293,7 +313,7 @@ namespace TeacherAssistant
 
             return true;
         }
-        private bool This_Student_Info_Already_Exist(string query, string Attribute_Name)
+        public bool This_Student_Info_Already_Exist(string query, string Attribute_Name)
         {
             MySqlConnection connect = new MySqlConnection(DataBase.Connect_String());
             connect.Open();

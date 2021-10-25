@@ -31,6 +31,7 @@ namespace TeacherAssistant
         {
             this.AddDept = new System.Windows.Forms.Button();
             this.Add_New_Student = new System.Windows.Forms.Button();
+            this.Instructor_Registration_Permission = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // AddDept
@@ -45,7 +46,7 @@ namespace TeacherAssistant
             // 
             // Add_New_Student
             // 
-            this.Add_New_Student.Location = new System.Drawing.Point(243, 143);
+            this.Add_New_Student.Location = new System.Drawing.Point(243, 126);
             this.Add_New_Student.Name = "Add_New_Student";
             this.Add_New_Student.Size = new System.Drawing.Size(203, 73);
             this.Add_New_Student.TabIndex = 1;
@@ -53,11 +54,22 @@ namespace TeacherAssistant
             this.Add_New_Student.UseVisualStyleBackColor = true;
             this.Add_New_Student.Click += new System.EventHandler(this.Add_New_Student_Click);
             // 
+            // Instructor_Registration_Permission
+            // 
+            this.Instructor_Registration_Permission.Location = new System.Drawing.Point(243, 218);
+            this.Instructor_Registration_Permission.Name = "Instructor_Registration_Permission";
+            this.Instructor_Registration_Permission.Size = new System.Drawing.Size(203, 73);
+            this.Instructor_Registration_Permission.TabIndex = 2;
+            this.Instructor_Registration_Permission.Text = "Instructor Registration Permission";
+            this.Instructor_Registration_Permission.UseVisualStyleBackColor = true;
+            this.Instructor_Registration_Permission.Click += new System.EventHandler(this.Instructor_Registration_Permission_Click);
+            // 
             // Admin_Profile
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.Instructor_Registration_Permission);
             this.Controls.Add(this.Add_New_Student);
             this.Controls.Add(this.AddDept);
             this.Name = "Admin_Profile";
@@ -71,5 +83,6 @@ namespace TeacherAssistant
 
         private System.Windows.Forms.Button AddDept;
         private System.Windows.Forms.Button Add_New_Student;
+        private System.Windows.Forms.Button Instructor_Registration_Permission;
     }
 }

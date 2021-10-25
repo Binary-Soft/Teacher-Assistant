@@ -34,5 +34,12 @@ namespace TeacherAssistant
 
             obj.ShowDialog();
         }
+
+        private void Instructor_Registration_Permission_Click(object sender, EventArgs e)
+        {
+            InstructorRegistration obj = new InstructorRegistration();
+
+            obj.ShowDialog();
+        }
     }
 }
