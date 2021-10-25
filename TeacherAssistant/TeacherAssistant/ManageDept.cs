@@ -240,9 +240,9 @@ namespace TeacherAssistant
             {
                 command.ExecuteNonQuery();
             }
-            catch (Exception Ex)
+            catch (Exception ex)
             {
-                MessageBox.Show(Ex.Message);
+                MessageBox.Show(ex.Message, "Warning!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
             connect.Close();
             MessageBox.Show("Intake " + Convert.ToString(Intake_No) + " Create Successfull", "Created", MessageBoxButtons.OK, MessageBoxIcon.Information);

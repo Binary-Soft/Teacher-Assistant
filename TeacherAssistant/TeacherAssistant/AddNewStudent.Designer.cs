@@ -48,7 +48,7 @@ namespace TeacherAssistant
             this.Show_Department = new System.Windows.Forms.ComboBox();
             this.Show_Intake = new System.Windows.Forms.ComboBox();
             this.Show_Section = new System.Windows.Forms.ComboBox();
-            this.Semester_No = new System.Windows.Forms.ComboBox();
+            this.Semester_Name = new System.Windows.Forms.ComboBox();
             this.Subbit_Student_Info = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
@@ -88,9 +88,9 @@ namespace TeacherAssistant
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.Location = new System.Drawing.Point(25, 259);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(207, 25);
+            this.label4.Size = new System.Drawing.Size(280, 25);
             this.label4.TabIndex = 8;
-            this.label4.Text = "Department  Name";
+            this.label4.Text = "Select Department  Name";
             // 
             // label5
             // 
@@ -108,9 +108,9 @@ namespace TeacherAssistant
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.Location = new System.Drawing.Point(78, 374);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(91, 25);
+            this.label6.Size = new System.Drawing.Size(164, 25);
             this.label6.TabIndex = 10;
-            this.label6.Text = "Section";
+            this.label6.Text = "Select Section";
             // 
             // label7
             // 
@@ -118,9 +118,9 @@ namespace TeacherAssistant
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.Location = new System.Drawing.Point(78, 323);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(76, 25);
+            this.label7.Size = new System.Drawing.Size(149, 25);
             this.label7.TabIndex = 11;
-            this.label7.Text = "Intake";
+            this.label7.Text = "Select Intake";
             // 
             // label8
             // 
@@ -148,9 +148,9 @@ namespace TeacherAssistant
             this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label10.Location = new System.Drawing.Point(58, 119);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(111, 25);
+            this.label10.Size = new System.Drawing.Size(184, 25);
             this.label10.TabIndex = 14;
-            this.label10.Text = "Semester";
+            this.label10.Text = "Select Semester";
             // 
             // Student_Name
             // 
@@ -220,13 +220,13 @@ namespace TeacherAssistant
             this.Show_Section.Size = new System.Drawing.Size(281, 21);
             this.Show_Section.TabIndex = 27;
             // 
-            // Semester_No
+            // Semester_Name
             // 
-            this.Semester_No.FormattingEnabled = true;
-            this.Semester_No.Location = new System.Drawing.Point(3, 147);
-            this.Semester_No.Name = "Semester_No";
-            this.Semester_No.Size = new System.Drawing.Size(281, 21);
-            this.Semester_No.TabIndex = 28;
+            this.Semester_Name.FormattingEnabled = true;
+            this.Semester_Name.Location = new System.Drawing.Point(3, 147);
+            this.Semester_Name.Name = "Semester_Name";
+            this.Semester_Name.Size = new System.Drawing.Size(281, 21);
+            this.Semester_Name.TabIndex = 28;
             // 
             // Subbit_Student_Info
             // 
@@ -244,7 +244,7 @@ namespace TeacherAssistant
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1282, 663);
             this.Controls.Add(this.Subbit_Student_Info);
-            this.Controls.Add(this.Semester_No);
+            this.Controls.Add(this.Semester_Name);
             this.Controls.Add(this.Show_Section);
             this.Controls.Add(this.Show_Intake);
             this.Controls.Add(this.Show_Department);
@@ -293,7 +293,7 @@ namespace TeacherAssistant
         private System.Windows.Forms.ComboBox Show_Department;
         private System.Windows.Forms.ComboBox Show_Intake;
         private System.Windows.Forms.ComboBox Show_Section;
-        private System.Windows.Forms.ComboBox Semester_No;
+        private System.Windows.Forms.ComboBox Semester_Name;
         private System.Windows.Forms.Button Subbit_Student_Info;
     }
 }

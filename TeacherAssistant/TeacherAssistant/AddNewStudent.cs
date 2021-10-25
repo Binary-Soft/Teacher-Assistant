@@ -21,27 +21,51 @@ namespace TeacherAssistant
 
         private void AddNewStudent_Load(object sender, EventArgs e)
         {
-            Get_Department_Record();
+            string query = "SELECT DISTINCT department.Dept_Name as Department FROM department, dept_intake_section " +
+                "WHERE department.ID=dept_intake_section.Dept_ID";
+            Get_Department_Intake_Section_Semester_Record(query, "Show_Department");
+            Get_Department_Intake_Section_Semester_Record("SELECT semesters.Semester AS Semester FROM  semesters", "Semester_Name");
             Student_Name.Focus();
         }
 
-        private void Get_Department_Record()
+        private void Get_Department_Intake_Section_Semester_Record(string query, string add_function_name)
         {
             MySqlConnection connect = new MySqlConnection(DataBase.Connect_String());
             connect.Open();
 
-            string query = "SELECT DISTINCT department.Dept_Name as Department FROM department, dept_intake_section " +
-                "WHERE department.ID=dept_intake_section.Dept_ID";
-            
 
             try
             {
                 MySqlCommand command = new MySqlCommand(query, connect);
                 MySqlDataReader dataReader = command.ExecuteReader();
 
-                while (dataReader.Read())
+                if(add_function_name == "Show_Department")
                 {
-                    Show_Department.Items.Add(dataReader.GetString("Department"));
+                    while (dataReader.Read())
+                    {
+                        Show_Department.Items.Add(dataReader.GetString("Department"));
+                    }
+                }
+                else if(add_function_name == "Semester_Name")
+                {
+                    while (dataReader.Read())
+                    {
+                        Semester_Name.Items.Add(dataReader.GetString("Semester"));
+                    }
+                }
+                else if(add_function_name == "Show_Intake")
+                {
+                    while (dataReader.Read())
+                    {
+                        Show_Intake.Items.Add(dataReader.GetString("Intake"));
+                    }
+                }
+                else if(add_function_name == "Show_Section")
+                {
+                    while (dataReader.Read())
+                    {
+                        Show_Section.Items.Add(dataReader.GetString("Section"));
+                    }
                 }
             }
             catch (Exception ex)
@@ -52,43 +76,22 @@ namespace TeacherAssistant
 
             connect.Close();
         }
-
+        
 
         private void Show_Department_SelectedIndexChanged(object sender, EventArgs e)
         {
             string department_name= Show_Department.Text.Trim();
             Show_Intake.Items.Clear();
             Show_Section.Items.Clear();
-            MessageBox.Show(department_name);   // for testing
             if(department_name == string.Empty)
             {
                 MessageBox.Show("Please Select A Department.", "Warning!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
             else
             {
-
-                MySqlConnection connect = new MySqlConnection(DataBase.Connect_String());
-                connect.Open();
-
                 string query = "SELECT DISTINCT dept_intake_section.Intake AS Intake FROM department, dept_intake_section " +
                     "WHERE department.Dept_Name='" + department_name + "' and department.ID=dept_intake_section.Dept_ID";
-
-
-                try
-                {
-                    MySqlCommand command = new MySqlCommand(query, connect);
-                    MySqlDataReader dataReader = command.ExecuteReader();
-
-                    while (dataReader.Read())
-                    {
-                        Show_Intake.Items.Add(dataReader.GetString("Intake"));
-                    }
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show(ex.Message, "Warning!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                }
-                connect.Close();
+                Get_Department_Intake_Section_Semester_Record(query, "Show_Intake");
             }
         }
 
@@ -107,31 +110,13 @@ namespace TeacherAssistant
             }
             else
             {
-                MySqlConnection connect = new MySqlConnection(DataBase.Connect_String());
-                connect.Open();
 
                 string query = "SELECT dept_intake_section.Section " +
                     "FROM department, dept_intake, dept_intake_section " +
                     "WHERE department.ID=dept_intake.Dept_ID AND department.ID=dept_intake_section.Dept_ID " +
                     "AND department.Dept_Name='" + department_name + "' AND dept_intake.Intake=dept_intake_section.Intake " +
                     "AND dept_intake.Intake=" + intake;
-
-
-                try
-                {
-                    MySqlCommand command = new MySqlCommand(query, connect);
-                    MySqlDataReader dataReader = command.ExecuteReader();
-
-                    while (dataReader.Read())
-                    {
-                        Show_Section.Items.Add(dataReader.GetString("Section"));
-                    }
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show(ex.Message, "Warning!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                }
-                connect.Close();
+                Get_Department_Intake_Section_Semester_Record(query, "Show_Section");
             }
         }
 
@@ -139,7 +124,7 @@ namespace TeacherAssistant
         {
             string name = Student_Name.Text.Trim();
             string stu_id = Student_ID.Text.Trim();
-            string semester = Semester_No.Text.Trim();
+            string semester = Semester_Name.Text.Trim();
             string email = Email.Text.Trim();
             string department_name = Show_Department.Text.Trim();
             string intake = Show_Intake.Text.Trim();
@@ -150,12 +135,62 @@ namespace TeacherAssistant
 
             if(is_Valid(name, stu_id, semester, email, department_name, intake, section, phone, address, year) == true)
             {
-                MessageBox.Show(name + stu_id + semester + email + department_name + intake + section + phone + address + year);
+                string dept_Id = Get_Department_ID(department_name);
+                MySqlConnection connect = new MySqlConnection(DataBase.Connect_String());
+                connect.Open();
+
+                MessageBox.Show(name +"  "+ stu_id + "  " + semester + "  " + email + "  " + department_name + dept_Id + "  " + intake + "  " + section + "  " + phone + "  " + address + "  " + year);
+                string query = "INSERT INTO students (`Student_ID`, `Name`, `Email`, `Dept_ID`, `Intake`, `Section`, `Phone_No`, `Address`, `Years`, `Semester`) " +
+                    "VALUES('" + stu_id + "', '" + name + "', '" + email + "', '" + dept_Id + "', '" + intake + "', '" + section + "', '" + phone + "', '" + address + "', '" + year + "', '" + semester + "')";
+
+                MySqlCommand command = connect.CreateCommand();
+                command.CommandText = query;
+
+                try
+                {
+                    command.ExecuteNonQuery();
+                    MessageBox.Show("Save Successfull.", "Sved!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message, "Warning!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+                connect.Close();
             }
+
+
+        }
+        private string Get_Department_ID(string department_name)
+        {
+            MySqlConnection connect = new MySqlConnection(DataBase.Connect_String());
+            connect.Open();
+
+            string query = "SELECT department.ID AS ID FROM department WHERE department.Dept_Name='" + department_name + "'";
+            
+            
+            try
+            {
+                MySqlCommand command = new MySqlCommand(query, connect);
+                MySqlDataReader dataReader = command.ExecuteReader();
+                while (dataReader.Read())
+                {
+                }
+
+                string Dept_ID = dataReader.GetString("ID");
+                connect.Close();
+                return Dept_ID;
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Warning!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            connect.Close();
+            return string.Empty;
         }
 
         private bool is_Valid(string name, string stu_id, string semester, string email, string department_name, string intake, string section, string phone, string address, string year)
         {
+            
             if (name == string.Empty)
             {
                 MessageBox.Show("Please Enter Student Name.", "Warning!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -212,8 +247,80 @@ namespace TeacherAssistant
                 Year.Focus();
                 return false;
             }
+            else if (stu_id != string.Empty && email != string.Empty && phone != string.Empty)
+            {
+                if(Student_ID_Email_PhoneNo_Is_Unic(stu_id, email, phone) == false)
+                {
+                    return false;
+                }
+            }
 
             return true;
+        }
+
+        private bool Student_ID_Email_PhoneNo_Is_Unic(string stu_id, string email, string phone)
+        {
+            string query = "SELECT COUNT(students.Student_ID) AS Tota_Student_ID from students WHERE students.Student_ID=" + stu_id;
+            bool STU_ID = This_Student_Info_Already_Exist(query, "Tota_Student_ID");
+
+            query = "SELECT COUNT(students.Email) AS Total_Student_Email from students WHERE students.Email = '" + email + "'";
+            bool STU_EMAIL = This_Student_Info_Already_Exist(query, "Total_Student_Email");
+
+            query = "SELECT COUNT(students.Phone_No) AS Total_Student_Phone_No from students WHERE students.Phone_No=" + phone;
+            bool STU_PHONE = This_Student_Info_Already_Exist(query, "Total_Student_Phone_No");
+
+            if (STU_ID == true && STU_EMAIL == true && STU_PHONE == true)
+            {
+                MessageBox.Show("This Student ID, E-mail & Phone Number Already Exist.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return false;
+            }
+            else if(STU_ID == true)
+            {
+                MessageBox.Show("Student ID: "+ stu_id +" Already Exist.", "Warning!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return false;
+            }
+            else if (STU_EMAIL == true)
+            {
+                MessageBox.Show("Student E-mail: " + email + " Already Exist.", "Warning!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return false;
+            }
+            else if (STU_PHONE == true)
+            {
+                MessageBox.Show("Student Phone No: " + phone + " Already Exist.", "Warning!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return false;
+            }
+
+
+            return true;
+        }
+        private bool This_Student_Info_Already_Exist(string query, string Attribute_Name)
+        {
+            MySqlConnection connect = new MySqlConnection(DataBase.Connect_String());
+            connect.Open();
+
+            MySqlCommand command = new MySqlCommand(query, connect);
+            MySqlDataReader dataReader = command.ExecuteReader();
+
+            try
+            {
+                while (dataReader.Read())
+                {
+                }
+
+                int total_Stu = Convert.ToInt32(dataReader.GetString(Attribute_Name));
+                if (total_Stu > 0)
+                {
+                    connect.Close();
+                    return true;
+                }
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            connect.Close();
+            return false;
         }
     }
 }
