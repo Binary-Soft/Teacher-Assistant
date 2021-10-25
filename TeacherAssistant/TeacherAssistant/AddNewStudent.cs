@@ -149,7 +149,7 @@ namespace TeacherAssistant
                 try
                 {
                     command.ExecuteNonQuery();
-                    MessageBox.Show("Save Successfull.", "Sved!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Save Successfull.", "Saved!", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 catch (Exception ex)
                 {
