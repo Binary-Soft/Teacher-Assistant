@@ -26,34 +26,68 @@ namespace TeacherAssistant
         private void Form1_Load(object sender, EventArgs e)
         {
             login_As.Items.Add("Login as Admin");
-          //  login_As.Items.Add("Login as Instructor");
+            login_As.Items.Add("Login as Instructor");
         }
 
 
         private void Login_Click(object sender, EventArgs e)
         {
-            MySqlConnection connect = new MySqlConnection(DataBase.Connect_String());
-            connect.Open();
-            MessageBox.Show("Connected");
-
-
-            string userType;
-            string email, pin_code, query, Data_Base_Email , Data_Base_Password;
+            string userType, email, pin_code;
 
 
             userType = login_As.Text.Trim();
             email = Email.Text.Trim();
             pin_code = Password.Text;
+ 
+
+               //   Login as Admin
+            if (userType == "Login as Admin" && Is_Login("Login as Admin", email, pin_code) == true)
+            {
+                // this.Hide();
+                MessageBox.Show("Admin Login");
+                Admin_Profile obj = new Admin_Profile();
+                obj.ShowDialog();
+
+            }
+               // Login as Instructor
+            else if (userType == "Login as Instructor" && Is_Login("Login as Instructor", email, pin_code) == true)
+            {
+                MessageBox.Show("Instructor Login");
+            }
+            else
+            {
+                MessageBox.Show("E-mail or Password is Incorrect, Try again!", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            
+
+        }
 
 
-           // query = "SELECT * FROM admin WHERE Email='" + email + "' AND Password='" + pin_code + "'";
-           query = "SELECT * FROM admin";
-           MySqlCommand command = new MySqlCommand(query, connect);
-           MySqlDataReader dataReader = command.ExecuteReader();
+        private bool Is_Login(string userType, string user_email, string user_password)
+        {
+            MySqlConnection connect = new MySqlConnection(DataBase.Connect_String());
+            connect.Open();
+            MessageBox.Show("Connected");
+
+            string query = string.Empty;
+
+
+
+            if(userType == "Login as Admin")
+            {
+                query = "SELECT COUNT(admin.Email) AS Toltal FROM admin WHERE admin.Email='" + user_email + "' AND admin.Password='" + user_password + "'";
+            }
+            else if(userType == "Login as Instructor")
+            {
+                query = "SELECT COUNT(instructor.Email) AS Toltal FROM instructor WHERE instructor.Email='" + user_email + "' AND instructor.Password='" + user_password + "'";
+            }
+
+            MySqlCommand command = new MySqlCommand(query, connect);
+            MySqlDataReader dataReader = command.ExecuteReader();
 
 
             /*
-                    // use this comment section or use "MySqlDataReader" =>> line-52 
+                    // use this comment section or use "MySqlDataReader" =>> Line 101
             MySqlDataAdapter dataadapter = new MySqlDataAdapter(command);
             DataTable datatable = new DataTable();
             dataadapter.Fill(datatable);
@@ -72,34 +106,22 @@ namespace TeacherAssistant
                 {
                 }
 
-                Data_Base_Email = dataReader.GetString("Email");
-                Data_Base_Password = dataReader.GetString("Password");
-
-                //   Login as Admin
-                if (userType == "Login as Admin" && (email == Data_Base_Email && pin_code == Data_Base_Password))
+                int total = Convert.ToInt32(dataReader.GetString("Toltal"));
+                if(total == 1)
                 {
-                   // this.Hide();
-                    MessageBox.Show("Admin Login");
-                    Admin_Profile obj = new Admin_Profile();
-                    obj.ShowDialog();
-
-                }
-                else if (userType == "Login as Instructor")
-                {
-                    MessageBox.Show("Instructor");
-                }
-                else
-                {
-                    MessageBox.Show("E-mail or Password is Incorrect, Try again!", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    connect.Close();
+                    return true;
                 }
             }
-            catch (Exception ex)
+            catch(Exception ex)
             {
-                MessageBox.Show(ex.Message, "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show(ex.Message, "Warning!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
 
             connect.Close();
+            return false;
         }
+
 
         private void Registration_Click(object sender, EventArgs e)
         {
@@ -107,7 +129,6 @@ namespace TeacherAssistant
             obj.ShowDialog();
         }
 
-        
 
         private void Email_TextChanged(object sender, EventArgs e)
         {
