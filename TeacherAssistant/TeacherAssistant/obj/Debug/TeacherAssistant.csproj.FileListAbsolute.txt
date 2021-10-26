@@ -71,3 +71,40 @@ D:\CSE- 200\CSE-200-2nd-Semester\TeacherAssistant\TeacherAssistant\obj\Debug\Tea
 D:\CSE- 200\CSE-200-2nd-Semester\TeacherAssistant\TeacherAssistant\obj\Debug\TeacherAssistant.pdb
 D:\CSE- 200\CSE-200-2nd-Semester\TeacherAssistant\TeacherAssistant\obj\Debug\TeacherAssistant.AddNewStudent.resources
 D:\CSE- 200\CSE-200-2nd-Semester\TeacherAssistant\TeacherAssistant\obj\Debug\TeacherAssistant.InstructorRegistration.resources
+D:\Project\CSE-200-2nd-Semester-\TeacherAssistant\TeacherAssistant\bin\Debug\TeacherAssistant.exe.config
+D:\Project\CSE-200-2nd-Semester-\TeacherAssistant\TeacherAssistant\bin\Debug\TeacherAssistant.exe
+D:\Project\CSE-200-2nd-Semester-\TeacherAssistant\TeacherAssistant\bin\Debug\TeacherAssistant.pdb
+D:\Project\CSE-200-2nd-Semester-\TeacherAssistant\TeacherAssistant\bin\Debug\BouncyCastle.Crypto.dll
+D:\Project\CSE-200-2nd-Semester-\TeacherAssistant\TeacherAssistant\bin\Debug\Google.Protobuf.dll
+D:\Project\CSE-200-2nd-Semester-\TeacherAssistant\TeacherAssistant\bin\Debug\K4os.Compression.LZ4.dll
+D:\Project\CSE-200-2nd-Semester-\TeacherAssistant\TeacherAssistant\bin\Debug\K4os.Compression.LZ4.Streams.dll
+D:\Project\CSE-200-2nd-Semester-\TeacherAssistant\TeacherAssistant\bin\Debug\K4os.Hash.xxHash.dll
+D:\Project\CSE-200-2nd-Semester-\TeacherAssistant\TeacherAssistant\bin\Debug\MySql.Data.dll
+D:\Project\CSE-200-2nd-Semester-\TeacherAssistant\TeacherAssistant\bin\Debug\System.Buffers.dll
+D:\Project\CSE-200-2nd-Semester-\TeacherAssistant\TeacherAssistant\bin\Debug\System.Memory.dll
+D:\Project\CSE-200-2nd-Semester-\TeacherAssistant\TeacherAssistant\bin\Debug\System.Numerics.Vectors.dll
+D:\Project\CSE-200-2nd-Semester-\TeacherAssistant\TeacherAssistant\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+D:\Project\CSE-200-2nd-Semester-\TeacherAssistant\TeacherAssistant\bin\Debug\Ubiety.Dns.Core.dll
+D:\Project\CSE-200-2nd-Semester-\TeacherAssistant\TeacherAssistant\bin\Debug\Zstandard.Net.dll
+D:\Project\CSE-200-2nd-Semester-\TeacherAssistant\TeacherAssistant\bin\Debug\Google.Protobuf.pdb
+D:\Project\CSE-200-2nd-Semester-\TeacherAssistant\TeacherAssistant\bin\Debug\Google.Protobuf.xml
+D:\Project\CSE-200-2nd-Semester-\TeacherAssistant\TeacherAssistant\bin\Debug\K4os.Compression.LZ4.xml
+D:\Project\CSE-200-2nd-Semester-\TeacherAssistant\TeacherAssistant\bin\Debug\K4os.Compression.LZ4.Streams.xml
+D:\Project\CSE-200-2nd-Semester-\TeacherAssistant\TeacherAssistant\bin\Debug\K4os.Hash.xxHash.xml
+D:\Project\CSE-200-2nd-Semester-\TeacherAssistant\TeacherAssistant\bin\Debug\MySql.Data.xml
+D:\Project\CSE-200-2nd-Semester-\TeacherAssistant\TeacherAssistant\bin\Debug\System.Buffers.xml
+D:\Project\CSE-200-2nd-Semester-\TeacherAssistant\TeacherAssistant\bin\Debug\System.Memory.xml
+D:\Project\CSE-200-2nd-Semester-\TeacherAssistant\TeacherAssistant\bin\Debug\System.Numerics.Vectors.xml
+D:\Project\CSE-200-2nd-Semester-\TeacherAssistant\TeacherAssistant\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+D:\Project\CSE-200-2nd-Semester-\TeacherAssistant\TeacherAssistant\obj\Debug\TeacherAssistant.csproj.AssemblyReference.cache
+D:\Project\CSE-200-2nd-Semester-\TeacherAssistant\TeacherAssistant\obj\Debug\TeacherAssistant.AddNewStudent.resources
+D:\Project\CSE-200-2nd-Semester-\TeacherAssistant\TeacherAssistant\obj\Debug\TeacherAssistant.InstructorRegistration.resources
+D:\Project\CSE-200-2nd-Semester-\TeacherAssistant\TeacherAssistant\obj\Debug\TeacherAssistant.Form1.resources
+D:\Project\CSE-200-2nd-Semester-\TeacherAssistant\TeacherAssistant\obj\Debug\TeacherAssistant.ManageDept.resources
+D:\Project\CSE-200-2nd-Semester-\TeacherAssistant\TeacherAssistant\obj\Debug\TeacherAssistant.Registration_Form.resources
+D:\Project\CSE-200-2nd-Semester-\TeacherAssistant\TeacherAssistant\obj\Debug\TeacherAssistant.Admin_Profile.resources
+D:\Project\CSE-200-2nd-Semester-\TeacherAssistant\TeacherAssistant\obj\Debug\TeacherAssistant.Properties.Resources.resources
+D:\Project\CSE-200-2nd-Semester-\TeacherAssistant\TeacherAssistant\obj\Debug\TeacherAssistant.csproj.GenerateResource.cache
+D:\Project\CSE-200-2nd-Semester-\TeacherAssistant\TeacherAssistant\obj\Debug\TeacherAssistant.csproj.CoreCompileInputs.cache
+D:\Project\CSE-200-2nd-Semester-\TeacherAssistant\TeacherAssistant\obj\Debug\TeacherAssistant.exe
+D:\Project\CSE-200-2nd-Semester-\TeacherAssistant\TeacherAssistant\obj\Debug\TeacherAssistant.pdb
