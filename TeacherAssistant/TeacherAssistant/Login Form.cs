@@ -13,6 +13,7 @@ namespace TeacherAssistant
 {
     public partial class Form1 : Form
     {
+        public static string INSTRUCTOR_EMAIL = string.Empty;   // Set Intitial Value.
         public Form1()
         {
             InitializeComponent();
@@ -44,7 +45,7 @@ namespace TeacherAssistant
             if (userType == "Login as Admin" && Is_Login("Login as Admin", email, pin_code) == true)
             {
                 // this.Hide();
-                MessageBox.Show("Admin Login");
+                MessageBox.Show("Admin Login");          // for  testing
                 Admin_Profile obj = new Admin_Profile();
                 obj.ShowDialog();
 
@@ -52,7 +53,26 @@ namespace TeacherAssistant
                // Login as Instructor
             else if (userType == "Login as Instructor" && Is_Login("Login as Instructor", email, pin_code) == true)
             {
-                MessageBox.Show("Instructor Login");
+                MessageBox.Show("Instructor Login");         // for  testing
+
+                INSTRUCTOR_EMAIL = email;
+                if (Is_First_Time_Login(email) == true)
+                {
+                    MessageBox.Show("You Logged in First Time. Please Change Your Password And Add Security Key.", "Warning!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+
+
+                    FirstLoginForm obj = new FirstLoginForm();
+
+                    // obj.Text = "test environment";    // runtime form title change
+                    // obj.Refresh();                    //  Refrase the title
+                    obj.ShowDialog();
+                }
+                else
+                {
+                    InstructorProfile obje = new InstructorProfile();
+                    obje.ShowDialog();
+                }
+                INSTRUCTOR_EMAIL = string.Empty;
             }
             else
             {
@@ -60,6 +80,40 @@ namespace TeacherAssistant
             }
             
 
+        }
+
+
+
+        private bool Is_First_Time_Login(string email)
+        {
+            MySqlConnection connect = new MySqlConnection(DataBase.Connect_String());
+            connect.Open();
+
+            string query = "SELECT COUNT(instructor.Email) AS Email FROM instructor WHERE instructor.Email='" + email + "' and instructor.Security_Key='##'";
+
+            MySqlCommand command = new MySqlCommand(query, connect);
+            MySqlDataReader dataReader = command.ExecuteReader();
+
+
+            try
+            {
+                while (dataReader.Read())
+                {
+                }
+                int total_email = Convert.ToInt32(dataReader.GetString("Email"));
+                if (total_email == 1)
+                {
+                    connect.Close();
+                    return true;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Warning!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+
+            connect.Close();
+            return false;
         }
 
 
