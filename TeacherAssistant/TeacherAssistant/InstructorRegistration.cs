@@ -75,7 +75,7 @@ namespace TeacherAssistant
                   
                 if (obj.Student_Info_Save_To_Database(query2) == true)  // <<==== this function exist AddNewStudent.cs file 
                 {
-                    MessageBox.Show("Save Successfull.", "Saved!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Save Successfully.", "Saved!", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     Clear_All();
                 }
                 else

@@ -38,6 +38,7 @@ namespace TeacherAssistant
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
+            this.Add_Course = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -128,6 +129,17 @@ namespace TeacherAssistant
             this.panel5.Size = new System.Drawing.Size(233, 270);
             this.panel5.TabIndex = 0;
             // 
+            // Add_Course
+            // 
+            this.Add_Course.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Add_Course.Location = new System.Drawing.Point(584, 190);
+            this.Add_Course.Name = "Add_Course";
+            this.Add_Course.Size = new System.Drawing.Size(162, 39);
+            this.Add_Course.TabIndex = 3;
+            this.Add_Course.Text = "Add Course";
+            this.Add_Course.UseVisualStyleBackColor = true;
+            this.Add_Course.Click += new System.EventHandler(this.Add_Course_Click);
+            // 
             // Admin_Profile
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -135,6 +147,7 @@ namespace TeacherAssistant
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(962, 587);
+            this.Controls.Add(this.Add_Course);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
@@ -162,5 +175,6 @@ namespace TeacherAssistant
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Panel panel5;
+        private System.Windows.Forms.Button Add_Course;
     }
 }

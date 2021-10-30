@@ -79,7 +79,6 @@ namespace TeacherAssistant
                 MessageBox.Show("E-mail or Password is Incorrect, Try again!", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
             
-
         }
 
 
@@ -121,7 +120,7 @@ namespace TeacherAssistant
         {
             MySqlConnection connect = new MySqlConnection(DataBase.Connect_String());
             connect.Open();
-            MessageBox.Show("Connected");
+            MessageBox.Show("Connected");    
 
             string query = string.Empty;
 

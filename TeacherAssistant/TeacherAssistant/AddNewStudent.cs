@@ -22,7 +22,7 @@ namespace TeacherAssistant
 
         private void AddNewStudent_Load(object sender, EventArgs e)
         {
-            string query = "SELECT DISTINCT department.Dept_Name as Department FROM department, dept_intake_section " +
+            string query = "SELECT DISTINCT department.Dept_Name AS Department FROM department, dept_intake_section " +
                 "WHERE department.ID=dept_intake_section.Dept_ID";
             Get_Department_Intake_Section_Semester_Record(query, "Show_Department");
             Get_Department_Intake_Section_Semester_Record("SELECT semesters.Semester AS Semester FROM  semesters", "Semester_Name");
@@ -73,7 +73,6 @@ namespace TeacherAssistant
             {
                 MessageBox.Show(ex.Message, "Warning!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
-
 
             connect.Close();
         }
@@ -194,6 +193,7 @@ namespace TeacherAssistant
                 MySqlDataReader dataReader = command.ExecuteReader();
                 while (dataReader.Read())
                 {
+
                 }
 
                 string Dept_ID = dataReader.GetString("Dept_ID");
@@ -269,10 +269,7 @@ namespace TeacherAssistant
             }
             else if (stu_id != string.Empty && email != string.Empty && phone != string.Empty)
             {
-                if(Student_ID_Email_PhoneNo_Is_Unique(stu_id, email, phone) == false)
-                {
-                    return false;
-                }
+                return Student_ID_Email_PhoneNo_Is_Unique(stu_id, email, phone);
             }
 
             return true;

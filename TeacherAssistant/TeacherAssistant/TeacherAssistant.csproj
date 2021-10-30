@@ -89,6 +89,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AddCourses.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddCourses.Designer.cs">
+      <DependentUpon>AddCourses.cs</DependentUpon>
+    </Compile>
     <Compile Include="AddNewStudent.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -140,6 +146,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="AddCourses.resx">
+      <DependentUpon>AddCourses.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="AddNewStudent.resx">
       <DependentUpon>AddNewStudent.cs</DependentUpon>
     </EmbeddedResource>

@@ -41,5 +41,12 @@ namespace TeacherAssistant
 
             obj.ShowDialog();
         }
+
+        private void Add_Course_Click(object sender, EventArgs e)
+        {
+            AddCourses obj = new AddCourses();
+
+            obj.ShowDialog();
+        }
     }
 }
