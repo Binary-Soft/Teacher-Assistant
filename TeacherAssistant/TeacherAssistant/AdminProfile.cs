@@ -48,5 +48,12 @@ namespace TeacherAssistant
 
             obj.ShowDialog();
         }
+
+        private void Course_Select_Click(object sender, EventArgs e)
+        {
+            CourseSelect obj = new CourseSelect();
+
+            obj.ShowDialog();
+        }
     }
 }

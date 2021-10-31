@@ -39,6 +39,7 @@ namespace TeacherAssistant
             this.panel4 = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
             this.Add_Course = new System.Windows.Forms.Button();
+            this.Course_Select = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -134,11 +135,22 @@ namespace TeacherAssistant
             this.Add_Course.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Add_Course.Location = new System.Drawing.Point(584, 190);
             this.Add_Course.Name = "Add_Course";
-            this.Add_Course.Size = new System.Drawing.Size(162, 39);
+            this.Add_Course.Size = new System.Drawing.Size(224, 39);
             this.Add_Course.TabIndex = 3;
-            this.Add_Course.Text = "Add Course";
+            this.Add_Course.Text = "Add New Course";
             this.Add_Course.UseVisualStyleBackColor = true;
             this.Add_Course.Click += new System.EventHandler(this.Add_Course_Click);
+            // 
+            // Course_Select
+            // 
+            this.Course_Select.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Course_Select.Location = new System.Drawing.Point(602, 469);
+            this.Course_Select.Name = "Course_Select";
+            this.Course_Select.Size = new System.Drawing.Size(162, 39);
+            this.Course_Select.TabIndex = 7;
+            this.Course_Select.Text = "Course Select";
+            this.Course_Select.UseVisualStyleBackColor = true;
+            this.Course_Select.Click += new System.EventHandler(this.Course_Select_Click);
             // 
             // Admin_Profile
             // 
@@ -147,6 +159,7 @@ namespace TeacherAssistant
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(962, 587);
+            this.Controls.Add(this.Course_Select);
             this.Controls.Add(this.Add_Course);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel3);
@@ -176,5 +189,6 @@ namespace TeacherAssistant
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.Button Add_Course;
+        private System.Windows.Forms.Button Course_Select;
     }
 }
