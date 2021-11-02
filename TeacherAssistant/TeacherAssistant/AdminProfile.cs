@@ -55,5 +55,12 @@ namespace TeacherAssistant
 
             obj.ShowDialog();
         }
+
+        private void Instructor_Select_Click(object sender, EventArgs e)
+        {
+            InstructorSelect obj = new InstructorSelect();
+
+            obj.ShowDialog();
+        }
     }
 }

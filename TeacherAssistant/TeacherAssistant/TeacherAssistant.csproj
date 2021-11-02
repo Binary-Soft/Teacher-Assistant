@@ -126,6 +126,12 @@
     <Compile Include="InstructorRegistration.Designer.cs">
       <DependentUpon>InstructorRegistration.cs</DependentUpon>
     </Compile>
+    <Compile Include="InstructorSelect.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InstructorSelect.Designer.cs">
+      <DependentUpon>InstructorSelect.cs</DependentUpon>
+    </Compile>
     <Compile Include="Login Form.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -169,6 +175,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="InstructorRegistration.resx">
       <DependentUpon>InstructorRegistration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InstructorSelect.resx">
+      <DependentUpon>InstructorSelect.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Login Form.resx">
       <DependentUpon>Login Form.cs</DependentUpon>
