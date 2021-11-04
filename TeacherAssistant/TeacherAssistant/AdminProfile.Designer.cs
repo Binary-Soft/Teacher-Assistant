@@ -134,9 +134,9 @@ namespace TeacherAssistant
             // Add_Course
             // 
             this.Add_Course.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Add_Course.Location = new System.Drawing.Point(584, 190);
+            this.Add_Course.Location = new System.Drawing.Point(463, 190);
             this.Add_Course.Name = "Add_Course";
-            this.Add_Course.Size = new System.Drawing.Size(224, 39);
+            this.Add_Course.Size = new System.Drawing.Size(400, 39);
             this.Add_Course.TabIndex = 3;
             this.Add_Course.Text = "Add New Course";
             this.Add_Course.UseVisualStyleBackColor = true;
@@ -145,22 +145,22 @@ namespace TeacherAssistant
             // Course_Select
             // 
             this.Course_Select.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Course_Select.Location = new System.Drawing.Point(602, 469);
+            this.Course_Select.Location = new System.Drawing.Point(463, 469);
             this.Course_Select.Name = "Course_Select";
-            this.Course_Select.Size = new System.Drawing.Size(162, 39);
+            this.Course_Select.Size = new System.Drawing.Size(400, 39);
             this.Course_Select.TabIndex = 7;
-            this.Course_Select.Text = "Course Select";
+            this.Course_Select.Text = "Course Prefer";
             this.Course_Select.UseVisualStyleBackColor = true;
             this.Course_Select.Click += new System.EventHandler(this.Course_Select_Click);
             // 
             // Instructor_Select
             // 
             this.Instructor_Select.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Instructor_Select.Location = new System.Drawing.Point(602, 536);
+            this.Instructor_Select.Location = new System.Drawing.Point(463, 536);
             this.Instructor_Select.Name = "Instructor_Select";
-            this.Instructor_Select.Size = new System.Drawing.Size(162, 39);
+            this.Instructor_Select.Size = new System.Drawing.Size(400, 39);
             this.Instructor_Select.TabIndex = 8;
-            this.Instructor_Select.Text = "Instructor Select";
+            this.Instructor_Select.Text = "Instructor Selection";
             this.Instructor_Select.UseVisualStyleBackColor = true;
             this.Instructor_Select.Click += new System.EventHandler(this.Instructor_Select_Click);
             // 

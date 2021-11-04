@@ -316,10 +316,12 @@ namespace TeacherAssistant
             connect.Open();
 
             MySqlCommand command = new MySqlCommand(query, connect);
-            MySqlDataReader dataReader = command.ExecuteReader();
+            
 
             try
             {
+                MySqlDataReader dataReader = command.ExecuteReader();
+
                 while (dataReader.Read())
                 {
                 }

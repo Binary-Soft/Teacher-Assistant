@@ -102,7 +102,7 @@ namespace TeacherAssistant
             }
         }
 
-        private bool is_valid(string dept_name)
+        public bool is_valid(string dept_name)
         {
             if (dept_name == string.Empty)
             {
