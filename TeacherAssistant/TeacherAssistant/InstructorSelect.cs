@@ -121,10 +121,6 @@ namespace TeacherAssistant
                     "WHERE department.ID=instructor.Dept_ID AND department.Dept_Name='" + dept_name + "'";
 
                 Get_Department_Name(query, "Show_Instructor_ID");
-
-                query = "SELECT course_prefer.Course_ID AS Course FROM department, course_prefer " +
-                    "WHERE department.ID=course_prefer.Dept_ID AND department.Dept_Name='" + dept_name + "'";
-                Get_Department_Name(query, "Show_Select_Course");
             }
         }
 
@@ -136,16 +132,22 @@ namespace TeacherAssistant
 
             if (is_valid(dept_name, intake) == true)
             {
-                string query = "SELECT DISTINCT dept_intake_section.Section AS Section FROM department, dept_intake_section " +
-                    "WHERE department.ID=dept_intake_section.Dept_ID AND department.Dept_Name='" + dept_name + "' AND dept_intake_section.Intake='" + intake + "'";
-
+                Show_Select_Course.Items.Clear();
                 Show_Section.Items.Clear();
                 Show_Instructor_Name.Clear();
+
+                string query = "SELECT DISTINCT course_prefer.Course_ID AS Course FROM department, course_prefer " +
+                    "WHERE department.ID=course_prefer.Dept_ID AND department.Dept_Name='" + dept_name + "' AND course_prefer.Intake='" + intake + "'";
+                Get_Department_Name(query, "Show_Select_Course");
+
+
+                query = "SELECT DISTINCT dept_intake_section.Section AS Section FROM department, dept_intake_section " +
+                    "WHERE department.ID=dept_intake_section.Dept_ID AND department.Dept_Name='" + dept_name + "' AND dept_intake_section.Intake='" + intake + "'";
                 Get_Department_Name(query, "Show_Section");
             }
         }
 
-        private bool is_valid(string DepartName)
+        public bool is_valid(string DepartName)
         {
             if(DepartName == string.Empty)
             {
@@ -156,7 +158,7 @@ namespace TeacherAssistant
             return true;
         }
 
-        private bool is_valid(string DepartName, string intake)
+        public bool is_valid(string DepartName, string intake)
         {
             if (is_valid(DepartName) == false)
             {
@@ -171,7 +173,7 @@ namespace TeacherAssistant
             return true;
         }
 
-        private bool is_valid(string DepartName, string intake, string section)
+        public bool is_valid(string DepartName, string intake, string section)
         {
             if(is_valid(DepartName, intake) == false)
             {
@@ -252,8 +254,11 @@ namespace TeacherAssistant
 
             string dept_id = obj.Get_Department_ID("SELECT department.ID AS Dept_ID  FROM department WHERE department.Dept_Name='" + dept_name + "'");
 
-            string query = "INSERT INTO `ins_selection` (`Dept_ID`, `Intake`, `Section`, `Course_ID`, `Ins_ID`, `Semester`) " +
-                "VALUES ('" + dept_id + "', '" + intake + "', '" + section + "', '" + course_id + "', '" + ins_id + "', '" + semester + "');";
+            string currentTime = Get_Current_Time();
+            string endingTime = Get_Ending_Time();
+
+            string query = "INSERT INTO `ins_selection` (`Dept_ID`, `Intake`, `Section`, `Course_ID`, `Ins_ID`, `Semester`, `Starting_Time`, `Ending_Time`) " +
+                "VALUES ('" + dept_id + "', '" + intake + "', '" + section + "', '" + course_id + "', '" + ins_id + "', '" + semester + "', '" + currentTime + "', '" + endingTime + "')";
 
             if (obj.Student_Info_Save_To_Database(query) == true)    // <<==== this function exist AddNewStudent.cs file
             {
@@ -263,6 +268,27 @@ namespace TeacherAssistant
             {
                 MessageBox.Show("Information Save Failed. Please Try Again.", "Failed!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
+        }
+
+        public string Get_Current_Time()
+        {
+            string year_month_Date = DateTime.Now.ToString("yyy/MM/dd").Replace('/', '-');
+
+            return year_month_Date;
+        }
+
+        private string Get_Ending_Time()
+        {
+            DateTime DT = new DateTime();
+
+            DT = DateTime.Now.AddMonths(4);
+
+            string year = Convert.ToString(DT.Year);
+            string month = Convert.ToString(DT.Month);
+            string date = Convert.ToString(DT.Day);
+
+
+            return year + "-" + month + "-" + date;
         }
 
         private bool is_valid(string dept_name, string intake, string section, string ins_id, string semester, string course_id)

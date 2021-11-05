@@ -28,6 +28,7 @@ namespace TeacherAssistant
         {
             login_As.Items.Add("Login as Admin");
             login_As.Items.Add("Login as Instructor");
+
         }
 
 
@@ -45,7 +46,6 @@ namespace TeacherAssistant
             if (userType == "Login as Admin" && Is_Login("Login as Admin", email, pin_code) == true)
             {
                 // this.Hide();
-                MessageBox.Show("Admin Login");          // for  testing
                 Admin_Profile obj = new Admin_Profile();
                 obj.ShowDialog();
 
@@ -53,8 +53,6 @@ namespace TeacherAssistant
                // Login as Instructor
             else if (userType == "Login as Instructor" && Is_Login("Login as Instructor", email, pin_code) == true)
             {
-                MessageBox.Show("Instructor Login");         // for  testing
-
                 INSTRUCTOR_EMAIL = email;
                 if (Is_First_Time_Login(email) == true)
                 {
@@ -119,8 +117,7 @@ namespace TeacherAssistant
         private bool Is_Login(string userType, string user_email, string user_password)
         {
             MySqlConnection connect = new MySqlConnection(DataBase.Connect_String());
-            connect.Open();
-            MessageBox.Show("Connected");    
+            connect.Open();   
 
             string query = string.Empty;
 
