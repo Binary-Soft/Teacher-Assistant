@@ -150,3 +150,4 @@ D:\CSE- 200\CSE-200-2nd-Semester-\TeacherAssistant\TeacherAssistant\obj\Debug\Te
 D:\CSE- 200\CSE-200-2nd-Semester-\TeacherAssistant\TeacherAssistant\obj\Debug\TeacherAssistant.AddCourses.resources
 D:\CSE- 200\CSE-200-2nd-Semester-\TeacherAssistant\TeacherAssistant\obj\Debug\TeacherAssistant.CourseSelect.resources
 D:\CSE- 200\CSE-200-2nd-Semester-\TeacherAssistant\TeacherAssistant\obj\Debug\TeacherAssistant.InstructorSelect.resources
+D:\CSE- 200\CSE-200-2nd-Semester-\TeacherAssistant\TeacherAssistant\obj\Debug\TeacherAssistant.AddStudentMarks.resources

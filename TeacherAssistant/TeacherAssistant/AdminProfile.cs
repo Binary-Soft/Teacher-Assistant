@@ -23,44 +23,61 @@ namespace TeacherAssistant
 
         private void AddDept_Click(object sender, EventArgs e)
         {
+            this.Hide();
             ManageDept obj = new ManageDept();
 
             obj.ShowDialog();
+            this.Show();
         }
 
         private void Add_New_Student_Click(object sender, EventArgs e)
         {
+            this.Hide();
             AddNewStudent obj = new AddNewStudent();
 
             obj.ShowDialog();
+            this.Show();
         }
 
         private void Instructor_Registration_Permission_Click(object sender, EventArgs e)
         {
+            this.Hide();
             InstructorRegistration obj = new InstructorRegistration();
 
             obj.ShowDialog();
+            this.Show();
         }
 
         private void Add_Course_Click(object sender, EventArgs e)
         {
+            this.Hide();
             AddCourses obj = new AddCourses();
 
             obj.ShowDialog();
+            this.Show();
         }
 
         private void Course_Select_Click(object sender, EventArgs e)
         {
+            this.Hide();
             CourseSelect obj = new CourseSelect();
 
             obj.ShowDialog();
+            this.Show();
         }
 
         private void Instructor_Select_Click(object sender, EventArgs e)
         {
+            this.Hide();
             InstructorSelect obj = new InstructorSelect();
 
             obj.ShowDialog();
+            this.Show();
+        }
+
+        private void Logout_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

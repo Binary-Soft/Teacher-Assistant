@@ -137,7 +137,7 @@ namespace TeacherAssistant
                     AddDeptName.Text = selected_item;
                     MessageBox.Show(Convert.ToString(Dept_ID));   // for testing
 
-                    Show_Intake(Dept_ID);
+                    Show_Intake(Dept_ID);   
                 }
                 else
                 {
@@ -150,8 +150,6 @@ namespace TeacherAssistant
                 MessageBox.Show("Please, Enter A Department.", "Warning!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 Reset();
             }
-            
-
         }
 
 
@@ -386,6 +384,15 @@ namespace TeacherAssistant
             connect.Close();
         }
 
+
+        private void Back_Click(object sender, EventArgs e)
+        {
+            DialogResult dialogResult = MessageBox.Show("Are You Confirm?", "Close this Window.", MessageBoxButtons.YesNo);
+            if (dialogResult == DialogResult.Yes)
+            {
+                this.Close();
+            }
+        }
     }
 }
 

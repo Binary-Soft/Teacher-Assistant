@@ -47,6 +47,7 @@ namespace TeacherAssistant
             this.Submit_Instructor_Info = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.Back = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -215,6 +216,20 @@ namespace TeacherAssistant
             this.panel2.Size = new System.Drawing.Size(262, 297);
             this.panel2.TabIndex = 0;
             // 
+            // Back
+            // 
+            this.Back.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.Back.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.Back.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Back.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Back.Location = new System.Drawing.Point(1057, 20);
+            this.Back.Name = "Back";
+            this.Back.Size = new System.Drawing.Size(120, 33);
+            this.Back.TabIndex = 103;
+            this.Back.Text = "< Back";
+            this.Back.UseVisualStyleBackColor = false;
+            this.Back.Click += new System.EventHandler(this.Back_Click);
+            // 
             // InstructorRegistration
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -222,6 +237,7 @@ namespace TeacherAssistant
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.ClientSize = new System.Drawing.Size(1189, 662);
+            this.Controls.Add(this.Back);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.Submit_Instructor_Info);
             this.Controls.Add(this.Password2);
@@ -267,5 +283,6 @@ namespace TeacherAssistant
         private System.Windows.Forms.Button Submit_Instructor_Info;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Button Back;
     }
 }

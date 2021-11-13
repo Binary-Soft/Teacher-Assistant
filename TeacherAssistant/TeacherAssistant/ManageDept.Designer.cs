@@ -41,6 +41,7 @@ namespace TeacherAssistant
             this.Show_Section_No = new System.Windows.Forms.ComboBox();
             this.Show_Section = new System.Windows.Forms.Label();
             this.Add_New_Section = new System.Windows.Forms.Button();
+            this.Back = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.ShowDeptName)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Intake)).BeginInit();
             this.SuspendLayout();
@@ -164,11 +165,26 @@ namespace TeacherAssistant
             this.Add_New_Section.UseVisualStyleBackColor = true;
             this.Add_New_Section.Click += new System.EventHandler(this.Add_New_Section_Click);
             // 
+            // Back
+            // 
+            this.Back.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.Back.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.Back.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Back.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Back.Location = new System.Drawing.Point(1055, 58);
+            this.Back.Name = "Back";
+            this.Back.Size = new System.Drawing.Size(120, 33);
+            this.Back.TabIndex = 103;
+            this.Back.Text = "< Back";
+            this.Back.UseVisualStyleBackColor = false;
+            this.Back.Click += new System.EventHandler(this.Back_Click);
+            // 
             // ManageDept
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1225, 658);
+            this.Controls.Add(this.Back);
             this.Controls.Add(this.Add_New_Section);
             this.Controls.Add(this.Show_Section);
             this.Controls.Add(this.Show_Section_No);
@@ -204,5 +220,6 @@ namespace TeacherAssistant
         private System.Windows.Forms.ComboBox Show_Section_No;
         private System.Windows.Forms.Label Show_Section;
         private System.Windows.Forms.Button Add_New_Section;
+        private System.Windows.Forms.Button Back;
     }
 }

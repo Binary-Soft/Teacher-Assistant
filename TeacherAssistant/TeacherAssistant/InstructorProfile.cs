@@ -37,7 +37,21 @@ namespace TeacherAssistant
                 "WHERE department.ID=ins_selection.Dept_ID AND ins_selection.Ins_ID='" + ins_id +"'";
 
                 Get_Department_Name(query, "Show_Department");
+                Display_Semester();
+
             }
+        }
+
+        private void Display_Semester()
+        {
+            InstructorSelect obj = new InstructorSelect();
+            string year_month_Date = obj.Get_Current_Time();   // Get Current Time (Year-Month-Date)
+
+            string query = "SELECT DISTINCT ins_selection.Semester AS Semester from ins_selection , instructor " +
+                    "WHERE instructor.Ins_ID=ins_selection.Ins_ID AND instructor.Ins_ID='" + ins_id + "' AND ins_selection.Starting_Time<='" + year_month_Date + "' AND" +
+                    " ins_selection.Ending_Time>='" + year_month_Date + "'";
+
+            Get_Department_Name(query, "Show_Semester_Name");
         }
 
         private string Get_Instructor_ID(string query)
@@ -112,8 +126,8 @@ namespace TeacherAssistant
                 {
                     while (dataReader.Read())
                     {
-                        Show_Semester_Name.Items.Add(dataReader.GetString("Semester"));
                     }
+                    Show_Semester_Name.Text = dataReader.GetString("Semester");
 
                 }
             }
@@ -136,7 +150,8 @@ namespace TeacherAssistant
             {
                 
                 string query = "SELECT DISTINCT ins_selection.Intake AS Intake FROM department,ins_selection " +
-                    "WHERE department.ID=ins_selection.Dept_ID AND ins_selection.Ins_ID='" + ins_id + "' AND department.Dept_Name='" + ins_dept_name + "'";
+                    "WHERE department.ID=ins_selection.Dept_ID AND ins_selection.Ins_ID='" + ins_id + "' AND department.Dept_Name='" + ins_dept_name + "'" +
+                    "ORDER BY ins_selection.Intake";
 
                 Show_Intake.Items.Clear();
                 Show_Section.Items.Clear();
@@ -156,11 +171,12 @@ namespace TeacherAssistant
             if(obj.is_valid(ins_dept_name, intake) == true)
             {
                 string query = "SELECT DISTINCT ins_selection.Section AS Section FROM instructor, ins_selection " +
-                    "WHERE instructor.Ins_ID=ins_selection.Ins_ID AND instructor.Ins_ID='" + ins_id + "' AND ins_selection.Intake='" + intake + "'";
+                    "WHERE instructor.Ins_ID=ins_selection.Ins_ID AND instructor.Ins_ID='" + ins_id + "' AND ins_selection.Intake='" + intake + "'"+
+                    "ORDER BY ins_selection.Section";
 
                 Show_Section.Items.Clear();
                 Show_Select_Course.Items.Clear();
-
+                Show_Student.DataSource = null;
                 
                 Get_Department_Name(query, "Show_Section");
             }
@@ -177,20 +193,195 @@ namespace TeacherAssistant
 
             if (obj.is_valid(ins_dept_name, intake, section) == true)
             {
-
                 string year_month_Date = obj.Get_Current_Time();   // Get Current Time (Year-Month-Date)
                 string query = "SELECT DISTINCT ins_selection.Course_ID AS Course  FROM department, ins_selection WHERE department.ID=ins_selection.Dept_ID AND" +
                     " ins_selection.Ins_ID='" + ins_id + "' AND ins_selection.Intake='" + intake + "' AND ins_selection.Section='" + section + "' AND " +
                     "ins_selection.Starting_Time <= '" + year_month_Date + "' AND ins_selection.Ending_Time >= '" + year_month_Date + "'";
 
+                Show_Student.DataSource = null;
+                Show_Select_Course.Items.Clear();
                 Get_Department_Name(query, "Show_Select_Course");
             }
         }
 
-
-        private void Submit_Info_Click(object sender, EventArgs e)
+        private void Show_Select_Course_SelectedIndexChanged(object sender, EventArgs e)
         {
+            Show_Student.DataSource = null;
+            Disp_Stu_Info();
+        }
+
+        private void Disp_Stu_Info()
+        {
+            string ins_dept_name = Show_Department.Text.Trim();
+            string intake = Show_Intake.Text.Trim();
+            string section = Show_Section.Text.Trim();
+            string course_id = Show_Select_Course.Text.Trim();
+
+            if (is_valid(ins_dept_name, intake, section, course_id) == true)
+            {
+                /*
+                 string query = "SELECT students.Student_ID AS 'Student ID', students.Name, students.Email, " +
+                    "students.Phone_No AS 'Phone Number', students.Address FROM students, department " +
+                    "WHERE department.ID=students.Dept_ID AND department.Dept_Name='" + ins_dept_name + "' AND" +
+                    " students.Intake='" + intake + "' AND students.Section='" + section + "'"; 
+               */
+
+                InstructorSelect obj = new InstructorSelect();
+
+                string year_month_Date = obj.Get_Current_Time();   // Get Current Time (Year-Month-Date)
+
+                string query = "SELECT students.Student_ID AS 'Student ID', students.Name, students.Email, students.Phone_No AS 'Phone Number', " +
+                    "students.Address , (SELECT CASE WHEN COUNT(attendance.Present_Or_Not) > 0 then 'Yes' else 'No' end from attendance WHERE students.Student_ID=attendance.Student_ID AND attendance.Year='" + year_month_Date + "' AND attendance.Course_ID='" + course_id + "') AS Present " +
+                    "FROM students, department " +
+                    "WHERE department.ID = students.Dept_ID AND department.Dept_Name='" + ins_dept_name + "' AND students.Intake='" + intake + "' AND students.Section='" + section + "'" +
+                    "ORDER BY students.Student_ID;";
+
+                Show_Student.DataSource = null;
+                Display_Student_Info(query);
+            }
+        }
+
+        private bool is_valid(string ins_dept_name, string intake, string section, string course_id)
+        {
+            InstructorSelect obj = new InstructorSelect();
+
+            if(obj.is_valid(ins_dept_name, intake, section) == false)
+            {
+                return false;
+            }
+            else if(course_id == string.Empty)
+            {
+                MessageBox.Show("Please Select a Course.", "Warning!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return false;
+            }
+
+            return true;
+        }
+
+        private void Display_Student_Info(string query)
+        {
+            MySqlConnection connect = new MySqlConnection(DataBase.Connect_String());
+            connect.Open();
+ 
+
+            try
+            {
+                MySqlCommand command = new MySqlCommand(query, connect);
+                MySqlDataReader dataReader = command.ExecuteReader();
+                DataTable data_table = new DataTable();
+
+                data_table.Load(dataReader);
+                Show_Student.DataSource = data_table;
+
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Warning!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+
+         
+            connect.Close();
+        }
+
+
+        private void Show_Student_DefaultValuesNeeded(object sender, DataGridViewRowEventArgs e)
+        {
+            e.Row.Cells[0].Value = "-1";  // set default value
+        }
+        private void Show_Student_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            string student_id = Show_Student.SelectedRows[0].Cells[0].Value.ToString();
+
+            if (student_id == "-1")
+            {
+                MessageBox.Show("Please Select a Student.", "Warning!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                Show_Student.DataSource = null;
+                Disp_Stu_Info();
+            }
+        }
+
+
+        private void Add_Attendance_Click(object sender, EventArgs e)
+        {
+            string ins_dept_name = Show_Department.Text.Trim();
+            string intake = Show_Intake.Text.Trim();
+            string section = Show_Section.Text.Trim();
+            string course_id = Show_Select_Course.Text.Trim();
+            string semester = Show_Semester_Name.Text.Trim();
             
+            
+
+            if (is_valid(ins_dept_name, intake, section, course_id) == true)
+            {
+                string student_id = string.Empty;
+
+                try
+                {
+                    student_id = Show_Student.SelectedRows[0].Cells[0].Value.ToString();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Please Select a Student.", "Warning!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+
+                InstructorSelect obj = new InstructorSelect();
+                string year_month_Date = obj.Get_Current_Time();   // Get Current Time (Year-Month-Date)
+                string query = "INSERT INTO `attendance` (`Student_ID`, `Course_ID`, `Present_Or_Not`, `Year`, `Semester`) " +
+                    "VALUES ('"+ student_id +"', '" + course_id + "', '1', '" + year_month_Date + "', '" + semester + "');";
+                
+                AddNewStudent obj1 = new AddNewStudent();
+
+                obj1.Student_Info_Save_To_Database(query);
+                Disp_Stu_Info();
+            }
+        }
+
+        private void Add_Marks_Click(object sender, EventArgs e)
+        {
+            string ins_dept_name = Show_Department.Text.Trim();
+            string intake = Show_Intake.Text.Trim();
+            string section = Show_Section.Text.Trim();
+            string course_id = Show_Select_Course.Text.Trim();
+            string semester = Show_Semester_Name.Text.Trim();
+
+            if (is_valid(ins_dept_name, intake, section, course_id) == true)
+            {
+                string student_id = string.Empty;
+
+                try
+                {
+                    student_id = Show_Student.SelectedRows[0].Cells[0].Value.ToString();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Please Select a Student.", "Warning!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+
+
+                this.Hide();
+
+                AddStudentMarks obj = new AddStudentMarks();
+                string StudentName = Show_Student.SelectedRows[0].Cells[1].Value.ToString();
+
+                obj.PassingStudentId = student_id;  // pass value this Windows Form to "AddStudentMarks" Windows Form
+                obj.passingCourseId = course_id;  // pass value this Windows Form to "AddStudentMarks" Windows Form
+                obj.passingStudentName = StudentName;   // pass value this Windows Form to "AddStudentMarks" Windows Form
+                obj.passingSemester = semester;
+
+                obj.Text = StudentName;    // Change the Student Marks Form Title.
+                obj.Refresh();
+
+                obj.ShowDialog();
+                this.Show();
+
+            }
+        }
+
+        private void Logout_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

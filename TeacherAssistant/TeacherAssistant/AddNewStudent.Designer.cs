@@ -50,6 +50,7 @@ namespace TeacherAssistant
             this.Show_Section = new System.Windows.Forms.ComboBox();
             this.Semester_Name = new System.Windows.Forms.ComboBox();
             this.Subbit_Student_Info = new System.Windows.Forms.Button();
+            this.Back = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label2
@@ -238,11 +239,26 @@ namespace TeacherAssistant
             this.Subbit_Student_Info.UseVisualStyleBackColor = true;
             this.Subbit_Student_Info.Click += new System.EventHandler(this.Subbit_Student_Info_Click);
             // 
+            // Back
+            // 
+            this.Back.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.Back.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.Back.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Back.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Back.Location = new System.Drawing.Point(1108, 37);
+            this.Back.Name = "Back";
+            this.Back.Size = new System.Drawing.Size(120, 33);
+            this.Back.TabIndex = 103;
+            this.Back.Text = "< Back";
+            this.Back.UseVisualStyleBackColor = false;
+            this.Back.Click += new System.EventHandler(this.Back_Click);
+            // 
             // AddNewStudent
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1282, 663);
+            this.Controls.Add(this.Back);
             this.Controls.Add(this.Subbit_Student_Info);
             this.Controls.Add(this.Semester_Name);
             this.Controls.Add(this.Show_Section);
@@ -295,5 +311,6 @@ namespace TeacherAssistant
         private System.Windows.Forms.ComboBox Show_Section;
         private System.Windows.Forms.ComboBox Semester_Name;
         private System.Windows.Forms.Button Subbit_Student_Info;
+        private System.Windows.Forms.Button Back;
     }
 }

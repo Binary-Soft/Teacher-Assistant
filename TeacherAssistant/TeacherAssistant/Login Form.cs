@@ -19,16 +19,16 @@ namespace TeacherAssistant
             InitializeComponent();
         }
 
-        private void login_As_SelectedIndexChanged(object sender, EventArgs e)
-        {
-           
-        }
-
         private void Form1_Load(object sender, EventArgs e)
         {
             login_As.Items.Add("Login as Admin");
             login_As.Items.Add("Login as Instructor");
+        }
 
+        private void login_As_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            Email.Text = string.Empty;
+            Password.Text = string.Empty;
         }
 
 
@@ -45,10 +45,11 @@ namespace TeacherAssistant
                //   Login as Admin
             if (userType == "Login as Admin" && Is_Login("Login as Admin", email, pin_code) == true)
             {
-                // this.Hide();
+                 this.Hide();
                 Admin_Profile obj = new Admin_Profile();
                 obj.ShowDialog();
-
+                MessageBox.Show("Logout Successfull.", "Successfull.", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                this.Close();
             }
                // Login as Instructor
             else if (userType == "Login as Instructor" && Is_Login("Login as Instructor", email, pin_code) == true)
@@ -56,19 +57,26 @@ namespace TeacherAssistant
                 INSTRUCTOR_EMAIL = email;
                 if (Is_First_Time_Login(email) == true)
                 {
+                    Email.Clear();
+                    Password.Clear();
+                    this.Hide();
                     MessageBox.Show("You Logged in First Time. Please Change Your Password And Add Security Key.", "Warning!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-
 
                     FirstLoginForm obj = new FirstLoginForm();
 
                     // obj.Text = "test environment";    // runtime form title change
                     // obj.Refresh();                    //  Refrase the title
                     obj.ShowDialog();
+                    this.Show();
                 }
                 else
                 {
+                    this.Hide();
                     InstructorProfile obje = new InstructorProfile();
                     obje.ShowDialog();
+
+                    MessageBox.Show("Logout Successfull.", "Successfull.", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    this.Close();
                 }
                 INSTRUCTOR_EMAIL = string.Empty;
             }
@@ -175,8 +183,10 @@ namespace TeacherAssistant
 
         private void Registration_Click(object sender, EventArgs e)
         {
+            this.Hide();
             Registration_Form obj = new Registration_Form();
             obj.ShowDialog();
+            this.Close();
         }
 
 

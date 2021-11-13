@@ -40,6 +40,7 @@ namespace TeacherAssistant
             this.label3 = new System.Windows.Forms.Label();
             this.Semester_Number = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
+            this.Back = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label2
@@ -138,11 +139,26 @@ namespace TeacherAssistant
             this.label5.TabIndex = 55;
             this.label5.Text = "Semester Number";
             // 
+            // Back
+            // 
+            this.Back.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.Back.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.Back.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Back.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Back.Location = new System.Drawing.Point(969, 28);
+            this.Back.Name = "Back";
+            this.Back.Size = new System.Drawing.Size(120, 33);
+            this.Back.TabIndex = 103;
+            this.Back.Text = "< Back";
+            this.Back.UseVisualStyleBackColor = false;
+            this.Back.Click += new System.EventHandler(this.Back_Click);
+            // 
             // AddCourses
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1114, 601);
+            this.Controls.Add(this.Back);
             this.Controls.Add(this.Semester_Number);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.Get_Course_Title);
@@ -175,5 +191,6 @@ namespace TeacherAssistant
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox Semester_Number;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Button Back;
     }
 }

@@ -44,12 +44,13 @@ namespace TeacherAssistant
             this.Submit_Info = new System.Windows.Forms.Button();
             this.Show_Select_Course = new System.Windows.Forms.ComboBox();
             this.aa = new System.Windows.Forms.Label();
+            this.Back = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // Show_Semester_Name
             // 
             this.Show_Semester_Name.FormattingEnabled = true;
-            this.Show_Semester_Name.Location = new System.Drawing.Point(11, 448);
+            this.Show_Semester_Name.Location = new System.Drawing.Point(38, 448);
             this.Show_Semester_Name.Name = "Show_Semester_Name";
             this.Show_Semester_Name.Size = new System.Drawing.Size(281, 21);
             this.Show_Semester_Name.TabIndex = 47;
@@ -58,7 +59,7 @@ namespace TeacherAssistant
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(66, 420);
+            this.label10.Location = new System.Drawing.Point(93, 420);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(184, 25);
             this.label10.TabIndex = 38;
@@ -67,7 +68,7 @@ namespace TeacherAssistant
             // Show_Section
             // 
             this.Show_Section.FormattingEnabled = true;
-            this.Show_Section.Location = new System.Drawing.Point(-6, 263);
+            this.Show_Section.Location = new System.Drawing.Point(21, 263);
             this.Show_Section.Name = "Show_Section";
             this.Show_Section.Size = new System.Drawing.Size(281, 21);
             this.Show_Section.TabIndex = 53;
@@ -104,7 +105,7 @@ namespace TeacherAssistant
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(60, 222);
+            this.label6.Location = new System.Drawing.Point(87, 222);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(164, 25);
             this.label6.TabIndex = 49;
@@ -123,7 +124,7 @@ namespace TeacherAssistant
             // Show_Instructor_ID
             // 
             this.Show_Instructor_ID.FormattingEnabled = true;
-            this.Show_Instructor_ID.Location = new System.Drawing.Point(-4, 363);
+            this.Show_Instructor_ID.Location = new System.Drawing.Point(23, 363);
             this.Show_Instructor_ID.Name = "Show_Instructor_ID";
             this.Show_Instructor_ID.Size = new System.Drawing.Size(281, 21);
             this.Show_Instructor_ID.TabIndex = 57;
@@ -133,7 +134,7 @@ namespace TeacherAssistant
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(37, 321);
+            this.label2.Location = new System.Drawing.Point(64, 321);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(213, 25);
             this.label2.TabIndex = 56;
@@ -141,7 +142,7 @@ namespace TeacherAssistant
             // 
             // Show_Instructor_Name
             // 
-            this.Show_Instructor_Name.Location = new System.Drawing.Point(323, 263);
+            this.Show_Instructor_Name.Location = new System.Drawing.Point(325, 364);
             this.Show_Instructor_Name.Name = "Show_Instructor_Name";
             this.Show_Instructor_Name.Size = new System.Drawing.Size(221, 20);
             this.Show_Instructor_Name.TabIndex = 58;
@@ -150,7 +151,7 @@ namespace TeacherAssistant
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(331, 220);
+            this.label3.Location = new System.Drawing.Point(333, 321);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(178, 25);
             this.label3.TabIndex = 59;
@@ -162,7 +163,7 @@ namespace TeacherAssistant
             this.Submit_Info.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.Submit_Info.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Submit_Info.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Submit_Info.Location = new System.Drawing.Point(100, 502);
+            this.Submit_Info.Location = new System.Drawing.Point(127, 502);
             this.Submit_Info.Name = "Submit_Info";
             this.Submit_Info.Size = new System.Drawing.Size(150, 37);
             this.Submit_Info.TabIndex = 60;
@@ -188,11 +189,26 @@ namespace TeacherAssistant
             this.aa.TabIndex = 61;
             this.aa.Text = "Select Course";
             // 
+            // Back
+            // 
+            this.Back.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.Back.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.Back.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Back.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Back.Location = new System.Drawing.Point(910, 22);
+            this.Back.Name = "Back";
+            this.Back.Size = new System.Drawing.Size(120, 33);
+            this.Back.TabIndex = 103;
+            this.Back.Text = "< Back";
+            this.Back.UseVisualStyleBackColor = false;
+            this.Back.Click += new System.EventHandler(this.Back_Click);
+            // 
             // InstructorSelect
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1063, 597);
+            this.Controls.Add(this.Back);
             this.Controls.Add(this.Show_Select_Course);
             this.Controls.Add(this.aa);
             this.Controls.Add(this.Submit_Info);
@@ -233,5 +249,6 @@ namespace TeacherAssistant
         private System.Windows.Forms.Button Submit_Info;
         private System.Windows.Forms.ComboBox Show_Select_Course;
         private System.Windows.Forms.Label aa;
+        private System.Windows.Forms.Button Back;
     }
 }
