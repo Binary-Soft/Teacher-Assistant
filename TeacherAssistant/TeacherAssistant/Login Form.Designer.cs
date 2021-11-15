@@ -43,6 +43,7 @@ namespace TeacherAssistant
             this.label4 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label7 = new System.Windows.Forms.Label();
+            this.panel3 = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -52,7 +53,7 @@ namespace TeacherAssistant
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Montserrat", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.HighlightText;
-            this.label1.Location = new System.Drawing.Point(502, 26);
+            this.label1.Location = new System.Drawing.Point(560, 53);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(196, 58);
             this.label1.TabIndex = 0;
@@ -61,7 +62,7 @@ namespace TeacherAssistant
             // login_As
             // 
             this.login_As.FormattingEnabled = true;
-            this.login_As.Location = new System.Drawing.Point(480, 173);
+            this.login_As.Location = new System.Drawing.Point(545, 173);
             this.login_As.Name = "login_As";
             this.login_As.Size = new System.Drawing.Size(228, 21);
             this.login_As.TabIndex = 1;
@@ -73,7 +74,7 @@ namespace TeacherAssistant
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.SystemColors.HighlightText;
-            this.label2.Location = new System.Drawing.Point(553, 212);
+            this.label2.Location = new System.Drawing.Point(623, 212);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(85, 25);
             this.label2.TabIndex = 4;
@@ -85,7 +86,7 @@ namespace TeacherAssistant
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.SystemColors.HighlightText;
-            this.label3.Location = new System.Drawing.Point(540, 295);
+            this.label3.Location = new System.Drawing.Point(605, 298);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(121, 25);
             this.label3.TabIndex = 5;
@@ -97,7 +98,7 @@ namespace TeacherAssistant
             this.Login.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.Login.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Login.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Login.Location = new System.Drawing.Point(522, 392);
+            this.Login.Location = new System.Drawing.Point(586, 394);
             this.Login.Name = "Login";
             this.Login.Size = new System.Drawing.Size(150, 37);
             this.Login.TabIndex = 8;
@@ -107,7 +108,7 @@ namespace TeacherAssistant
             // 
             // Email
             // 
-            this.Email.Location = new System.Drawing.Point(480, 251);
+            this.Email.Location = new System.Drawing.Point(545, 251);
             this.Email.Name = "Email";
             this.Email.Size = new System.Drawing.Size(228, 20);
             this.Email.TabIndex = 9;
@@ -115,7 +116,7 @@ namespace TeacherAssistant
             // 
             // Password
             // 
-            this.Password.Location = new System.Drawing.Point(480, 338);
+            this.Password.Location = new System.Drawing.Point(545, 338);
             this.Password.Name = "Password";
             this.Password.Size = new System.Drawing.Size(228, 20);
             this.Password.TabIndex = 10;
@@ -185,11 +186,21 @@ namespace TeacherAssistant
             this.label7.BackColor = System.Drawing.Color.Transparent;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.SystemColors.HighlightText;
-            this.label7.Location = new System.Drawing.Point(534, 132);
+            this.label7.Location = new System.Drawing.Point(599, 131);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(127, 25);
             this.label7.TabIndex = 12;
             this.label7.Text = "User Type:";
+            // 
+            // panel3
+            // 
+            this.panel3.BackColor = System.Drawing.Color.Transparent;
+            this.panel3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel3.BackgroundImage")));
+            this.panel3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.panel3.Location = new System.Drawing.Point(261, 139);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(278, 292);
+            this.panel3.TabIndex = 13;
             // 
             // Form1
             // 
@@ -200,6 +211,7 @@ namespace TeacherAssistant
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.ClientSize = new System.Drawing.Size(1008, 607);
+            this.Controls.Add(this.panel3);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.Password);
@@ -243,6 +255,7 @@ namespace TeacherAssistant
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Panel panel3;
     }
 }
 
