@@ -45,6 +45,8 @@ namespace TeacherAssistant
             this.Show_Semester_Name = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.Logout = new System.Windows.Forms.Button();
+            this.Show_Student_Details = new System.Windows.Forms.Button();
+            this.Exam_Permission = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.Show_Student)).BeginInit();
             this.SuspendLayout();
             // 
@@ -149,7 +151,7 @@ namespace TeacherAssistant
             this.Add_Attendance.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.Add_Attendance.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Add_Attendance.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Add_Attendance.Location = new System.Drawing.Point(559, 551);
+            this.Add_Attendance.Location = new System.Drawing.Point(510, 551);
             this.Add_Attendance.Name = "Add_Attendance";
             this.Add_Attendance.Size = new System.Drawing.Size(211, 37);
             this.Add_Attendance.TabIndex = 82;
@@ -163,7 +165,7 @@ namespace TeacherAssistant
             this.Add_Marks.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.Add_Marks.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Add_Marks.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Add_Marks.Location = new System.Drawing.Point(868, 551);
+            this.Add_Marks.Location = new System.Drawing.Point(748, 551);
             this.Add_Marks.Name = "Add_Marks";
             this.Add_Marks.Size = new System.Drawing.Size(150, 37);
             this.Add_Marks.TabIndex = 83;
@@ -212,11 +214,41 @@ namespace TeacherAssistant
             this.Logout.UseVisualStyleBackColor = false;
             this.Logout.Click += new System.EventHandler(this.Logout_Click);
             // 
+            // Show_Student_Details
+            // 
+            this.Show_Student_Details.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.Show_Student_Details.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.Show_Student_Details.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Show_Student_Details.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Show_Student_Details.Location = new System.Drawing.Point(926, 551);
+            this.Show_Student_Details.Name = "Show_Student_Details";
+            this.Show_Student_Details.Size = new System.Drawing.Size(184, 37);
+            this.Show_Student_Details.TabIndex = 89;
+            this.Show_Student_Details.Text = "Student Details";
+            this.Show_Student_Details.UseVisualStyleBackColor = false;
+            this.Show_Student_Details.Click += new System.EventHandler(this.Show_Student_Details_Click);
+            // 
+            // Exam_Permission
+            // 
+            this.Exam_Permission.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.Exam_Permission.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.Exam_Permission.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Exam_Permission.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Exam_Permission.Location = new System.Drawing.Point(666, 608);
+            this.Exam_Permission.Name = "Exam_Permission";
+            this.Exam_Permission.Size = new System.Drawing.Size(211, 37);
+            this.Exam_Permission.TabIndex = 90;
+            this.Exam_Permission.Text = "Exam Permission";
+            this.Exam_Permission.UseVisualStyleBackColor = false;
+            this.Exam_Permission.Click += new System.EventHandler(this.Exam_Permission_Click);
+            // 
             // InstructorProfile
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1158, 671);
+            this.Controls.Add(this.Exam_Permission);
+            this.Controls.Add(this.Show_Student_Details);
             this.Controls.Add(this.Logout);
             this.Controls.Add(this.Show_Semester_Name);
             this.Controls.Add(this.label10);
@@ -260,5 +292,7 @@ namespace TeacherAssistant
         private System.Windows.Forms.TextBox Show_Semester_Name;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Button Logout;
+        private System.Windows.Forms.Button Show_Student_Details;
+        private System.Windows.Forms.Button Exam_Permission;
     }
 }

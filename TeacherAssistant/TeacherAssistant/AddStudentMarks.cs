@@ -13,10 +13,11 @@ namespace TeacherAssistant
 {
     public partial class AddStudentMarks : Form
     {
-        public string STUDENT_ID;
-        public string COURSE_ID;
-        public string STUDENT_NAME;
-        public string SEMESTER;
+        private string STUDENT_ID = string.Empty;
+        private string COURSE_ID = string.Empty;
+        private string STUDENT_NAME = string.Empty;
+        private string SEMESTER = string.Empty;
+
         public AddStudentMarks()
         {
             InitializeComponent();
@@ -223,7 +224,7 @@ namespace TeacherAssistant
 
             if (is_valid(Exam_Type, mark) == true)
             {
-                DialogResult dialogResult = MessageBox.Show("Sure", "Some Title", MessageBoxButtons.YesNo);
+                DialogResult dialogResult = MessageBox.Show("Are You Sure You Want To Update " + Exam_Type.Replace('_', ' ') + " Marks?", "Update!", MessageBoxButtons.YesNo);
                 if (dialogResult == DialogResult.Yes)
                 {
                     string query = "UPDATE marks SET marks."+ Mark_Table_Att_Name_exam_type + "='"+ mark +"' WHERE marks."+ Mark_Table_Att_Name_exam_type + " !=0";

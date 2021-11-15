@@ -107,6 +107,12 @@
     <Compile Include="AddStudentMarks.Designer.cs">
       <DependentUpon>AddStudentMarks.cs</DependentUpon>
     </Compile>
+    <Compile Include="AllStudentExamPermission.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AllStudentExamPermission.Designer.cs">
+      <DependentUpon>AllStudentExamPermission.cs</DependentUpon>
+    </Compile>
     <Compile Include="CourseSelect.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -164,6 +170,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="StudentDetails.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="StudentDetails.Designer.cs">
+      <DependentUpon>StudentDetails.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="AddCourses.resx">
       <DependentUpon>AddCourses.cs</DependentUpon>
     </EmbeddedResource>
@@ -172,6 +184,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="AddStudentMarks.resx">
       <DependentUpon>AddStudentMarks.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AllStudentExamPermission.resx">
+      <DependentUpon>AllStudentExamPermission.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="CourseSelect.resx">
       <DependentUpon>CourseSelect.cs</DependentUpon>
@@ -209,6 +224,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="StudentDetails.resx">
+      <DependentUpon>StudentDetails.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

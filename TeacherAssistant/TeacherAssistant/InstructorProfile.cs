@@ -16,6 +16,7 @@ namespace TeacherAssistant
     {
         string ins_email = Form1.INSTRUCTOR_EMAIL;
         string ins_id = string.Empty;
+        private string Total_Class = string.Empty;
 
         public InstructorProfile()
         {
@@ -54,7 +55,7 @@ namespace TeacherAssistant
             Get_Department_Name(query, "Show_Semester_Name");
         }
 
-        private string Get_Instructor_ID(string query)
+        public string Get_Instructor_ID(string query)
         {
             MySqlConnection connect = new MySqlConnection(DataBase.Connect_String());
             connect.Open();
@@ -207,6 +208,7 @@ namespace TeacherAssistant
         private void Show_Select_Course_SelectedIndexChanged(object sender, EventArgs e)
         {
             Show_Student.DataSource = null;
+            Total_Class = "2";  // dinamically // ========================================================
             Disp_Stu_Info();
         }
 
@@ -290,7 +292,15 @@ namespace TeacherAssistant
         }
         private void Show_Student_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            string student_id = Show_Student.SelectedRows[0].Cells[0].Value.ToString();
+            string student_id = string.Empty;
+            try
+            {
+                student_id = Show_Student.SelectedRows[0].Cells[0].Value.ToString();  // error
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Warning!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
 
             if (student_id == "-1")
             {
@@ -379,9 +389,77 @@ namespace TeacherAssistant
             }
         }
 
+        private void Show_Student_Details_Click(object sender, EventArgs e)
+        {
+            string ins_dept_name = Show_Department.Text.Trim();
+            string intake = Show_Intake.Text.Trim();
+            string section = Show_Section.Text.Trim();
+            string course_id = Show_Select_Course.Text.Trim();
+            string semester = Show_Semester_Name.Text.Trim();
+
+            if (is_valid(ins_dept_name, intake, section, course_id) == true)
+            {
+                string student_id = string.Empty;
+
+                try
+                {
+                    student_id = Show_Student.SelectedRows[0].Cells[0].Value.ToString();
+                }
+                catch (Exception)
+                {
+                    MessageBox.Show("Please Select a Student.", "Warning!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+
+
+                this.Hide();
+                StudentDetails obj = new StudentDetails();
+
+                string StudentName = Show_Student.SelectedRows[0].Cells[1].Value.ToString();
+
+                obj.PassingStudentID = student_id;
+                obj.PassingStudentName = StudentName;
+                obj.PassingCourseID = course_id;
+                obj.PassingIntake = intake;
+                obj.PassinStudentEmail = Show_Student.SelectedRows[0].Cells[2].Value.ToString();
+                obj.PassinStudentPhoneNo = Show_Student.SelectedRows[0].Cells[3].Value.ToString();
+                obj.PassinStudentAddress = Show_Student.SelectedRows[0].Cells[4].Value.ToString();
+                obj.PassingTotalClass = Total_Class; 
+
+                obj.ShowDialog();
+                this.Show();
+            }
+        }
+
+        private void Exam_Permission_Click(object sender, EventArgs e)
+        {
+            string ins_dept_name = Show_Department.Text.Trim();
+            string intake = Show_Intake.Text.Trim();
+            string section = Show_Section.Text.Trim();
+            string course_id = Show_Select_Course.Text.Trim();
+
+            if (is_valid(ins_dept_name, intake, section, course_id) == true)
+            {
+                this.Hide();
+                AllStudentExamPermission obj = new AllStudentExamPermission();
+
+                obj.PassingDeptartmentName = ins_dept_name;
+                obj.PassingIntake = intake;
+                obj.PassingSection = section;
+                obj.PassingCourseID = course_id;
+                obj.PassingTotalClass = Total_Class;
+
+                obj.ShowDialog();
+                this.Show();
+            }
+
+        }
+
         private void Logout_Click(object sender, EventArgs e)
         {
             this.Close();
         }
+
+        
     }
 }
