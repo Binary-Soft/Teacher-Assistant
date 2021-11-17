@@ -52,9 +52,9 @@ namespace TeacherAssistant
             // 
             // Temp_Instructor_Email
             // 
-            this.Temp_Instructor_Email.Location = new System.Drawing.Point(12, 60);
+            this.Temp_Instructor_Email.Location = new System.Drawing.Point(73, 97);
             this.Temp_Instructor_Email.Name = "Temp_Instructor_Email";
-            this.Temp_Instructor_Email.Size = new System.Drawing.Size(160, 20);
+            this.Temp_Instructor_Email.Size = new System.Drawing.Size(281, 20);
             this.Temp_Instructor_Email.TabIndex = 1;
             // 
             // label2
@@ -62,8 +62,8 @@ namespace TeacherAssistant
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.SystemColors.AppWorkspace;
-            this.label2.Location = new System.Drawing.Point(12, 22);
+            this.label2.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.label2.Location = new System.Drawing.Point(127, 69);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(178, 25);
             this.label2.TabIndex = 30;
@@ -73,7 +73,7 @@ namespace TeacherAssistant
             // 
             this.aa.AutoSize = true;
             this.aa.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.aa.Location = new System.Drawing.Point(87, 339);
+            this.aa.Location = new System.Drawing.Point(131, 478);
             this.aa.Name = "aa";
             this.aa.Size = new System.Drawing.Size(160, 25);
             this.aa.TabIndex = 75;
@@ -82,7 +82,7 @@ namespace TeacherAssistant
             // Show_Section
             // 
             this.Show_Section.FormattingEnabled = true;
-            this.Show_Section.Location = new System.Drawing.Point(31, 290);
+            this.Show_Section.Location = new System.Drawing.Point(73, 425);
             this.Show_Section.Name = "Show_Section";
             this.Show_Section.Size = new System.Drawing.Size(281, 21);
             this.Show_Section.TabIndex = 69;
@@ -91,7 +91,7 @@ namespace TeacherAssistant
             // Show_Intake
             // 
             this.Show_Intake.FormattingEnabled = true;
-            this.Show_Intake.Location = new System.Drawing.Point(46, 212);
+            this.Show_Intake.Location = new System.Drawing.Point(73, 343);
             this.Show_Intake.Name = "Show_Intake";
             this.Show_Intake.Size = new System.Drawing.Size(281, 21);
             this.Show_Intake.TabIndex = 68;
@@ -100,7 +100,7 @@ namespace TeacherAssistant
             // Show_Department
             // 
             this.Show_Department.FormattingEnabled = true;
-            this.Show_Department.Location = new System.Drawing.Point(52, 161);
+            this.Show_Department.Location = new System.Drawing.Point(73, 262);
             this.Show_Department.Name = "Show_Department";
             this.Show_Department.Size = new System.Drawing.Size(281, 21);
             this.Show_Department.TabIndex = 67;
@@ -110,7 +110,7 @@ namespace TeacherAssistant
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(112, 185);
+            this.label7.Location = new System.Drawing.Point(142, 315);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(149, 25);
             this.label7.TabIndex = 66;
@@ -120,7 +120,7 @@ namespace TeacherAssistant
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(97, 249);
+            this.label6.Location = new System.Drawing.Point(127, 397);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(164, 25);
             this.label6.TabIndex = 65;
@@ -130,7 +130,7 @@ namespace TeacherAssistant
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(48, 117);
+            this.label4.Location = new System.Drawing.Point(74, 234);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(280, 25);
             this.label4.TabIndex = 77;
@@ -139,7 +139,7 @@ namespace TeacherAssistant
             // Show_Select_Course
             // 
             this.Show_Select_Course.FormattingEnabled = true;
-            this.Show_Select_Course.Location = new System.Drawing.Point(31, 367);
+            this.Show_Select_Course.Location = new System.Drawing.Point(73, 506);
             this.Show_Select_Course.Name = "Show_Select_Course";
             this.Show_Select_Course.Size = new System.Drawing.Size(281, 21);
             this.Show_Select_Course.TabIndex = 79;
@@ -185,16 +185,16 @@ namespace TeacherAssistant
             // 
             // Show_Semester_Name
             // 
-            this.Show_Semester_Name.Location = new System.Drawing.Point(191, 62);
+            this.Show_Semester_Name.Location = new System.Drawing.Point(73, 175);
             this.Show_Semester_Name.Name = "Show_Semester_Name";
-            this.Show_Semester_Name.Size = new System.Drawing.Size(230, 20);
+            this.Show_Semester_Name.Size = new System.Drawing.Size(281, 20);
             this.Show_Semester_Name.TabIndex = 87;
             // 
             // label10
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(237, 34);
+            this.label10.Location = new System.Drawing.Point(155, 147);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(111, 25);
             this.label10.TabIndex = 86;
@@ -202,7 +202,7 @@ namespace TeacherAssistant
             // 
             // Logout
             // 
-            this.Logout.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.Logout.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
             this.Logout.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.Logout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Logout.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -234,7 +234,7 @@ namespace TeacherAssistant
             this.Exam_Permission.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.Exam_Permission.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Exam_Permission.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Exam_Permission.Location = new System.Drawing.Point(666, 608);
+            this.Exam_Permission.Location = new System.Drawing.Point(715, 611);
             this.Exam_Permission.Name = "Exam_Permission";
             this.Exam_Permission.Size = new System.Drawing.Size(211, 37);
             this.Exam_Permission.TabIndex = 90;
@@ -246,6 +246,7 @@ namespace TeacherAssistant
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.CornflowerBlue;
             this.ClientSize = new System.Drawing.Size(1158, 671);
             this.Controls.Add(this.Exam_Permission);
             this.Controls.Add(this.Show_Student_Details);
@@ -266,6 +267,7 @@ namespace TeacherAssistant
             this.Controls.Add(this.label2);
             this.Controls.Add(this.Temp_Instructor_Email);
             this.Name = "InstructorProfile";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Instructor Profile";
             this.Load += new System.EventHandler(this.InstructorProfile_Load);
             ((System.ComponentModel.ISupportInitialize)(this.Show_Student)).EndInit();
