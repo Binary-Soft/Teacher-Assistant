@@ -52,7 +52,7 @@ namespace TeacherAssistant
             this.Login.FlatAppearance.BorderSize = 0;
             this.Login.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Login.ForeColor = System.Drawing.Color.White;
-            this.Login.Location = new System.Drawing.Point(785, 22);
+            this.Login.Location = new System.Drawing.Point(785, 541);
             this.Login.Name = "Login";
             this.Login.Size = new System.Drawing.Size(150, 40);
             this.Login.TabIndex = 111;
@@ -65,10 +65,12 @@ namespace TeacherAssistant
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(947, 593);
             this.Controls.Add(this.Login);
             this.Controls.Add(this.Show_Students_Atd_Per);
             this.Name = "AllStudentExamPermission";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Student Exam Permission";
             this.Load += new System.EventHandler(this.AllStudentExamPermission_Load);
             ((System.ComponentModel.ISupportInitialize)(this.Show_Students_Atd_Per)).EndInit();

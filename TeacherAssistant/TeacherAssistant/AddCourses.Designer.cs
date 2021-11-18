@@ -41,9 +41,6 @@ namespace TeacherAssistant
             this.label3 = new System.Windows.Forms.Label();
             this.Total_Class = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.panel3 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
             this.Back = new TeacherAssistant.CustomButton();
             this.SuspendLayout();
@@ -62,7 +59,7 @@ namespace TeacherAssistant
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(470, 132);
+            this.label4.Location = new System.Drawing.Point(493, 112);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(280, 25);
             this.label4.TabIndex = 33;
@@ -70,7 +67,7 @@ namespace TeacherAssistant
             // 
             // Submit_New_Course
             // 
-            this.Submit_New_Course.Location = new System.Drawing.Point(521, 455);
+            this.Submit_New_Course.Location = new System.Drawing.Point(537, 409);
             this.Submit_New_Course.Name = "Submit_New_Course";
             this.Submit_New_Course.Size = new System.Drawing.Size(203, 73);
             this.Submit_New_Course.TabIndex = 50;
@@ -81,7 +78,7 @@ namespace TeacherAssistant
             // Show_Department
             // 
             this.Show_Department.FormattingEnabled = true;
-            this.Show_Department.Location = new System.Drawing.Point(475, 172);
+            this.Show_Department.Location = new System.Drawing.Point(498, 140);
             this.Show_Department.Name = "Show_Department";
             this.Show_Department.Size = new System.Drawing.Size(281, 21);
             this.Show_Department.TabIndex = 46;
@@ -95,7 +92,7 @@ namespace TeacherAssistant
             // 
             // Get_Course_ID
             // 
-            this.Get_Course_ID.Location = new System.Drawing.Point(475, 250);
+            this.Get_Course_ID.Location = new System.Drawing.Point(498, 218);
             this.Get_Course_ID.Name = "Get_Course_ID";
             this.Get_Course_ID.Size = new System.Drawing.Size(281, 20);
             this.Get_Course_ID.TabIndex = 52;
@@ -104,7 +101,7 @@ namespace TeacherAssistant
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(566, 207);
+            this.label1.Location = new System.Drawing.Point(577, 190);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(116, 25);
             this.label1.TabIndex = 51;
@@ -112,7 +109,7 @@ namespace TeacherAssistant
             // 
             // Get_Course_Title
             // 
-            this.Get_Course_Title.Location = new System.Drawing.Point(475, 320);
+            this.Get_Course_Title.Location = new System.Drawing.Point(498, 301);
             this.Get_Course_Title.Name = "Get_Course_Title";
             this.Get_Course_Title.Size = new System.Drawing.Size(281, 20);
             this.Get_Course_Title.TabIndex = 54;
@@ -121,7 +118,7 @@ namespace TeacherAssistant
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(542, 282);
+            this.label3.Location = new System.Drawing.Point(566, 273);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(140, 25);
             this.label3.TabIndex = 53;
@@ -129,7 +126,7 @@ namespace TeacherAssistant
             // 
             // Total_Class
             // 
-            this.Total_Class.Location = new System.Drawing.Point(475, 404);
+            this.Total_Class.Location = new System.Drawing.Point(492, 377);
             this.Total_Class.Name = "Total_Class";
             this.Total_Class.Size = new System.Drawing.Size(281, 20);
             this.Total_Class.TabIndex = 56;
@@ -138,35 +135,11 @@ namespace TeacherAssistant
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(525, 363);
+            this.label5.Location = new System.Drawing.Point(566, 349);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(131, 25);
             this.label5.TabIndex = 55;
             this.label5.Text = "Total Class";
-            // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.SystemColors.WindowFrame;
-            this.panel1.Location = new System.Drawing.Point(-1, -21);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1116, 74);
-            this.panel1.TabIndex = 104;
-            // 
-            // panel2
-            // 
-            this.panel2.BackColor = System.Drawing.SystemColors.WindowFrame;
-            this.panel2.Location = new System.Drawing.Point(-31, 48);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(103, 561);
-            this.panel2.TabIndex = 105;
-            // 
-            // panel3
-            // 
-            this.panel3.BackColor = System.Drawing.SystemColors.WindowFrame;
-            this.panel3.Location = new System.Drawing.Point(1041, 48);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(74, 574);
-            this.panel3.TabIndex = 105;
             // 
             // panel4
             // 
@@ -187,7 +160,7 @@ namespace TeacherAssistant
             this.Back.FlatAppearance.BorderSize = 0;
             this.Back.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Back.ForeColor = System.Drawing.Color.White;
-            this.Back.Location = new System.Drawing.Point(885, 549);
+            this.Back.Location = new System.Drawing.Point(942, 549);
             this.Back.Name = "Back";
             this.Back.Size = new System.Drawing.Size(150, 40);
             this.Back.TabIndex = 106;
@@ -200,12 +173,10 @@ namespace TeacherAssistant
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(1114, 601);
             this.Controls.Add(this.Back);
             this.Controls.Add(this.panel4);
-            this.Controls.Add(this.panel3);
-            this.Controls.Add(this.panel2);
-            this.Controls.Add(this.panel1);
             this.Controls.Add(this.Total_Class);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.Get_Course_Title);
@@ -218,6 +189,7 @@ namespace TeacherAssistant
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label2);
             this.Name = "AddCourses";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Add Courses";
             this.Load += new System.EventHandler(this.AddCourses_Load);
             this.ResumeLayout(false);
@@ -238,9 +210,6 @@ namespace TeacherAssistant
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox Total_Class;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Panel panel4;
         private CustomButton Back;
     }
