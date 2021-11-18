@@ -47,7 +47,9 @@ namespace TeacherAssistant
             this.Submit_Instructor_Info = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.Back = new System.Windows.Forms.Button();
+            this.Back = new TeacherAssistant.CustomButton();
+            this.customButton1 = new TeacherAssistant.CustomButton();
+            this.customButton2 = new TeacherAssistant.CustomButton();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -200,6 +202,8 @@ namespace TeacherAssistant
             // 
             this.panel1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel1.BackgroundImage")));
             this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.panel1.Controls.Add(this.customButton1);
+            this.panel1.Controls.Add(this.Back);
             this.panel1.Controls.Add(this.panel2);
             this.panel1.Location = new System.Drawing.Point(-1, -5);
             this.panel1.Name = "panel1";
@@ -218,17 +222,58 @@ namespace TeacherAssistant
             // 
             // Back
             // 
-            this.Back.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.Back.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.Back.BackColor = System.Drawing.Color.MediumSlateBlue;
+            this.Back.BackgroundColor = System.Drawing.Color.MediumSlateBlue;
+            this.Back.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.Back.BorderRadius = 20;
+            this.Back.BorderSize = 0;
+            this.Back.FlatAppearance.BorderSize = 0;
             this.Back.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Back.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Back.Location = new System.Drawing.Point(1057, 20);
+            this.Back.ForeColor = System.Drawing.Color.White;
+            this.Back.Location = new System.Drawing.Point(88, 318);
             this.Back.Name = "Back";
-            this.Back.Size = new System.Drawing.Size(120, 33);
-            this.Back.TabIndex = 103;
+            this.Back.Size = new System.Drawing.Size(150, 40);
+            this.Back.TabIndex = 113;
             this.Back.Text = "< Back";
+            this.Back.TextColor = System.Drawing.Color.White;
             this.Back.UseVisualStyleBackColor = false;
-            this.Back.Click += new System.EventHandler(this.Back_Click);
+            // 
+            // customButton1
+            // 
+            this.customButton1.BackColor = System.Drawing.Color.MediumSlateBlue;
+            this.customButton1.BackgroundColor = System.Drawing.Color.MediumSlateBlue;
+            this.customButton1.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.customButton1.BorderRadius = 20;
+            this.customButton1.BorderSize = 0;
+            this.customButton1.FlatAppearance.BorderSize = 0;
+            this.customButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.customButton1.ForeColor = System.Drawing.Color.White;
+            this.customButton1.Location = new System.Drawing.Point(96, 326);
+            this.customButton1.Name = "customButton1";
+            this.customButton1.Size = new System.Drawing.Size(150, 40);
+            this.customButton1.TabIndex = 114;
+            this.customButton1.Text = "< Back";
+            this.customButton1.TextColor = System.Drawing.Color.White;
+            this.customButton1.UseVisualStyleBackColor = false;
+            // 
+            // customButton2
+            // 
+            this.customButton2.BackColor = System.Drawing.Color.MediumSlateBlue;
+            this.customButton2.BackgroundColor = System.Drawing.Color.MediumSlateBlue;
+            this.customButton2.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.customButton2.BorderRadius = 20;
+            this.customButton2.BorderSize = 0;
+            this.customButton2.FlatAppearance.BorderSize = 0;
+            this.customButton2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.customButton2.ForeColor = System.Drawing.Color.White;
+            this.customButton2.Location = new System.Drawing.Point(1016, 20);
+            this.customButton2.Name = "customButton2";
+            this.customButton2.Size = new System.Drawing.Size(150, 40);
+            this.customButton2.TabIndex = 113;
+            this.customButton2.Text = "< Back";
+            this.customButton2.TextColor = System.Drawing.Color.White;
+            this.customButton2.UseVisualStyleBackColor = false;
+            this.customButton2.Click += new System.EventHandler(this.Back_Click);
             // 
             // InstructorRegistration
             // 
@@ -237,7 +282,7 @@ namespace TeacherAssistant
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.ClientSize = new System.Drawing.Size(1189, 662);
-            this.Controls.Add(this.Back);
+            this.Controls.Add(this.customButton2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.Submit_Instructor_Info);
             this.Controls.Add(this.Password2);
@@ -283,6 +328,8 @@ namespace TeacherAssistant
         private System.Windows.Forms.Button Submit_Instructor_Info;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Button Back;
+        private CustomButton customButton1;
+        private CustomButton Back;
+        private CustomButton customButton2;
     }
 }

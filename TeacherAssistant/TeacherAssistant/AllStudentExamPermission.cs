@@ -65,7 +65,7 @@ namespace TeacherAssistant
                  "from department, students, ins_selection WHERE department.ID=students.Dept_ID AND students.Dept_ID=ins_selection.Dept_ID AND students.Intake=ins_selection.Intake AND " +
                  "students.Section=ins_selection.Section  AND ins_selection.Course_ID='" + COURSE_ID + "' AND department.Dept_Name='" + Student_Dept_Name + "' AND ins_selection.Intake='" + INTAKE + "' AND ins_selection.Section='" + SECTION + "') " +
                  "SELECT AllStuTotalAtt.Stu_Name AS 'Student Name', AllStuTotalAtt.Stu_ID AS 'Student ID', AllStuTotalAtt.Total_Attendance 'Total Attendance', (100*AllStuTotalAtt.Total_Attendance)/"+ TOTAL_CLASS + " AS 'Percentage (Attendance)'," +
-                 "(CASE WHEN (100*AllStuTotalAtt.Total_Attendance)/" + TOTAL_CLASS + " >= 80.00 THEN 'Final Exam' WHEN (100*AllStuTotalAtt.Total_Attendance)/"+ TOTAL_CLASS + " >= 40.00 THEN 'Mid Exam' ELSE 'No' END) AS 'Mid Or Final' from AllStuTotalAtt;";
+                 "(CASE WHEN (100*AllStuTotalAtt.Total_Attendance)/" + TOTAL_CLASS + " >= 70.00 THEN 'Final Exam' WHEN (100*AllStuTotalAtt.Total_Attendance)/("+ TOTAL_CLASS + "/2) >= 70.00 THEN 'Mid Exam' ELSE 'No' END) AS 'Mid Or Final' from AllStuTotalAtt;";
 
             MySqlConnection connect = new MySqlConnection(DataBase.Connect_String());
             connect.Open();

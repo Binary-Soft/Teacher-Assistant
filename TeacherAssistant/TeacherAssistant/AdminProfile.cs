@@ -77,7 +77,11 @@ namespace TeacherAssistant
 
         private void Logout_Click(object sender, EventArgs e)
         {
-            this.Close();
+            DialogResult dialogResult = MessageBox.Show("Are You Sure You Want to Logout?", "Logout", MessageBoxButtons.YesNo);
+            if (dialogResult == DialogResult.Yes)
+            {
+                this.Close();
+            }
         }
     }
 }

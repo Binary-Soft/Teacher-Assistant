@@ -138,9 +138,7 @@ D:\CSE- 200\CSE-200-2nd-Semester-\TeacherAssistant\TeacherAssistant\obj\Debug\Te
 D:\CSE- 200\CSE-200-2nd-Semester-\TeacherAssistant\TeacherAssistant\obj\Debug\TeacherAssistant.FirstLoginForm.resources
 D:\CSE- 200\CSE-200-2nd-Semester-\TeacherAssistant\TeacherAssistant\obj\Debug\TeacherAssistant.InstructorProfile.resources
 D:\CSE- 200\CSE-200-2nd-Semester-\TeacherAssistant\TeacherAssistant\obj\Debug\TeacherAssistant.InstructorRegistration.resources
-D:\CSE- 200\CSE-200-2nd-Semester-\TeacherAssistant\TeacherAssistant\obj\Debug\TeacherAssistant.Form1.resources
 D:\CSE- 200\CSE-200-2nd-Semester-\TeacherAssistant\TeacherAssistant\obj\Debug\TeacherAssistant.ManageDept.resources
-D:\CSE- 200\CSE-200-2nd-Semester-\TeacherAssistant\TeacherAssistant\obj\Debug\TeacherAssistant.Registration_Form.resources
 D:\CSE- 200\CSE-200-2nd-Semester-\TeacherAssistant\TeacherAssistant\obj\Debug\TeacherAssistant.Admin_Profile.resources
 D:\CSE- 200\CSE-200-2nd-Semester-\TeacherAssistant\TeacherAssistant\obj\Debug\TeacherAssistant.Properties.Resources.resources
 D:\CSE- 200\CSE-200-2nd-Semester-\TeacherAssistant\TeacherAssistant\obj\Debug\TeacherAssistant.csproj.GenerateResource.cache
@@ -153,3 +151,6 @@ D:\CSE- 200\CSE-200-2nd-Semester-\TeacherAssistant\TeacherAssistant\obj\Debug\Te
 D:\CSE- 200\CSE-200-2nd-Semester-\TeacherAssistant\TeacherAssistant\obj\Debug\TeacherAssistant.AddStudentMarks.resources
 D:\CSE- 200\CSE-200-2nd-Semester-\TeacherAssistant\TeacherAssistant\obj\Debug\TeacherAssistant.StudentDetails.resources
 D:\CSE- 200\CSE-200-2nd-Semester-\TeacherAssistant\TeacherAssistant\obj\Debug\TeacherAssistant.AllStudentExamPermission.resources
+D:\CSE- 200\CSE-200-2nd-Semester-\TeacherAssistant\TeacherAssistant\obj\Debug\TeacherAssistant.RecoveryAccoount.resources
+D:\CSE- 200\CSE-200-2nd-Semester-\TeacherAssistant\TeacherAssistant\obj\Debug\TeacherAssistant.LoginForm.resources
+D:\CSE- 200\CSE-200-2nd-Semester-\TeacherAssistant\TeacherAssistant\obj\Debug\TeacherAssistant.Change_Password_Form.resources

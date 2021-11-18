@@ -42,7 +42,7 @@ namespace TeacherAssistant
             this.Submit_Marks = new System.Windows.Forms.Button();
             this.Get_Marks = new System.Windows.Forms.TextBox();
             this.Update_Marks = new System.Windows.Forms.Button();
-            this.Back = new System.Windows.Forms.Button();
+            this.Login = new TeacherAssistant.CustomButton();
             ((System.ComponentModel.ISupportInitialize)(this.Show_Student_Marks)).BeginInit();
             this.SuspendLayout();
             // 
@@ -169,26 +169,31 @@ namespace TeacherAssistant
             this.Update_Marks.UseVisualStyleBackColor = false;
             this.Update_Marks.Click += new System.EventHandler(this.Update_Marks_Click);
             // 
-            // Back
+            // Login
             // 
-            this.Back.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.Back.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.Back.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Back.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Back.Location = new System.Drawing.Point(12, 463);
-            this.Back.Name = "Back";
-            this.Back.Size = new System.Drawing.Size(120, 33);
-            this.Back.TabIndex = 102;
-            this.Back.Text = "< Back";
-            this.Back.UseVisualStyleBackColor = false;
-            this.Back.Click += new System.EventHandler(this.Back_Click);
+            this.Login.BackColor = System.Drawing.Color.MediumSlateBlue;
+            this.Login.BackgroundColor = System.Drawing.Color.MediumSlateBlue;
+            this.Login.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.Login.BorderRadius = 20;
+            this.Login.BorderSize = 0;
+            this.Login.FlatAppearance.BorderSize = 0;
+            this.Login.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Login.ForeColor = System.Drawing.Color.White;
+            this.Login.Location = new System.Drawing.Point(31, 497);
+            this.Login.Name = "Login";
+            this.Login.Size = new System.Drawing.Size(150, 40);
+            this.Login.TabIndex = 110;
+            this.Login.Text = "< Back";
+            this.Login.TextColor = System.Drawing.Color.White;
+            this.Login.UseVisualStyleBackColor = false;
+            this.Login.Click += new System.EventHandler(this.Back_Click);
             // 
             // AddStudentMarks
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1094, 567);
-            this.Controls.Add(this.Back);
+            this.Controls.Add(this.Login);
             this.Controls.Add(this.Update_Marks);
             this.Controls.Add(this.Get_Marks);
             this.Controls.Add(this.Submit_Marks);
@@ -226,6 +231,6 @@ namespace TeacherAssistant
         private System.Windows.Forms.Button Submit_Marks;
         private System.Windows.Forms.TextBox Get_Marks;
         private System.Windows.Forms.Button Update_Marks;
-        private System.Windows.Forms.Button Back;
+        private CustomButton Login;
     }
 }

@@ -30,7 +30,7 @@ namespace TeacherAssistant
         private void InitializeComponent()
         {
             this.Show_Students_Atd_Per = new System.Windows.Forms.DataGridView();
-            this.Back = new System.Windows.Forms.Button();
+            this.Login = new TeacherAssistant.CustomButton();
             ((System.ComponentModel.ISupportInitialize)(this.Show_Students_Atd_Per)).BeginInit();
             this.SuspendLayout();
             // 
@@ -42,26 +42,31 @@ namespace TeacherAssistant
             this.Show_Students_Atd_Per.Size = new System.Drawing.Size(620, 479);
             this.Show_Students_Atd_Per.TabIndex = 85;
             // 
-            // Back
+            // Login
             // 
-            this.Back.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.Back.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.Back.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Back.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Back.Location = new System.Drawing.Point(815, 12);
-            this.Back.Name = "Back";
-            this.Back.Size = new System.Drawing.Size(120, 33);
-            this.Back.TabIndex = 105;
-            this.Back.Text = "< Back";
-            this.Back.UseVisualStyleBackColor = false;
-            this.Back.Click += new System.EventHandler(this.Back_Click);
+            this.Login.BackColor = System.Drawing.Color.MediumSlateBlue;
+            this.Login.BackgroundColor = System.Drawing.Color.MediumSlateBlue;
+            this.Login.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.Login.BorderRadius = 20;
+            this.Login.BorderSize = 0;
+            this.Login.FlatAppearance.BorderSize = 0;
+            this.Login.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Login.ForeColor = System.Drawing.Color.White;
+            this.Login.Location = new System.Drawing.Point(785, 22);
+            this.Login.Name = "Login";
+            this.Login.Size = new System.Drawing.Size(150, 40);
+            this.Login.TabIndex = 111;
+            this.Login.Text = "< Back";
+            this.Login.TextColor = System.Drawing.Color.White;
+            this.Login.UseVisualStyleBackColor = false;
+            this.Login.Click += new System.EventHandler(this.Back_Click);
             // 
             // AllStudentExamPermission
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(947, 593);
-            this.Controls.Add(this.Back);
+            this.Controls.Add(this.Login);
             this.Controls.Add(this.Show_Students_Atd_Per);
             this.Name = "AllStudentExamPermission";
             this.Text = "Student Exam Permission";
@@ -74,6 +79,6 @@ namespace TeacherAssistant
         #endregion
 
         private System.Windows.Forms.DataGridView Show_Students_Atd_Per;
-        private System.Windows.Forms.Button Back;
+        private CustomButton Login;
     }
 }

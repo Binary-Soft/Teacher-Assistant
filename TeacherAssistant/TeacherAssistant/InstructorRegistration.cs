@@ -198,7 +198,7 @@ namespace TeacherAssistant
 
         private void Back_Click(object sender, EventArgs e)
         {
-            DialogResult dialogResult = MessageBox.Show("Are You Confirm?", "Close this Window.", MessageBoxButtons.YesNo);
+            DialogResult dialogResult = MessageBox.Show("Are You Sure?", "Close this Window.", MessageBoxButtons.YesNo);
             if (dialogResult == DialogResult.Yes)
             {
                 this.Close();

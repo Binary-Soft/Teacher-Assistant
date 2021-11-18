@@ -39,13 +39,13 @@ namespace TeacherAssistant
             this.label1 = new System.Windows.Forms.Label();
             this.Get_Course_Title = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.Semester_Number = new System.Windows.Forms.TextBox();
+            this.Total_Class = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.Back = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.Back = new TeacherAssistant.CustomButton();
             this.SuspendLayout();
             // 
             // label2
@@ -127,12 +127,12 @@ namespace TeacherAssistant
             this.label3.TabIndex = 53;
             this.label3.Text = "Course Title";
             // 
-            // Semester_Number
+            // Total_Class
             // 
-            this.Semester_Number.Location = new System.Drawing.Point(475, 404);
-            this.Semester_Number.Name = "Semester_Number";
-            this.Semester_Number.Size = new System.Drawing.Size(281, 20);
-            this.Semester_Number.TabIndex = 56;
+            this.Total_Class.Location = new System.Drawing.Point(475, 404);
+            this.Total_Class.Name = "Total_Class";
+            this.Total_Class.Size = new System.Drawing.Size(281, 20);
+            this.Total_Class.TabIndex = 56;
             // 
             // label5
             // 
@@ -140,23 +140,9 @@ namespace TeacherAssistant
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.Location = new System.Drawing.Point(525, 363);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(199, 25);
+            this.label5.Size = new System.Drawing.Size(131, 25);
             this.label5.TabIndex = 55;
-            this.label5.Text = "Semester Number";
-            // 
-            // Back
-            // 
-            this.Back.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.Back.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.Back.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Back.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Back.Location = new System.Drawing.Point(904, 556);
-            this.Back.Name = "Back";
-            this.Back.Size = new System.Drawing.Size(120, 33);
-            this.Back.TabIndex = 103;
-            this.Back.Text = "< Back";
-            this.Back.UseVisualStyleBackColor = false;
-            this.Back.Click += new System.EventHandler(this.Back_Click);
+            this.label5.Text = "Total Class";
             // 
             // panel1
             // 
@@ -191,17 +177,36 @@ namespace TeacherAssistant
             this.panel4.Size = new System.Drawing.Size(391, 384);
             this.panel4.TabIndex = 106;
             // 
+            // Back
+            // 
+            this.Back.BackColor = System.Drawing.Color.MediumSlateBlue;
+            this.Back.BackgroundColor = System.Drawing.Color.MediumSlateBlue;
+            this.Back.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.Back.BorderRadius = 20;
+            this.Back.BorderSize = 0;
+            this.Back.FlatAppearance.BorderSize = 0;
+            this.Back.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Back.ForeColor = System.Drawing.Color.White;
+            this.Back.Location = new System.Drawing.Point(885, 549);
+            this.Back.Name = "Back";
+            this.Back.Size = new System.Drawing.Size(150, 40);
+            this.Back.TabIndex = 106;
+            this.Back.Text = "< Back";
+            this.Back.TextColor = System.Drawing.Color.White;
+            this.Back.UseVisualStyleBackColor = false;
+            this.Back.Click += new System.EventHandler(this.Back_Click);
+            // 
             // AddCourses
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1114, 601);
+            this.Controls.Add(this.Back);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.Back);
-            this.Controls.Add(this.Semester_Number);
+            this.Controls.Add(this.Total_Class);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.Get_Course_Title);
             this.Controls.Add(this.label3);
@@ -231,12 +236,12 @@ namespace TeacherAssistant
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox Get_Course_Title;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox Semester_Number;
+        private System.Windows.Forms.TextBox Total_Class;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Button Back;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Panel panel4;
+        private CustomButton Back;
     }
 }

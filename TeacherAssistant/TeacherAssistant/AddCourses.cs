@@ -54,17 +54,17 @@ namespace TeacherAssistant
             string dept_name = Show_Department.Text.Trim();
             string course_id = Get_Course_ID.Text.Trim();
             string course_title = Get_Course_Title.Text.Trim();
-            string semester_no = Semester_Number.Text.Trim();
+            string total_class = Total_Class.Text.Trim();
 
-            if (Is_Valid(dept_name, course_id, course_title, semester_no) == true)
+            if (Is_Valid(dept_name, course_id, course_title, total_class) == true)
             {
                 AddNewStudent obj = new AddNewStudent();  //  //  =====>> From AddNewStudent.cs file   <<=====
 
                 string query1 = "SELECT department.ID As Dept_ID FROM department WHERE department.Dept_Name='" + dept_name + "'";
                 string Dept_ID = obj.Get_Department_ID(query1);   // <<==== this function exist AddNewStudent.cs file
 
-                string query2 = "INSERT INTO courses (`Course_ID`, `Course_Title`, `Semester_No`, `Dept_ID`) " +
-                    "VALUES ('" + course_id + "', '" + course_title + "', '" + semester_no + "', '" + Dept_ID + "')";
+                string query2 = "INSERT INTO courses (`Course_ID`, `Course_Title`, `Total_Class`, `Dept_ID`) " +
+                    "VALUES ('" + course_id + "', '" + course_title + "', '" + total_class + "', '" + Dept_ID + "')";
 
                 if (obj.Student_Info_Save_To_Database(query2) == true)    // <<==== this function exist AddNewStudent.cs file
                 {
@@ -84,7 +84,7 @@ namespace TeacherAssistant
             Get_Course_Title.Clear();
         }
 
-        private bool Is_Valid(string dept_name, string course_id, string course_title, string semester_no)
+        private bool Is_Valid(string dept_name, string course_id, string course_title, string total_class)
         {
             if (dept_name == string.Empty)
             {
@@ -103,11 +103,11 @@ namespace TeacherAssistant
                 Get_Course_Title.Focus();
                 return false;
             }
-            else if(semester_no == string.Empty)
+            else if(total_class == string.Empty)
             {
 
-                MessageBox.Show("Please Fillup Semester Number", "Warning!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                Semester_Number.Focus();
+                MessageBox.Show("Please Fillup Total Class", "Warning!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                Total_Class.Focus();
                 return false;
             }
 

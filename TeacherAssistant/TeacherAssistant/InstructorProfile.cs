@@ -14,7 +14,7 @@ namespace TeacherAssistant
 {
     public partial class InstructorProfile : Form
     {
-        string ins_email = Form1.INSTRUCTOR_EMAIL;
+        string ins_email = LoginForm.INSTRUCTOR_EMAIL;
         string ins_id = string.Empty;
         private string Total_Class = string.Empty;
 
@@ -25,8 +25,10 @@ namespace TeacherAssistant
 
         private void InstructorProfile_Load(object sender, EventArgs e)
         {
-            
-            Temp_Instructor_Email.Text = ins_email;
+            InstructorSelect obj = new InstructorSelect();
+
+            Temp_Instructor_Email.Text = Get_Instructor_Name(ins_email);
+            Show_Date.Text = obj.Get_Current_Time(); // Get Current Time (Year-Month-Date)
 
             string query = "SELECT instructor.Ins_ID AS Instructor_ID FROM instructor WHERE instructor.Email='"+ ins_email +"'";
             ins_id = Get_Instructor_ID(query);
@@ -41,6 +43,12 @@ namespace TeacherAssistant
                 Display_Semester();
 
             }
+        }
+
+        private string Get_Instructor_Name(string inst_email)
+        {
+            string query = "SELECT instructor.Name AS Instructor_ID FROM instructor WHERE instructor.Email='"+ inst_email + "';";
+            return Get_Instructor_ID(query);
         }
 
         private void Display_Semester()
@@ -208,8 +216,16 @@ namespace TeacherAssistant
         private void Show_Select_Course_SelectedIndexChanged(object sender, EventArgs e)
         {
             Show_Student.DataSource = null;
-            Total_Class = "2";  // dinamically // ========================================================
+            Total_Class = Get_Total_Class(Show_Department.Text.Trim(), Show_Select_Course.Text.Trim());
             Disp_Stu_Info();
+        }
+
+        private string Get_Total_Class(string dept_name, string course_id)
+        {
+            string query = "SELECT courses.Total_Class AS Instructor_ID FROM department, courses WHERE " +
+                "department.ID=courses.Dept_ID AND department.Dept_Name='" + dept_name + "' AND courses.Course_ID='" + course_id + "';";
+
+            return Get_Instructor_ID(query);
         }
 
         private void Disp_Stu_Info()
@@ -457,9 +473,11 @@ namespace TeacherAssistant
 
         private void Logout_Click(object sender, EventArgs e)
         {
-            this.Close();
+            DialogResult dialogResult = MessageBox.Show("Are You Sure You Want to Logout?", "Logout", MessageBoxButtons.YesNo);
+            if (dialogResult == DialogResult.Yes)
+            {
+                this.Close();
+            }
         }
-
-        
     }
 }

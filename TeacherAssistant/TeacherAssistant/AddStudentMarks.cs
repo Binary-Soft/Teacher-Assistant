@@ -121,20 +121,42 @@ namespace TeacherAssistant
                 string query = "INSERT INTO `marks` (`Student_ID`, `Course_ID`, `Year`, `Semester`, `"+ Mark_Table_Att_Name_exam_type + "`) " +
                     "VALUES ('" + STUDENT_ID + "', '" + COURSE_ID + "', '" + year_month_Date + "', '" + SEMESTER + "', '" + mark + "');";
                
-                
-                if(Save_Info_To_Database(query) == true)
+                if(is_Mark_Already_Submitted(STUDENT_ID, COURSE_ID, Mark_Table_Att_Name_exam_type) == false)
                 {
-                    MessageBox.Show("Save Successfull.", "Saved!", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    Reset_All();
-                    Show_Student_Marks.DataSource = null;
-                    Display_Student_Marks();
+                    if (Save_Info_To_Database(query) == true)
+                    {
+                        MessageBox.Show("Saved Successfully.", "Saved!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        Reset_All();
+                        Show_Student_Marks.DataSource = null;
+                        Display_Student_Marks();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Information Saving Failed. Please Try Again.", "Failed!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    }
                 }
                 else
                 {
-                    MessageBox.Show("Information Save Failed. Please Try Again.", "Failed!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBox.Show(Exam_Type + " Marks Can Not be Submitted Twice.", "Warning!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
-
+                
             }
+
+        }
+
+        private bool is_Mark_Already_Submitted(string Student_ID, string Course_ID, string Exam_Type)
+        {
+            InstructorProfile obj = new InstructorProfile();
+
+            string query = "SELECT COUNT(marks.Student_ID) AS Instructor_ID FROM marks WHERE marks.Student_ID='" + Student_ID + "' AND " +
+                "marks.Course_ID='"+ Course_ID + "' AND marks."+ Exam_Type + " > 0";
+
+            if(Convert.ToInt32(obj.Get_Instructor_ID(query)) > 0)
+            {
+                return true;
+            }
+
+            return false;
         }
 
         private void Reset_All()
@@ -179,15 +201,33 @@ namespace TeacherAssistant
                     Get_Marks.Focus();
                     return false;
                 }
-                else if(Check_Max_Mini_Limit(mark) == false)
+                else if(Check_Max_Mini_Limit(Exam_Type, mark) == false)
                 {
-                    MessageBox.Show("Incorrect Number. Marks Can Not be Negative or More Than 100.", "Warning!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBox.Show("Incorrect Number! "+ Get_Error_Message(Exam_Type, mark), "Warning!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     Get_Marks.Focus();
                     return false;
                 }
             }
 
             return true;
+        }
+
+        private string Get_Error_Message(string Exam_Type, string mark)
+        {
+            if(Exam_Type == "Assignment 1" || Exam_Type == "Assignment 2" || Exam_Type == "Class Test 1" || Exam_Type == "Class Test 2")
+            {
+                return Exam_Type + " Mark Can Not be Negative or More Than 5.0";
+            }
+            else if (Exam_Type == "Lab Performance 1" || Exam_Type == "Mid Exam")
+            {
+                return Exam_Type + " Mark Can Not be Negative or More Than 30.0";
+            }
+            else if (Exam_Type == "Lab Performance 2" || Exam_Type == "Final Exam")
+            {
+                return Exam_Type + " Marks Can Not be Negative or More Than 40.0";
+            }
+
+            return string.Empty;
         }
 
         private bool is_Exist_Any_Character(string mark)
@@ -203,14 +243,31 @@ namespace TeacherAssistant
             return false;
         }
 
-        private bool Check_Max_Mini_Limit(string mark)
+        private bool Check_Max_Mini_Limit(string Exam_Type, string mark)
         {
             double number = Convert.ToDouble(mark);
 
-            if (number >= 0.0 && number <= 100.0)
+            if ((Exam_Type == "Assignment 1" || Exam_Type == "Assignment 2") && (number >= 0.0 && number <= 5.0))
             {
                 return true;
             }
+            else if ((Exam_Type == "Class Test 1" || Exam_Type == "Class Test 2") && (number >= 0.0 && number <= 5.0))
+            {
+                return true;
+            }
+            else if (Exam_Type == "Mid Exam" && (number >= 0.0 && number <= 30.0))
+            {
+                return true;
+            }
+            else if (Exam_Type == "Final Exam" && (number >= 0.0 && number <= 40.0))
+            {
+                return true;
+            }
+            else if ((Exam_Type == "Lab Performance 1" && (number >= 0.0 && number <= 30.0)) || (Exam_Type == "Lab Performance 2" && (number >= 0.0 && number <= 40.0)))
+            {
+                return true;
+            }
+
             return false;
         }
 
@@ -260,7 +317,7 @@ namespace TeacherAssistant
 
         private void Back_Click(object sender, EventArgs e)
         {
-            DialogResult dialogResult = MessageBox.Show("Are You Confirm?", "Close this Window.", MessageBoxButtons.YesNo);
+            DialogResult dialogResult = MessageBox.Show("Are You Sure?", "Close this Window.", MessageBoxButtons.YesNo);
             if(dialogResult == DialogResult.Yes)
             {
                 this.Close();

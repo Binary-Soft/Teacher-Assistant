@@ -44,7 +44,7 @@ namespace TeacherAssistant
             this.Submit_Info = new System.Windows.Forms.Button();
             this.Show_Select_Course = new System.Windows.Forms.ComboBox();
             this.aa = new System.Windows.Forms.Label();
-            this.Back = new System.Windows.Forms.Button();
+            this.Back = new TeacherAssistant.CustomButton();
             this.SuspendLayout();
             // 
             // Show_Semester_Name
@@ -191,15 +191,20 @@ namespace TeacherAssistant
             // 
             // Back
             // 
-            this.Back.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.Back.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.Back.BackColor = System.Drawing.Color.MediumSlateBlue;
+            this.Back.BackgroundColor = System.Drawing.Color.MediumSlateBlue;
+            this.Back.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.Back.BorderRadius = 20;
+            this.Back.BorderSize = 0;
+            this.Back.FlatAppearance.BorderSize = 0;
             this.Back.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Back.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Back.Location = new System.Drawing.Point(910, 22);
+            this.Back.ForeColor = System.Drawing.Color.White;
+            this.Back.Location = new System.Drawing.Point(886, 27);
             this.Back.Name = "Back";
-            this.Back.Size = new System.Drawing.Size(120, 33);
-            this.Back.TabIndex = 103;
+            this.Back.Size = new System.Drawing.Size(150, 40);
+            this.Back.TabIndex = 113;
             this.Back.Text = "< Back";
+            this.Back.TextColor = System.Drawing.Color.White;
             this.Back.UseVisualStyleBackColor = false;
             this.Back.Click += new System.EventHandler(this.Back_Click);
             // 
@@ -249,6 +254,6 @@ namespace TeacherAssistant
         private System.Windows.Forms.Button Submit_Info;
         private System.Windows.Forms.ComboBox Show_Select_Course;
         private System.Windows.Forms.Label aa;
-        private System.Windows.Forms.Button Back;
+        private CustomButton Back;
     }
 }

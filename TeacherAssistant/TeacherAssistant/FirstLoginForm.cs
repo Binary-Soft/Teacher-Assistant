@@ -26,7 +26,7 @@ namespace TeacherAssistant
 
             if (Ins_Password_Security_key_is_valid(ins_password, ins_confirm_password, ins_security_key, ins_confirm_security_key) == true)
             {
-                string query = "UPDATE instructor SET instructor.Password='" + ins_password + "' , instructor.Security_Key='" + ins_security_key + "' WHERE instructor.Email='" + Form1.INSTRUCTOR_EMAIL + "'";
+                string query = "UPDATE instructor SET instructor.Password='" + ins_password + "' , instructor.Security_Key='" + ins_security_key + "' WHERE instructor.Email='" + LoginForm.INSTRUCTOR_EMAIL + "'";
                 if (Update_Instructor_Password_Security_Key(query) == true)
                 {
                     MessageBox.Show("Password And Security Key Change Successfully. Now Login Again", "Successfull", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -52,13 +52,13 @@ namespace TeacherAssistant
         {
             if (ins_password == string.Empty)
             {
-                MessageBox.Show("Please Enter a Password.", "Warning!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Enter a New Password.", "Warning!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 Instructor_New_Password.Focus();
                 return false;
             }
             else if (ins_confirm_password == string.Empty)
             {
-                MessageBox.Show("Please Enter a Confirm Password.", "Warning!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Enter Confirm Password.", "Warning!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 Instructor_Confirm_Password.Focus();
                 return false;
             }
@@ -70,7 +70,7 @@ namespace TeacherAssistant
             }
             else if (ins_confirm_security_key == string.Empty)
             {
-                MessageBox.Show("Please Enter Confirm Security Key.", "Warning!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Enter Confirm Security Key.", "Warning!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 Instructor_New_Security_Key.Focus();
                 return false;
             }

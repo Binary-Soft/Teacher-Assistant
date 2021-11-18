@@ -113,11 +113,20 @@
     <Compile Include="AllStudentExamPermission.Designer.cs">
       <DependentUpon>AllStudentExamPermission.cs</DependentUpon>
     </Compile>
+    <Compile Include="Change Password.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Change Password.Designer.cs">
+      <DependentUpon>Change Password.cs</DependentUpon>
+    </Compile>
     <Compile Include="CourseSelect.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="CourseSelect.Designer.cs">
       <DependentUpon>CourseSelect.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CustomButton.cs">
+      <SubType>Component</SubType>
     </Compile>
     <Compile Include="DataBase.cs" />
     <Compile Include="FirstLoginForm.cs">
@@ -156,11 +165,11 @@
     <Compile Include="ManageDept.Designer.cs">
       <DependentUpon>ManageDept.cs</DependentUpon>
     </Compile>
-    <Compile Include="Registration Form.cs">
+    <Compile Include="RecoveryAccoount.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Registration Form.Designer.cs">
-      <DependentUpon>Registration Form.cs</DependentUpon>
+    <Compile Include="RecoveryAccoount.Designer.cs">
+      <DependentUpon>RecoveryAccoount.cs</DependentUpon>
     </Compile>
     <Compile Include="AdminProfile.cs">
       <SubType>Form</SubType>
@@ -188,6 +197,9 @@
     <EmbeddedResource Include="AllStudentExamPermission.resx">
       <DependentUpon>AllStudentExamPermission.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Change Password.resx">
+      <DependentUpon>Change Password.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="CourseSelect.resx">
       <DependentUpon>CourseSelect.cs</DependentUpon>
     </EmbeddedResource>
@@ -209,8 +221,8 @@
     <EmbeddedResource Include="ManageDept.resx">
       <DependentUpon>ManageDept.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Registration Form.resx">
-      <DependentUpon>Registration Form.cs</DependentUpon>
+    <EmbeddedResource Include="RecoveryAccoount.resx">
+      <DependentUpon>RecoveryAccoount.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="AdminProfile.resx">
       <DependentUpon>AdminProfile.cs</DependentUpon>

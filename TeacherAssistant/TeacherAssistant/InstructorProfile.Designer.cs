@@ -44,15 +44,17 @@ namespace TeacherAssistant
             this.Show_Student = new System.Windows.Forms.DataGridView();
             this.Show_Semester_Name = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
-            this.Logout = new System.Windows.Forms.Button();
             this.Show_Student_Details = new System.Windows.Forms.Button();
             this.Exam_Permission = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.Show_Date = new System.Windows.Forms.TextBox();
+            this.Logout = new TeacherAssistant.CustomButton();
             ((System.ComponentModel.ISupportInitialize)(this.Show_Student)).BeginInit();
             this.SuspendLayout();
             // 
             // Temp_Instructor_Email
             // 
-            this.Temp_Instructor_Email.Location = new System.Drawing.Point(73, 97);
+            this.Temp_Instructor_Email.Location = new System.Drawing.Point(73, 102);
             this.Temp_Instructor_Email.Name = "Temp_Instructor_Email";
             this.Temp_Instructor_Email.Size = new System.Drawing.Size(281, 20);
             this.Temp_Instructor_Email.TabIndex = 1;
@@ -63,7 +65,7 @@ namespace TeacherAssistant
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label2.Location = new System.Drawing.Point(127, 69);
+            this.label2.Location = new System.Drawing.Point(127, 74);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(178, 25);
             this.label2.TabIndex = 30;
@@ -200,20 +202,6 @@ namespace TeacherAssistant
             this.label10.TabIndex = 86;
             this.label10.Text = "Semester";
             // 
-            // Logout
-            // 
-            this.Logout.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.Logout.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.Logout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Logout.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Logout.Location = new System.Drawing.Point(996, 10);
-            this.Logout.Name = "Logout";
-            this.Logout.Size = new System.Drawing.Size(150, 37);
-            this.Logout.TabIndex = 88;
-            this.Logout.Text = "Logout";
-            this.Logout.UseVisualStyleBackColor = false;
-            this.Logout.Click += new System.EventHandler(this.Logout_Click);
-            // 
             // Show_Student_Details
             // 
             this.Show_Student_Details.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
@@ -242,15 +230,55 @@ namespace TeacherAssistant
             this.Exam_Permission.UseVisualStyleBackColor = false;
             this.Exam_Permission.Click += new System.EventHandler(this.Exam_Permission_Click);
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.label1.Location = new System.Drawing.Point(131, 10);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(135, 25);
+            this.label1.TabIndex = 92;
+            this.label1.Text = "YY/MM//DD";
+            // 
+            // Show_Date
+            // 
+            this.Show_Date.Location = new System.Drawing.Point(77, 38);
+            this.Show_Date.Name = "Show_Date";
+            this.Show_Date.Size = new System.Drawing.Size(281, 20);
+            this.Show_Date.TabIndex = 91;
+            // 
+            // Logout
+            // 
+            this.Logout.BackColor = System.Drawing.Color.MediumSlateBlue;
+            this.Logout.BackgroundColor = System.Drawing.Color.MediumSlateBlue;
+            this.Logout.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.Logout.BorderRadius = 20;
+            this.Logout.BorderSize = 0;
+            this.Logout.FlatAppearance.BorderSize = 0;
+            this.Logout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Logout.ForeColor = System.Drawing.Color.White;
+            this.Logout.Location = new System.Drawing.Point(960, 5);
+            this.Logout.Name = "Logout";
+            this.Logout.Size = new System.Drawing.Size(150, 40);
+            this.Logout.TabIndex = 114;
+            this.Logout.Text = "Logout";
+            this.Logout.TextColor = System.Drawing.Color.White;
+            this.Logout.UseVisualStyleBackColor = false;
+            this.Logout.Click += new System.EventHandler(this.Logout_Click);
+            // 
             // InstructorProfile
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.CornflowerBlue;
             this.ClientSize = new System.Drawing.Size(1158, 671);
+            this.Controls.Add(this.Logout);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.Show_Date);
             this.Controls.Add(this.Exam_Permission);
             this.Controls.Add(this.Show_Student_Details);
-            this.Controls.Add(this.Logout);
             this.Controls.Add(this.Show_Semester_Name);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.Show_Student);
@@ -293,8 +321,10 @@ namespace TeacherAssistant
         private System.Windows.Forms.DataGridView Show_Student;
         private System.Windows.Forms.TextBox Show_Semester_Name;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Button Logout;
         private System.Windows.Forms.Button Show_Student_Details;
         private System.Windows.Forms.Button Exam_Permission;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox Show_Date;
+        private CustomButton Logout;
     }
 }

@@ -11,10 +11,10 @@ using MySql.Data.MySqlClient;
 
 namespace TeacherAssistant
 {
-    public partial class Form1 : Form
+    public partial class LoginForm : Form
     {
         public static string INSTRUCTOR_EMAIL = string.Empty;   // Set Intitial Value.
-        public Form1()
+        public LoginForm()
         {
             InitializeComponent();
         }
@@ -35,24 +35,27 @@ namespace TeacherAssistant
         private void Login_Click(object sender, EventArgs e)
         {
             string userType, email, pin_code;
+            string query1, query2;
 
 
             userType = login_As.Text.Trim();
             email = Email.Text.Trim();
             pin_code = Password.Text;
- 
 
-               //   Login as Admin
-            if (userType == "Login as Admin" && Is_Login("Login as Admin", email, pin_code) == true)
+            query1 = "SELECT COUNT(admin.Email) AS Toltal FROM admin WHERE admin.Email='" + email + "' AND admin.Password='" + pin_code + "'";
+            query2 = "SELECT COUNT(instructor.Email) AS Toltal FROM instructor WHERE instructor.Email='" + email + "' AND instructor.Password='" + pin_code + "'";
+              
+            //   Login as Admin
+            if (userType == "Login as Admin" && Is_Login(query1) == true)
             {
                  this.Hide();
                 Admin_Profile obj = new Admin_Profile();
                 obj.ShowDialog();
-                MessageBox.Show("Logout Successfull.", "Successfull.", MessageBoxButtons.OK, MessageBoxIcon.Information);
+              //  MessageBox.Show("Logout Successfull.", "Successfull.", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 this.Close();
             }
                // Login as Instructor
-            else if (userType == "Login as Instructor" && Is_Login("Login as Instructor", email, pin_code) == true)
+            else if (userType == "Login as Instructor" && Is_Login(query2) == true)
             {
                 INSTRUCTOR_EMAIL = email;
                 if (Is_First_Time_Login(email) == true)
@@ -75,7 +78,7 @@ namespace TeacherAssistant
                     InstructorProfile obje = new InstructorProfile();
                     obje.ShowDialog();
 
-                    MessageBox.Show("Logout Successfull.", "Successfull.", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                  //  MessageBox.Show("Logout Successfull.", "Successfull.", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     this.Close();
                 }
                 INSTRUCTOR_EMAIL = string.Empty;
@@ -122,41 +125,15 @@ namespace TeacherAssistant
         }
 
 
-        private bool Is_Login(string userType, string user_email, string user_password)
+        public bool Is_Login(string query)
         {
             MySqlConnection connect = new MySqlConnection(DataBase.Connect_String());
             connect.Open();   
 
-            string query = string.Empty;
-
-
-
-            if(userType == "Login as Admin")
-            {
-                query = "SELECT COUNT(admin.Email) AS Toltal FROM admin WHERE admin.Email='" + user_email + "' AND admin.Password='" + user_password + "'";
-            }
-            else if(userType == "Login as Instructor")
-            {
-                query = "SELECT COUNT(instructor.Email) AS Toltal FROM instructor WHERE instructor.Email='" + user_email + "' AND instructor.Password='" + user_password + "'";
-            }
 
             MySqlCommand command = new MySqlCommand(query, connect);
             MySqlDataReader dataReader = command.ExecuteReader();
 
-
-            /*
-                    // use this comment section or use "MySqlDataReader" =>> Line 101
-            MySqlDataAdapter dataadapter = new MySqlDataAdapter(command);
-            DataTable datatable = new DataTable();
-            dataadapter.Fill(datatable);
-
-                  // now get the value from mysql database
-            foreach(DataRow datarow in datatable.Rows)
-            {
-                Console.WriteLine(datarow["email"].ToString().Trim());
-                Console.WriteLine(datarow["password"].ToString().Trim());
-            }
-            */
 
             try
             {
@@ -180,19 +157,55 @@ namespace TeacherAssistant
             return false;
         }
 
-
-        private void Registration_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            Registration_Form obj = new Registration_Form();
-            obj.ShowDialog();
-            this.Close();
-        }
-
-
         private void Email_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void Password_TextChanged(object sender, EventArgs e)
+        {
+            // Password.PasswordChar = '●';
+            Password.UseSystemPasswordChar = true;
+        }
+
+        private void Show_Password_CheckedChanged(object sender, EventArgs e)
+        {
+            if(Show_Password.Checked == true)
+            {
+                Password.UseSystemPasswordChar = false;
+            }
+            else
+            {
+                Password.UseSystemPasswordChar = true;
+            }
+        }
+
+        private void Forget_Password_Click(object sender, EventArgs e)
+        {
+            string user_type = login_As.Text.Trim();
+
+            if (is_valid(user_type) == true)
+            {
+                Password.Clear();
+                this.Hide();
+                RecoveryAccoount obj = new RecoveryAccoount();
+
+                obj.passingusertype = user_type;
+                obj.passinguseremail = Email.Text.Trim();
+
+                obj.ShowDialog();
+                this.Show();
+            }
+        }
+
+        private bool is_valid(string user_type)
+        {
+            if (user_type == String.Empty)
+            {
+                MessageBox.Show("Pelse Select User Type.", "Warning!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return false;
+            }
+            return true;
         }
     }
 }

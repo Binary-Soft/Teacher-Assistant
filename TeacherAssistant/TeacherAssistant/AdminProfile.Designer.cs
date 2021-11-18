@@ -41,7 +41,7 @@ namespace TeacherAssistant
             this.Add_Course = new System.Windows.Forms.Button();
             this.Course_Select = new System.Windows.Forms.Button();
             this.Instructor_Select = new System.Windows.Forms.Button();
-            this.Logout = new System.Windows.Forms.Button();
+            this.Logout = new TeacherAssistant.CustomButton();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -167,15 +167,20 @@ namespace TeacherAssistant
             // 
             // Logout
             // 
-            this.Logout.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.Logout.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.Logout.BackColor = System.Drawing.Color.MediumSlateBlue;
+            this.Logout.BackgroundColor = System.Drawing.Color.MediumSlateBlue;
+            this.Logout.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.Logout.BorderRadius = 20;
+            this.Logout.BorderSize = 0;
+            this.Logout.FlatAppearance.BorderSize = 0;
             this.Logout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Logout.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Logout.Location = new System.Drawing.Point(729, 12);
+            this.Logout.ForeColor = System.Drawing.Color.White;
+            this.Logout.Location = new System.Drawing.Point(790, 12);
             this.Logout.Name = "Logout";
-            this.Logout.Size = new System.Drawing.Size(120, 33);
-            this.Logout.TabIndex = 103;
+            this.Logout.Size = new System.Drawing.Size(150, 40);
+            this.Logout.TabIndex = 113;
             this.Logout.Text = "Logout";
+            this.Logout.TextColor = System.Drawing.Color.White;
             this.Logout.UseVisualStyleBackColor = false;
             this.Logout.Click += new System.EventHandler(this.Logout_Click);
             // 
@@ -220,6 +225,6 @@ namespace TeacherAssistant
         private System.Windows.Forms.Button Add_Course;
         private System.Windows.Forms.Button Course_Select;
         private System.Windows.Forms.Button Instructor_Select;
-        private System.Windows.Forms.Button Logout;
+        private CustomButton Logout;
     }
 }

@@ -51,11 +51,11 @@ namespace TeacherAssistant
             this.Show_Section = new System.Windows.Forms.ComboBox();
             this.Semester_Name = new System.Windows.Forms.ComboBox();
             this.Subbit_Student_Info = new System.Windows.Forms.Button();
-            this.Back = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.Back = new TeacherAssistant.CustomButton();
             this.SuspendLayout();
             // 
             // label2
@@ -244,20 +244,6 @@ namespace TeacherAssistant
             this.Subbit_Student_Info.UseVisualStyleBackColor = true;
             this.Subbit_Student_Info.Click += new System.EventHandler(this.Subbit_Student_Info_Click);
             // 
-            // Back
-            // 
-            this.Back.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.Back.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.Back.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Back.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Back.Location = new System.Drawing.Point(1087, 618);
-            this.Back.Name = "Back";
-            this.Back.Size = new System.Drawing.Size(120, 33);
-            this.Back.TabIndex = 103;
-            this.Back.Text = "< Back";
-            this.Back.UseVisualStyleBackColor = false;
-            this.Back.Click += new System.EventHandler(this.Back_Click);
-            // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.WindowFrame;
@@ -291,16 +277,35 @@ namespace TeacherAssistant
             this.panel4.Size = new System.Drawing.Size(425, 266);
             this.panel4.TabIndex = 108;
             // 
+            // Back
+            // 
+            this.Back.BackColor = System.Drawing.Color.MediumSlateBlue;
+            this.Back.BackgroundColor = System.Drawing.Color.MediumSlateBlue;
+            this.Back.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.Back.BorderRadius = 20;
+            this.Back.BorderSize = 0;
+            this.Back.FlatAppearance.BorderSize = 0;
+            this.Back.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Back.ForeColor = System.Drawing.Color.White;
+            this.Back.Location = new System.Drawing.Point(1037, 557);
+            this.Back.Name = "Back";
+            this.Back.Size = new System.Drawing.Size(150, 40);
+            this.Back.TabIndex = 109;
+            this.Back.Text = "< Back";
+            this.Back.TextColor = System.Drawing.Color.White;
+            this.Back.UseVisualStyleBackColor = false;
+            this.Back.Click += new System.EventHandler(this.Back_Click);
+            // 
             // AddNewStudent
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1282, 663);
+            this.Controls.Add(this.Back);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.Back);
             this.Controls.Add(this.Subbit_Student_Info);
             this.Controls.Add(this.Semester_Name);
             this.Controls.Add(this.Show_Section);
@@ -353,10 +358,10 @@ namespace TeacherAssistant
         private System.Windows.Forms.ComboBox Show_Section;
         private System.Windows.Forms.ComboBox Semester_Name;
         private System.Windows.Forms.Button Subbit_Student_Info;
-        private System.Windows.Forms.Button Back;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Panel panel4;
+        private CustomButton Back;
     }
 }

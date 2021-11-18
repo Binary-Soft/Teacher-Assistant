@@ -79,9 +79,58 @@ namespace TeacherAssistant
             Show_Student_Email.Text = STUDENT_EMAIL;
             Show_Phone_No.Text = STU_Phone_NO;
             Show_Student_Address.Text = STUDENT_ADDRESS;
-            Show_Total_Mark.Text = string.Empty;
+            Show_Total_Mark.Text = Get_Total_Marks();
+
             Show_Attendance_Percentage.Text = Convert.ToString(Get_Attendance_Percentage(STUDENT_ID, COURSE_ID)) + '%';
 
+        }
+
+        private string Get_Total_Marks()
+        {
+            string query = "with Exam_Marks(Total_Mark) AS (SELECT marks.Assignment_1+ " +
+                "marks.Assignment_2+ marks.Class_Test_1+ marks.Class_Test_2+ marks.Lab_Performance_1 " +
+                "+marks.Lab_Performance_2+ marks.Mid_Exam+ marks.Final_Exam AS 'Total' FROM marks " +
+                "WHERE marks.Student_ID='"+ STUDENT_ID + "' AND marks.Course_ID='"+ COURSE_ID + "') SELECT COALESCE(SUM(Exam_Marks.Total_Mark), 0) " +
+                "AS Instructor_ID FROM Exam_Marks;";
+
+            InstructorProfile obj = new InstructorProfile();
+            string total_exam_mark = obj.Get_Instructor_ID(query);
+
+            int attendance_number = Get_Attendance_Number(Get_Attendance_Percentage(STUDENT_ID, COURSE_ID));
+
+            double total_mark = Convert.ToDouble(total_exam_mark) + attendance_number;
+
+            total_exam_mark = Convert.ToString(total_mark);
+
+            return total_exam_mark;
+        }
+
+        private int Get_Attendance_Number(double attendance_percentage)
+        {
+            if (attendance_percentage > 90)
+            {
+                return 10;
+            }
+            else if (attendance_percentage > 85)
+            {
+                return 8;
+            }
+            else if (attendance_percentage > 80)
+            {
+                return 6;
+            }
+            else if (attendance_percentage > 75)
+            {
+                return 4;
+            }
+            else if (attendance_percentage > 69)
+            {
+                return 2;
+            }
+            else
+            {
+                return 0;
+            }
         }
 
         private int Get_Total_Attendance(string Student_Id, string Courde_Id)

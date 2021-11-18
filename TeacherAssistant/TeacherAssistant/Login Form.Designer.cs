@@ -1,7 +1,7 @@
 ﻿
 namespace TeacherAssistant
 {
-    partial class Form1
+    partial class LoginForm
     {
         /// <summary>
         /// Required designer variable.
@@ -29,12 +29,11 @@ namespace TeacherAssistant
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LoginForm));
             this.label1 = new System.Windows.Forms.Label();
             this.login_As = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.Login = new System.Windows.Forms.Button();
             this.Email = new System.Windows.Forms.TextBox();
             this.Password = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -44,6 +43,9 @@ namespace TeacherAssistant
             this.panel2 = new System.Windows.Forms.Panel();
             this.label7 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.Show_Password = new System.Windows.Forms.CheckBox();
+            this.Login = new TeacherAssistant.CustomButton();
+            this.Forget_Password = new TeacherAssistant.CustomButton();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -51,11 +53,11 @@ namespace TeacherAssistant
             // 
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Font = new System.Drawing.Font("Montserrat", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.HighlightText;
             this.label1.Location = new System.Drawing.Point(560, 53);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(196, 58);
+            this.label1.Size = new System.Drawing.Size(180, 55);
             this.label1.TabIndex = 0;
             this.label1.Text = "Sign In";
             // 
@@ -92,20 +94,6 @@ namespace TeacherAssistant
             this.label3.TabIndex = 5;
             this.label3.Text = "Password:";
             // 
-            // Login
-            // 
-            this.Login.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.Login.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.Login.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Login.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Login.Location = new System.Drawing.Point(586, 394);
-            this.Login.Name = "Login";
-            this.Login.Size = new System.Drawing.Size(150, 37);
-            this.Login.TabIndex = 8;
-            this.Login.Text = "Login";
-            this.Login.UseVisualStyleBackColor = false;
-            this.Login.Click += new System.EventHandler(this.Login_Click);
-            // 
             // Email
             // 
             this.Email.Location = new System.Drawing.Point(545, 251);
@@ -120,6 +108,7 @@ namespace TeacherAssistant
             this.Password.Name = "Password";
             this.Password.Size = new System.Drawing.Size(228, 20);
             this.Password.TabIndex = 10;
+            this.Password.TextChanged += new System.EventHandler(this.Password_TextChanged);
             // 
             // panel1
             // 
@@ -202,6 +191,55 @@ namespace TeacherAssistant
             this.panel3.Size = new System.Drawing.Size(278, 292);
             this.panel3.TabIndex = 13;
             // 
+            // Show_Password
+            // 
+            this.Show_Password.AutoSize = true;
+            this.Show_Password.Location = new System.Drawing.Point(779, 338);
+            this.Show_Password.Name = "Show_Password";
+            this.Show_Password.Size = new System.Drawing.Size(115, 17);
+            this.Show_Password.TabIndex = 14;
+            this.Show_Password.Text = "Show Password";
+            this.Show_Password.UseVisualStyleBackColor = true;
+            this.Show_Password.CheckedChanged += new System.EventHandler(this.Show_Password_CheckedChanged);
+            // 
+            // Login
+            // 
+            this.Login.BackColor = System.Drawing.Color.MediumSlateBlue;
+            this.Login.BackgroundColor = System.Drawing.Color.MediumSlateBlue;
+            this.Login.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.Login.BorderRadius = 20;
+            this.Login.BorderSize = 0;
+            this.Login.FlatAppearance.BorderSize = 0;
+            this.Login.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Login.ForeColor = System.Drawing.Color.White;
+            this.Login.Location = new System.Drawing.Point(590, 377);
+            this.Login.Name = "Login";
+            this.Login.Size = new System.Drawing.Size(150, 40);
+            this.Login.TabIndex = 15;
+            this.Login.Text = "Login";
+            this.Login.TextColor = System.Drawing.Color.White;
+            this.Login.UseVisualStyleBackColor = false;
+            this.Login.Click += new System.EventHandler(this.Login_Click);
+            // 
+            // Forget_Password
+            // 
+            this.Forget_Password.BackColor = System.Drawing.Color.MediumSlateBlue;
+            this.Forget_Password.BackgroundColor = System.Drawing.Color.MediumSlateBlue;
+            this.Forget_Password.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.Forget_Password.BorderRadius = 20;
+            this.Forget_Password.BorderSize = 0;
+            this.Forget_Password.FlatAppearance.BorderSize = 0;
+            this.Forget_Password.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Forget_Password.ForeColor = System.Drawing.Color.White;
+            this.Forget_Password.Location = new System.Drawing.Point(576, 440);
+            this.Forget_Password.Name = "Forget_Password";
+            this.Forget_Password.Size = new System.Drawing.Size(150, 40);
+            this.Forget_Password.TabIndex = 16;
+            this.Forget_Password.Text = "Forget Password?";
+            this.Forget_Password.TextColor = System.Drawing.Color.White;
+            this.Forget_Password.UseVisualStyleBackColor = false;
+            this.Forget_Password.Click += new System.EventHandler(this.Forget_Password_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 13F);
@@ -211,12 +249,14 @@ namespace TeacherAssistant
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.ClientSize = new System.Drawing.Size(1008, 607);
+            this.Controls.Add(this.Forget_Password);
+            this.Controls.Add(this.Login);
+            this.Controls.Add(this.Show_Password);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.Password);
             this.Controls.Add(this.Email);
-            this.Controls.Add(this.Login);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.login_As);
@@ -246,7 +286,6 @@ namespace TeacherAssistant
         private System.Windows.Forms.ComboBox login_As;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Button Login;
         private System.Windows.Forms.TextBox Email;
         private System.Windows.Forms.TextBox Password;
         private System.Windows.Forms.Panel panel1;
@@ -256,6 +295,9 @@ namespace TeacherAssistant
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.CheckBox Show_Password;
+        private CustomButton Login;
+        private CustomButton Forget_Password;
     }
 }
 
