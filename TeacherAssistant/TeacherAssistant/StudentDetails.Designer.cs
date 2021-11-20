@@ -46,21 +46,24 @@ namespace TeacherAssistant
             this.label6 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.Login = new TeacherAssistant.CustomButton();
-            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // Show_Student_ID
             // 
+            this.Show_Student_ID.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Show_Student_ID.Location = new System.Drawing.Point(160, 172);
             this.Show_Student_ID.Name = "Show_Student_ID";
-            this.Show_Student_ID.Size = new System.Drawing.Size(267, 20);
+            this.Show_Student_ID.ReadOnly = true;
+            this.Show_Student_ID.Size = new System.Drawing.Size(267, 29);
             this.Show_Student_ID.TabIndex = 27;
             // 
             // Show_Student_Name
             // 
+            this.Show_Student_Name.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Show_Student_Name.Location = new System.Drawing.Point(160, 90);
             this.Show_Student_Name.Name = "Show_Student_Name";
-            this.Show_Student_Name.Size = new System.Drawing.Size(267, 20);
+            this.Show_Student_Name.ReadOnly = true;
+            this.Show_Student_Name.Size = new System.Drawing.Size(267, 29);
             this.Show_Student_Name.TabIndex = 26;
             // 
             // label3
@@ -85,9 +88,11 @@ namespace TeacherAssistant
             // 
             // Show_Student_Email
             // 
+            this.Show_Student_Email.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Show_Student_Email.Location = new System.Drawing.Point(160, 397);
             this.Show_Student_Email.Name = "Show_Student_Email";
-            this.Show_Student_Email.Size = new System.Drawing.Size(267, 20);
+            this.Show_Student_Email.ReadOnly = true;
+            this.Show_Student_Email.Size = new System.Drawing.Size(267, 29);
             this.Show_Student_Email.TabIndex = 29;
             // 
             // label1
@@ -102,16 +107,20 @@ namespace TeacherAssistant
             // 
             // Show_Student_Address
             // 
+            this.Show_Student_Address.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Show_Student_Address.Location = new System.Drawing.Point(160, 320);
             this.Show_Student_Address.Name = "Show_Student_Address";
-            this.Show_Student_Address.Size = new System.Drawing.Size(267, 20);
+            this.Show_Student_Address.ReadOnly = true;
+            this.Show_Student_Address.Size = new System.Drawing.Size(267, 29);
             this.Show_Student_Address.TabIndex = 33;
             // 
             // Show_Phone_No
             // 
+            this.Show_Phone_No.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Show_Phone_No.Location = new System.Drawing.Point(160, 240);
             this.Show_Phone_No.Name = "Show_Phone_No";
-            this.Show_Phone_No.Size = new System.Drawing.Size(267, 20);
+            this.Show_Phone_No.ReadOnly = true;
+            this.Show_Phone_No.Size = new System.Drawing.Size(267, 29);
             this.Show_Phone_No.TabIndex = 32;
             // 
             // label8
@@ -136,9 +145,11 @@ namespace TeacherAssistant
             // 
             // Show_Total_Mark
             // 
+            this.Show_Total_Mark.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Show_Total_Mark.Location = new System.Drawing.Point(160, 473);
             this.Show_Total_Mark.Name = "Show_Total_Mark";
-            this.Show_Total_Mark.Size = new System.Drawing.Size(267, 20);
+            this.Show_Total_Mark.ReadOnly = true;
+            this.Show_Total_Mark.Size = new System.Drawing.Size(267, 29);
             this.Show_Total_Mark.TabIndex = 35;
             // 
             // label4
@@ -153,9 +164,11 @@ namespace TeacherAssistant
             // 
             // Show_Attendance_Percentage
             // 
+            this.Show_Attendance_Percentage.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Show_Attendance_Percentage.Location = new System.Drawing.Point(160, 547);
             this.Show_Attendance_Percentage.Name = "Show_Attendance_Percentage";
-            this.Show_Attendance_Percentage.Size = new System.Drawing.Size(267, 20);
+            this.Show_Attendance_Percentage.ReadOnly = true;
+            this.Show_Attendance_Percentage.Size = new System.Drawing.Size(267, 29);
             this.Show_Attendance_Percentage.TabIndex = 37;
             // 
             // label6
@@ -172,7 +185,6 @@ namespace TeacherAssistant
             // 
             this.panel1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel1.BackgroundImage")));
             this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.panel1.Controls.Add(this.Login);
             this.panel1.Location = new System.Drawing.Point(554, -117);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(537, 765);
@@ -180,15 +192,16 @@ namespace TeacherAssistant
             // 
             // Login
             // 
-            this.Login.BackColor = System.Drawing.Color.MediumSlateBlue;
-            this.Login.BackgroundColor = System.Drawing.Color.MediumSlateBlue;
+            this.Login.BackColor = System.Drawing.SystemColors.HotTrack;
+            this.Login.BackgroundColor = System.Drawing.SystemColors.HotTrack;
             this.Login.BorderColor = System.Drawing.Color.PaleVioletRed;
             this.Login.BorderRadius = 20;
             this.Login.BorderSize = 0;
             this.Login.FlatAppearance.BorderSize = 0;
             this.Login.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Login.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Login.ForeColor = System.Drawing.Color.White;
-            this.Login.Location = new System.Drawing.Point(313, 129);
+            this.Login.Location = new System.Drawing.Point(945, 634);
             this.Login.Name = "Login";
             this.Login.Size = new System.Drawing.Size(150, 40);
             this.Login.TabIndex = 105;
@@ -201,9 +214,10 @@ namespace TeacherAssistant
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.CornflowerBlue;
+            this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.ClientSize = new System.Drawing.Size(1048, 672);
+            this.ClientSize = new System.Drawing.Size(1107, 677);
+            this.Controls.Add(this.Login);
             this.Controls.Add(this.Show_Student_ID);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.Show_Attendance_Percentage);
@@ -219,11 +233,11 @@ namespace TeacherAssistant
             this.Controls.Add(this.Show_Student_Name);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "StudentDetails";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "StudentDetails";
             this.Load += new System.EventHandler(this.StudentDetails_Load);
-            this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 

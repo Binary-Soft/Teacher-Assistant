@@ -99,9 +99,7 @@ D:\Project\CSE-200-2nd-Semester-\TeacherAssistant\TeacherAssistant\bin\Debug\Sys
 D:\Project\CSE-200-2nd-Semester-\TeacherAssistant\TeacherAssistant\obj\Debug\TeacherAssistant.csproj.AssemblyReference.cache
 D:\Project\CSE-200-2nd-Semester-\TeacherAssistant\TeacherAssistant\obj\Debug\TeacherAssistant.AddNewStudent.resources
 D:\Project\CSE-200-2nd-Semester-\TeacherAssistant\TeacherAssistant\obj\Debug\TeacherAssistant.InstructorRegistration.resources
-D:\Project\CSE-200-2nd-Semester-\TeacherAssistant\TeacherAssistant\obj\Debug\TeacherAssistant.Form1.resources
 D:\Project\CSE-200-2nd-Semester-\TeacherAssistant\TeacherAssistant\obj\Debug\TeacherAssistant.ManageDept.resources
-D:\Project\CSE-200-2nd-Semester-\TeacherAssistant\TeacherAssistant\obj\Debug\TeacherAssistant.Registration_Form.resources
 D:\Project\CSE-200-2nd-Semester-\TeacherAssistant\TeacherAssistant\obj\Debug\TeacherAssistant.Admin_Profile.resources
 D:\Project\CSE-200-2nd-Semester-\TeacherAssistant\TeacherAssistant\obj\Debug\TeacherAssistant.Properties.Resources.resources
 D:\Project\CSE-200-2nd-Semester-\TeacherAssistant\TeacherAssistant\obj\Debug\TeacherAssistant.csproj.GenerateResource.cache
@@ -154,3 +152,14 @@ D:\CSE- 200\CSE-200-2nd-Semester-\TeacherAssistant\TeacherAssistant\obj\Debug\Te
 D:\CSE- 200\CSE-200-2nd-Semester-\TeacherAssistant\TeacherAssistant\obj\Debug\TeacherAssistant.RecoveryAccoount.resources
 D:\CSE- 200\CSE-200-2nd-Semester-\TeacherAssistant\TeacherAssistant\obj\Debug\TeacherAssistant.LoginForm.resources
 D:\CSE- 200\CSE-200-2nd-Semester-\TeacherAssistant\TeacherAssistant\obj\Debug\TeacherAssistant.Change_Password_Form.resources
+D:\Project\CSE-200-2nd-Semester-\TeacherAssistant\TeacherAssistant\obj\Debug\TeacherAssistant.AddCourses.resources
+D:\Project\CSE-200-2nd-Semester-\TeacherAssistant\TeacherAssistant\obj\Debug\TeacherAssistant.AddStudentMarks.resources
+D:\Project\CSE-200-2nd-Semester-\TeacherAssistant\TeacherAssistant\obj\Debug\TeacherAssistant.AllStudentExamPermission.resources
+D:\Project\CSE-200-2nd-Semester-\TeacherAssistant\TeacherAssistant\obj\Debug\TeacherAssistant.Change_Password_Form.resources
+D:\Project\CSE-200-2nd-Semester-\TeacherAssistant\TeacherAssistant\obj\Debug\TeacherAssistant.CourseSelect.resources
+D:\Project\CSE-200-2nd-Semester-\TeacherAssistant\TeacherAssistant\obj\Debug\TeacherAssistant.FirstLoginForm.resources
+D:\Project\CSE-200-2nd-Semester-\TeacherAssistant\TeacherAssistant\obj\Debug\TeacherAssistant.InstructorProfile.resources
+D:\Project\CSE-200-2nd-Semester-\TeacherAssistant\TeacherAssistant\obj\Debug\TeacherAssistant.InstructorSelect.resources
+D:\Project\CSE-200-2nd-Semester-\TeacherAssistant\TeacherAssistant\obj\Debug\TeacherAssistant.LoginForm.resources
+D:\Project\CSE-200-2nd-Semester-\TeacherAssistant\TeacherAssistant\obj\Debug\TeacherAssistant.RecoveryAccoount.resources
+D:\Project\CSE-200-2nd-Semester-\TeacherAssistant\TeacherAssistant\obj\Debug\TeacherAssistant.StudentDetails.resources

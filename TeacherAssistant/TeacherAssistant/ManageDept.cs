@@ -135,7 +135,6 @@ namespace TeacherAssistant
                 {
                     string selected_item = ShowDeptName.SelectedRows[0].Cells[1].Value.ToString();
                     AddDeptName.Text = selected_item;
-                    MessageBox.Show(Convert.ToString(Dept_ID));   // for testing
 
                     Show_Intake(Dept_ID);   
                 }
@@ -258,6 +257,7 @@ namespace TeacherAssistant
             Intake.DataSource = null;
             AddDeptName.Clear();
             Show_Section_No.Items.Clear();
+            Show_Section_No.Items.Add(" ");
         }
 
         private void Intake_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -269,7 +269,6 @@ namespace TeacherAssistant
                 if (Dep_intake != -1)
                 {
                     this.intake_no = Dep_intake;
-                    MessageBox.Show("Dept ID " + Convert.ToString(Dept_ID) + "  Intake " + Convert.ToString(Dep_intake));  // for testing
                     Show_Section_No.Items.Clear();
                     Display_Section_No(Dept_ID, Dep_intake);
                 }

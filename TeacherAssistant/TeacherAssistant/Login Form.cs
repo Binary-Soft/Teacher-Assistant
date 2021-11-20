@@ -51,8 +51,9 @@ namespace TeacherAssistant
                  this.Hide();
                 Admin_Profile obj = new Admin_Profile();
                 obj.ShowDialog();
-              //  MessageBox.Show("Logout Successfull.", "Successfull.", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                this.Close();
+                //  MessageBox.Show("Logout Successfull.", "Successfull.", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                Clear_All();
+                this.Show();
             }
                // Login as Instructor
             else if (userType == "Login as Instructor" && Is_Login(query2) == true)
@@ -70,6 +71,7 @@ namespace TeacherAssistant
                     // obj.Text = "test environment";    // runtime form title change
                     // obj.Refresh();                    //  Refrase the title
                     obj.ShowDialog();
+                    Clear_All();
                     this.Show();
                 }
                 else
@@ -78,8 +80,9 @@ namespace TeacherAssistant
                     InstructorProfile obje = new InstructorProfile();
                     obje.ShowDialog();
 
-                  //  MessageBox.Show("Logout Successfull.", "Successfull.", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    this.Close();
+                    //  MessageBox.Show("Logout Successfull.", "Successfull.", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    Clear_All();
+                    this.Show();
                 }
                 INSTRUCTOR_EMAIL = string.Empty;
             }
@@ -91,6 +94,11 @@ namespace TeacherAssistant
         }
 
 
+        private void Clear_All()
+        {
+            Email.Clear();
+            Password.Clear();
+        }
 
         private bool Is_First_Time_Login(string email)
         {

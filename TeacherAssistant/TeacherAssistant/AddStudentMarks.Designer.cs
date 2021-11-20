@@ -29,6 +29,7 @@ namespace TeacherAssistant
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AddStudentMarks));
             this.Show_Student_Name = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.Show_Student_ID = new System.Windows.Forms.TextBox();
@@ -48,16 +49,18 @@ namespace TeacherAssistant
             // 
             // Show_Student_Name
             // 
+            this.Show_Student_Name.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Show_Student_Name.Location = new System.Drawing.Point(46, 83);
+            this.Show_Student_Name.Multiline = true;
             this.Show_Student_Name.Name = "Show_Student_Name";
-            this.Show_Student_Name.Size = new System.Drawing.Size(230, 20);
+            this.Show_Student_Name.Size = new System.Drawing.Size(281, 35);
             this.Show_Student_Name.TabIndex = 89;
             // 
             // label10
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(88, 55);
+            this.label10.Location = new System.Drawing.Point(99, 55);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(160, 25);
             this.label10.TabIndex = 88;
@@ -65,16 +68,18 @@ namespace TeacherAssistant
             // 
             // Show_Student_ID
             // 
+            this.Show_Student_ID.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Show_Student_ID.Location = new System.Drawing.Point(46, 164);
+            this.Show_Student_ID.Multiline = true;
             this.Show_Student_ID.Name = "Show_Student_ID";
-            this.Show_Student_ID.Size = new System.Drawing.Size(230, 20);
+            this.Show_Student_ID.Size = new System.Drawing.Size(281, 35);
             this.Show_Student_ID.TabIndex = 91;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(105, 136);
+            this.label1.Location = new System.Drawing.Point(121, 136);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(122, 25);
             this.label1.TabIndex = 90;
@@ -82,16 +87,18 @@ namespace TeacherAssistant
             // 
             // Show_Course_ID
             // 
+            this.Show_Course_ID.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Show_Course_ID.Location = new System.Drawing.Point(46, 239);
+            this.Show_Course_ID.Multiline = true;
             this.Show_Course_ID.Name = "Show_Course_ID";
-            this.Show_Course_ID.Size = new System.Drawing.Size(230, 20);
+            this.Show_Course_ID.Size = new System.Drawing.Size(281, 35);
             this.Show_Course_ID.TabIndex = 93;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(111, 211);
+            this.label2.Location = new System.Drawing.Point(127, 211);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(116, 25);
             this.label2.TabIndex = 92;
@@ -100,17 +107,18 @@ namespace TeacherAssistant
             // Show_Student_Marks
             // 
             this.Show_Student_Marks.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.Show_Student_Marks.Location = new System.Drawing.Point(328, 17);
+            this.Show_Student_Marks.Location = new System.Drawing.Point(375, 26);
             this.Show_Student_Marks.Name = "Show_Student_Marks";
             this.Show_Student_Marks.Size = new System.Drawing.Size(754, 508);
             this.Show_Student_Marks.TabIndex = 94;
             // 
             // Show_Marks_Type
             // 
+            this.Show_Marks_Type.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Show_Marks_Type.FormattingEnabled = true;
             this.Show_Marks_Type.Location = new System.Drawing.Point(46, 316);
             this.Show_Marks_Type.Name = "Show_Marks_Type";
-            this.Show_Marks_Type.Size = new System.Drawing.Size(230, 21);
+            this.Show_Marks_Type.Size = new System.Drawing.Size(281, 32);
             this.Show_Marks_Type.TabIndex = 95;
             this.Show_Marks_Type.SelectedIndexChanged += new System.EventHandler(this.Show_Marks_Type_SelectedIndexChanged);
             // 
@@ -118,7 +126,7 @@ namespace TeacherAssistant
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(58, 288);
+            this.label3.Location = new System.Drawing.Point(88, 288);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(208, 25);
             this.label3.TabIndex = 96;
@@ -128,7 +136,7 @@ namespace TeacherAssistant
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(88, 375);
+            this.label4.Location = new System.Drawing.Point(120, 375);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(139, 25);
             this.label4.TabIndex = 97;
@@ -140,7 +148,7 @@ namespace TeacherAssistant
             this.Submit_Marks.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.Submit_Marks.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Submit_Marks.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Submit_Marks.Location = new System.Drawing.Point(12, 491);
+            this.Submit_Marks.Location = new System.Drawing.Point(46, 491);
             this.Submit_Marks.Name = "Submit_Marks";
             this.Submit_Marks.Size = new System.Drawing.Size(120, 33);
             this.Submit_Marks.TabIndex = 99;
@@ -150,9 +158,11 @@ namespace TeacherAssistant
             // 
             // Get_Marks
             // 
+            this.Get_Marks.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Get_Marks.Location = new System.Drawing.Point(46, 403);
+            this.Get_Marks.Multiline = true;
             this.Get_Marks.Name = "Get_Marks";
-            this.Get_Marks.Size = new System.Drawing.Size(230, 20);
+            this.Get_Marks.Size = new System.Drawing.Size(281, 35);
             this.Get_Marks.TabIndex = 100;
             // 
             // Update_Marks
@@ -161,7 +171,7 @@ namespace TeacherAssistant
             this.Update_Marks.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.Update_Marks.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Update_Marks.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Update_Marks.Location = new System.Drawing.Point(163, 491);
+            this.Update_Marks.Location = new System.Drawing.Point(188, 490);
             this.Update_Marks.Name = "Update_Marks";
             this.Update_Marks.Size = new System.Drawing.Size(149, 34);
             this.Update_Marks.TabIndex = 101;
@@ -171,13 +181,14 @@ namespace TeacherAssistant
             // 
             // Login
             // 
-            this.Login.BackColor = System.Drawing.Color.MediumSlateBlue;
-            this.Login.BackgroundColor = System.Drawing.Color.MediumSlateBlue;
+            this.Login.BackColor = System.Drawing.SystemColors.HotTrack;
+            this.Login.BackgroundColor = System.Drawing.SystemColors.HotTrack;
             this.Login.BorderColor = System.Drawing.Color.PaleVioletRed;
             this.Login.BorderRadius = 20;
             this.Login.BorderSize = 0;
             this.Login.FlatAppearance.BorderSize = 0;
             this.Login.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Login.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Login.ForeColor = System.Drawing.Color.White;
             this.Login.Location = new System.Drawing.Point(990, 570);
             this.Login.Name = "Login";
@@ -208,6 +219,7 @@ namespace TeacherAssistant
             this.Controls.Add(this.label1);
             this.Controls.Add(this.Show_Student_Name);
             this.Controls.Add(this.label10);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "AddStudentMarks";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Add Student Marks";

@@ -85,15 +85,16 @@ namespace TeacherAssistant
             // 
             // Logout
             // 
-            this.Logout.BackColor = System.Drawing.Color.MediumSlateBlue;
-            this.Logout.BackgroundColor = System.Drawing.Color.MediumSlateBlue;
+            this.Logout.BackColor = System.Drawing.SystemColors.HotTrack;
+            this.Logout.BackgroundColor = System.Drawing.SystemColors.HotTrack;
             this.Logout.BorderColor = System.Drawing.Color.PaleVioletRed;
             this.Logout.BorderRadius = 20;
             this.Logout.BorderSize = 0;
             this.Logout.FlatAppearance.BorderSize = 0;
             this.Logout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Logout.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Logout.ForeColor = System.Drawing.Color.White;
-            this.Logout.Location = new System.Drawing.Point(790, 535);
+            this.Logout.Location = new System.Drawing.Point(800, 535);
             this.Logout.Name = "Logout";
             this.Logout.Size = new System.Drawing.Size(150, 40);
             this.Logout.TabIndex = 113;
