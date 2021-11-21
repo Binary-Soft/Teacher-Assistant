@@ -166,13 +166,14 @@ namespace TeacherAssistant
                     "dept_intake.Intake=dept_intake_section.Intake AND department.Dept_Name='" + dept_name + "' AND dept_intake.Intake='" + intake + "'";
 
                 // Display_Intake_Section(query, "Show_Section");
+                Select_Course.Items.Clear();
                 Show_Course(dept_name);
             }
         }
 
         private void Show_Course(string dept_name)
         {
-            string query = "SELECT courses.Course_ID, courses.Course_Title FROM department, courses " +
+            string query = "SELECT DISTINCT courses.Course_ID, courses.Course_Title FROM department, courses " +
                 "WHERE department.ID=courses.Dept_ID AND department.Dept_Name='" + dept_name + "'";
 
             Display_Intake_Section(query, "Show_Course");

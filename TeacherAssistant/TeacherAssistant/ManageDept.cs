@@ -181,7 +181,7 @@ namespace TeacherAssistant
             if (this.Dept_ID != 0)
             {
                 string dept_ID = ShowDeptName.SelectedRows[0].Cells[0].Value.ToString();
-                MessageBox.Show("Dept ID " + dept_ID);  // testing
+                // MessageBox.Show("Dept ID " + dept_ID);  // testing
 
 
                 MySqlConnection connect = new MySqlConnection(DataBase.Connect_String());
@@ -242,7 +242,7 @@ namespace TeacherAssistant
                 MessageBox.Show(ex.Message, "Warning!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
             connect.Close();
-            MessageBox.Show("Intake " + Convert.ToString(Intake_No) + " Create Successfull", "Created", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            MessageBox.Show("Intake " + Convert.ToString(Intake_No) + " Created Successfully", "Created", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         private void Reset_All_Click(object sender, EventArgs e)
@@ -386,7 +386,7 @@ namespace TeacherAssistant
 
         private void Back_Click(object sender, EventArgs e)
         {
-            DialogResult dialogResult = MessageBox.Show("Are You Confirm?", "Close this Window.", MessageBoxButtons.YesNo);
+            DialogResult dialogResult = MessageBox.Show("Are You Sure ?", "Close this Window.", MessageBoxButtons.YesNo);
             if (dialogResult == DialogResult.Yes)
             {
                 this.Close();

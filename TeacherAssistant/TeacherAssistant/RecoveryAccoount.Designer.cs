@@ -144,6 +144,7 @@ namespace TeacherAssistant
             this.Controls.Add(this.Email);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "RecoveryAccoount";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Recovery Account";
             this.Load += new System.EventHandler(this.RecoveryAccoount_Load);
             this.ResumeLayout(false);

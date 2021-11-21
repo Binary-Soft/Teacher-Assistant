@@ -262,11 +262,11 @@ namespace TeacherAssistant
 
             if (obj.Student_Info_Save_To_Database(query) == true)    // <<==== this function exist AddNewStudent.cs file
             {
-                MessageBox.Show("Save Successfully.", "Saved!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Saved Successfully.", "Saved!", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else
             {
-                MessageBox.Show("Information Save Failed. Please Try Again.", "Failed!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Information Saving Failed. Please Try Again.", "Failed!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
 

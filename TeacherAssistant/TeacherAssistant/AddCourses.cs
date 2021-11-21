@@ -80,6 +80,7 @@ namespace TeacherAssistant
 
         private void Reset_All()
         {
+            Total_Class.Clear();
             Get_Course_ID.Clear();
             Get_Course_Title.Clear();
         }

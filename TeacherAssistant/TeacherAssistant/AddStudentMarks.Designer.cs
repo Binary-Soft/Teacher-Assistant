@@ -53,6 +53,7 @@ namespace TeacherAssistant
             this.Show_Student_Name.Location = new System.Drawing.Point(46, 83);
             this.Show_Student_Name.Multiline = true;
             this.Show_Student_Name.Name = "Show_Student_Name";
+            this.Show_Student_Name.ReadOnly = true;
             this.Show_Student_Name.Size = new System.Drawing.Size(281, 35);
             this.Show_Student_Name.TabIndex = 89;
             // 
@@ -72,6 +73,7 @@ namespace TeacherAssistant
             this.Show_Student_ID.Location = new System.Drawing.Point(46, 164);
             this.Show_Student_ID.Multiline = true;
             this.Show_Student_ID.Name = "Show_Student_ID";
+            this.Show_Student_ID.ReadOnly = true;
             this.Show_Student_ID.Size = new System.Drawing.Size(281, 35);
             this.Show_Student_ID.TabIndex = 91;
             // 
@@ -91,6 +93,7 @@ namespace TeacherAssistant
             this.Show_Course_ID.Location = new System.Drawing.Point(46, 239);
             this.Show_Course_ID.Multiline = true;
             this.Show_Course_ID.Name = "Show_Course_ID";
+            this.Show_Course_ID.ReadOnly = true;
             this.Show_Course_ID.Size = new System.Drawing.Size(281, 35);
             this.Show_Course_ID.TabIndex = 93;
             // 

@@ -58,6 +58,7 @@ namespace TeacherAssistant
             this.Temp_Instructor_Email.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Temp_Instructor_Email.Location = new System.Drawing.Point(101, 111);
             this.Temp_Instructor_Email.Name = "Temp_Instructor_Email";
+            this.Temp_Instructor_Email.ReadOnly = true;
             this.Temp_Instructor_Email.Size = new System.Drawing.Size(281, 29);
             this.Temp_Instructor_Email.TabIndex = 1;
             // 
@@ -196,6 +197,7 @@ namespace TeacherAssistant
             this.Show_Semester_Name.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Show_Semester_Name.Location = new System.Drawing.Point(101, 184);
             this.Show_Semester_Name.Name = "Show_Semester_Name";
+            this.Show_Semester_Name.ReadOnly = true;
             this.Show_Semester_Name.Size = new System.Drawing.Size(281, 29);
             this.Show_Semester_Name.TabIndex = 87;
             // 
@@ -254,6 +256,7 @@ namespace TeacherAssistant
             this.Show_Date.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Show_Date.Location = new System.Drawing.Point(101, 51);
             this.Show_Date.Name = "Show_Date";
+            this.Show_Date.ReadOnly = true;
             this.Show_Date.Size = new System.Drawing.Size(281, 29);
             this.Show_Date.TabIndex = 91;
             // 

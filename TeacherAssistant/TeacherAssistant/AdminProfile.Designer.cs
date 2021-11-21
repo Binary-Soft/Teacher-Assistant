@@ -53,7 +53,7 @@ namespace TeacherAssistant
             // Add_Course
             // 
             this.Add_Course.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Add_Course.Location = new System.Drawing.Point(382, 309);
+            this.Add_Course.Location = new System.Drawing.Point(691, 94);
             this.Add_Course.Name = "Add_Course";
             this.Add_Course.Size = new System.Drawing.Size(198, 158);
             this.Add_Course.TabIndex = 3;
@@ -64,7 +64,7 @@ namespace TeacherAssistant
             // Course_Select
             // 
             this.Course_Select.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Course_Select.Location = new System.Drawing.Point(691, 94);
+            this.Course_Select.Location = new System.Drawing.Point(382, 309);
             this.Course_Select.Name = "Course_Select";
             this.Course_Select.Size = new System.Drawing.Size(198, 158);
             this.Course_Select.TabIndex = 7;

@@ -49,7 +49,7 @@ namespace TeacherAssistant
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.InfoText;
-            this.label1.Location = new System.Drawing.Point(471, 82);
+            this.label1.Location = new System.Drawing.Point(471, 70);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(180, 55);
             this.label1.TabIndex = 0;
@@ -113,11 +113,11 @@ namespace TeacherAssistant
             this.label7.BackColor = System.Drawing.Color.Transparent;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.SystemColors.InfoText;
-            this.label7.Location = new System.Drawing.Point(503, 160);
+            this.label7.Location = new System.Drawing.Point(465, 160);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(127, 25);
+            this.label7.Size = new System.Drawing.Size(200, 25);
             this.label7.TabIndex = 12;
-            this.label7.Text = "User Type:";
+            this.label7.Text = "Select User Type:";
             // 
             // panel3
             // 
@@ -209,7 +209,7 @@ namespace TeacherAssistant
             this.Name = "LoginForm";
             this.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Login";
+            this.Text = "Log in";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
