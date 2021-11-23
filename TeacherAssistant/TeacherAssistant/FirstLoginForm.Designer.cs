@@ -40,6 +40,8 @@ namespace TeacherAssistant
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.Show_Password_Visible = new System.Windows.Forms.CheckBox();
+            this.Confirm_Password_Visible = new System.Windows.Forms.CheckBox();
             this.SuspendLayout();
             // 
             // Instructor_Password_Change
@@ -96,6 +98,7 @@ namespace TeacherAssistant
             this.Instructor_Confirm_Password.Name = "Instructor_Confirm_Password";
             this.Instructor_Confirm_Password.Size = new System.Drawing.Size(281, 29);
             this.Instructor_Confirm_Password.TabIndex = 20;
+            this.Instructor_Confirm_Password.TextChanged += new System.EventHandler(this.Instructor_Confirm_Password_TextChanged);
             // 
             // Instructor_New_Password
             // 
@@ -104,6 +107,7 @@ namespace TeacherAssistant
             this.Instructor_New_Password.Name = "Instructor_New_Password";
             this.Instructor_New_Password.Size = new System.Drawing.Size(281, 29);
             this.Instructor_New_Password.TabIndex = 19;
+            this.Instructor_New_Password.TextChanged += new System.EventHandler(this.Instructor_New_Password_TextChanged);
             // 
             // label2
             // 
@@ -134,12 +138,36 @@ namespace TeacherAssistant
             this.panel1.Size = new System.Drawing.Size(385, 330);
             this.panel1.TabIndex = 26;
             // 
+            // Show_Password_Visible
+            // 
+            this.Show_Password_Visible.AutoSize = true;
+            this.Show_Password_Visible.Location = new System.Drawing.Point(690, 141);
+            this.Show_Password_Visible.Name = "Show_Password_Visible";
+            this.Show_Password_Visible.Size = new System.Drawing.Size(102, 17);
+            this.Show_Password_Visible.TabIndex = 120;
+            this.Show_Password_Visible.Text = "Show Password";
+            this.Show_Password_Visible.UseVisualStyleBackColor = true;
+            this.Show_Password_Visible.CheckedChanged += new System.EventHandler(this.Show_Password_Visible_CheckedChanged);
+            // 
+            // Confirm_Password_Visible
+            // 
+            this.Confirm_Password_Visible.AutoSize = true;
+            this.Confirm_Password_Visible.Location = new System.Drawing.Point(690, 222);
+            this.Confirm_Password_Visible.Name = "Confirm_Password_Visible";
+            this.Confirm_Password_Visible.Size = new System.Drawing.Size(102, 17);
+            this.Confirm_Password_Visible.TabIndex = 121;
+            this.Confirm_Password_Visible.Text = "Show Password";
+            this.Confirm_Password_Visible.UseVisualStyleBackColor = true;
+            this.Confirm_Password_Visible.CheckedChanged += new System.EventHandler(this.Confirm_Password_Visible_CheckedChanged);
+            // 
             // FirstLoginForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(910, 545);
+            this.Controls.Add(this.Confirm_Password_Visible);
+            this.Controls.Add(this.Show_Password_Visible);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.Instructor_Password_Change);
             this.Controls.Add(this.Instructor_confirm_Security_Key);
@@ -171,5 +199,7 @@ namespace TeacherAssistant
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.CheckBox Show_Password_Visible;
+        private System.Windows.Forms.CheckBox Confirm_Password_Visible;
     }
 }

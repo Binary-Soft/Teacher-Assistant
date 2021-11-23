@@ -90,5 +90,39 @@ namespace TeacherAssistant
 
             return true;
         }
+
+        private void Instructor_New_Password_TextChanged(object sender, EventArgs e)
+        {
+            Instructor_New_Password.UseSystemPasswordChar = true;
+        }
+
+        private void Show_Password_Visible_CheckedChanged(object sender, EventArgs e)
+        {
+            if (Show_Password_Visible.Checked == true)
+            {
+                Instructor_New_Password.UseSystemPasswordChar = false;
+            }
+            else
+            {
+                Instructor_New_Password.UseSystemPasswordChar = true;
+            }
+        }
+
+        private void Instructor_Confirm_Password_TextChanged(object sender, EventArgs e)
+        {
+            Instructor_Confirm_Password.UseSystemPasswordChar = true;
+        }
+
+        private void Confirm_Password_Visible_CheckedChanged(object sender, EventArgs e)
+        {   
+            if (Confirm_Password_Visible.Checked == true)
+            {
+                Instructor_Confirm_Password.UseSystemPasswordChar = false;
+            }
+            else
+            {
+                Instructor_Confirm_Password.UseSystemPasswordChar = true;
+            }
+        }
     }
 }
