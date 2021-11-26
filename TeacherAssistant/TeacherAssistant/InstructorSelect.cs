@@ -104,6 +104,8 @@ namespace TeacherAssistant
 
             if (is_valid(dept_name) == true)
             {
+                Show_Sectuin_Course.DataSource = null;
+
                 string query = "SELECT DISTINCT course_prefer.Intake AS Intake " +
                     "FROM department, course_prefer ,dept_intake_section " +
                     "WHERE department.ID=course_prefer.Dept_ID AND " +
@@ -132,6 +134,7 @@ namespace TeacherAssistant
 
             if (is_valid(dept_name, intake) == true)
             {
+                Show_Sectuin_Course.DataSource = null;
                 Show_Select_Course.Items.Clear();
                 Show_Section.Items.Clear();
                 Show_Instructor_Name.Clear();
@@ -245,6 +248,9 @@ namespace TeacherAssistant
             if(is_valid(dept_name, intake, section, ins_id, semester, course_id) == true)
             {
                 Save_To_DataBase(dept_name, intake, section, ins_id, semester, course_id);
+                Show_Sectuin_Course.DataSource = null;
+                Show_Prefer_Courses();
+
             }
         }
 
@@ -323,6 +329,49 @@ namespace TeacherAssistant
             if (dialogResult == DialogResult.Yes)
             {
                 this.Close();
+            }
+        }
+
+        private void Show_Section_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            Show_Prefer_Courses();
+        }
+
+
+        private void Show_Prefer_Courses()
+        {
+            string dept_name = Show_Department.Text.Trim();
+            string intake = Show_Intake.Text.Trim();
+            string section = Show_Section.Text.Trim();
+
+            if(is_valid(dept_name, intake, section) == true)
+            {
+                string current_time = Get_Current_Time();
+                string query = "SELECT ins_selection.Course_ID As 'Course ID', ins_selection.Ins_ID AS 'Instructor ID' " +
+                    "FROM ins_selection, department WHERE ins_selection.Dept_ID=department.ID AND department.Dept_Name='" + dept_name + "' " +
+                    "AND ins_selection.Intake='" + intake + "' AND ins_selection.Section='" + section + "' AND ins_selection.Starting_Time <= '" + current_time + "'" +
+                    " AND ins_selection.Ending_Time >='" + current_time + "';";
+
+                MySqlConnection connect = new MySqlConnection(DataBase.Connect_String());
+                connect.Open();
+
+
+                try
+                {
+                    MySqlCommand command = new MySqlCommand(query, connect);
+                    MySqlDataReader dataReader = command.ExecuteReader();
+                    DataTable data_table = new DataTable();
+
+                    data_table.Load(dataReader);
+                    Show_Sectuin_Course.DataSource = data_table;
+
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message, "Warning!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+
+                connect.Close();
             }
         }
     }

@@ -60,7 +60,7 @@ namespace TeacherAssistant
             Ins_Phone = Instructor_Phone_No.Text.Trim();
             Ins_Password = Password1.Text.Trim();
             Ins_Confirm_Password = Password2.Text.Trim();
-            MessageBox.Show(Ins_Name + "  " + Ins_ID + "  " + Ins_Email + "  " + Ins_Dept + "  " + Ins_Phone + "  " + Ins_Password + "  " + Ins_Confirm_Password);
+           
 
             if (is_Valid(Ins_Name, Ins_ID, Ins_Email, Ins_Dept, Ins_Phone, Ins_Password, Ins_Confirm_Password) == true)
             {

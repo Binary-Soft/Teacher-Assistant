@@ -45,8 +45,10 @@ namespace TeacherAssistant
             this.Submit_Info = new System.Windows.Forms.Button();
             this.Show_Select_Course = new System.Windows.Forms.ComboBox();
             this.aa = new System.Windows.Forms.Label();
-            this.Back = new TeacherAssistant.CustomButton();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.Show_Sectuin_Course = new System.Windows.Forms.DataGridView();
+            this.Back = new TeacherAssistant.CustomButton();
+            ((System.ComponentModel.ISupportInitialize)(this.Show_Sectuin_Course)).BeginInit();
             this.SuspendLayout();
             // 
             // Show_Semester_Name
@@ -76,6 +78,7 @@ namespace TeacherAssistant
             this.Show_Section.Name = "Show_Section";
             this.Show_Section.Size = new System.Drawing.Size(281, 32);
             this.Show_Section.TabIndex = 53;
+            this.Show_Section.SelectedIndexChanged += new System.EventHandler(this.Show_Section_SelectedIndexChanged);
             // 
             // Show_Intake
             // 
@@ -198,6 +201,23 @@ namespace TeacherAssistant
             this.aa.TabIndex = 61;
             this.aa.Text = "Select Course";
             // 
+            // panel1
+            // 
+            this.panel1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel1.BackgroundImage")));
+            this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panel1.Location = new System.Drawing.Point(12, 67);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(382, 432);
+            this.panel1.TabIndex = 114;
+            // 
+            // Show_Sectuin_Course
+            // 
+            this.Show_Sectuin_Course.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.Show_Sectuin_Course.Location = new System.Drawing.Point(734, 47);
+            this.Show_Sectuin_Course.Name = "Show_Sectuin_Course";
+            this.Show_Sectuin_Course.Size = new System.Drawing.Size(295, 442);
+            this.Show_Sectuin_Course.TabIndex = 115;
+            // 
             // Back
             // 
             this.Back.BackColor = System.Drawing.SystemColors.HotTrack;
@@ -218,21 +238,13 @@ namespace TeacherAssistant
             this.Back.UseVisualStyleBackColor = false;
             this.Back.Click += new System.EventHandler(this.Back_Click);
             // 
-            // panel1
-            // 
-            this.panel1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel1.BackgroundImage")));
-            this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.panel1.Location = new System.Drawing.Point(12, 67);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(382, 432);
-            this.panel1.TabIndex = 114;
-            // 
             // InstructorSelect
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(1063, 597);
+            this.Controls.Add(this.Show_Sectuin_Course);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.Back);
             this.Controls.Add(this.Show_Select_Course);
@@ -255,6 +267,7 @@ namespace TeacherAssistant
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Instructor Select";
             this.Load += new System.EventHandler(this.InstructorSelect_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.Show_Sectuin_Course)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -279,5 +292,6 @@ namespace TeacherAssistant
         private System.Windows.Forms.Label aa;
         private CustomButton Back;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.DataGridView Show_Sectuin_Course;
     }
 }

@@ -146,6 +146,11 @@ namespace TeacherAssistant
                 if(Student_Info_Save_To_Database(query) == true)
                 {
                     MessageBox.Show("Save Successfull.", "Saved!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    Student_Name.Clear();
+                    Student_ID.Clear();
+                    Email.Clear();
+                    Phone_No.Clear();
+                    Address.Clear();
                 }
                 else
                 {
