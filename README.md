@@ -13,6 +13,25 @@ ii.	Instructor Module.
 
 iii.	Marks and Attendance Management.
 
+## Requirements
+Hardware : 
+
+    CPU: Intel Pentium Dual Core
+		Minimum RAM: 2 GB
+		Recommended RAM: 4 GB
+		HDD: 200 MB
+
+Software:
+ 		OS: Windows (32 & 64 bit)
+Tools:
+
+		i) Visual Studio
+		ii) Xampp Server / Wamp Serer
+ 		iii) MySQL Connector
+    	
+
+
+
 
 ## ER Diagram 
 ![up](https://user-images.githubusercontent.com/58485174/143671087-e2b917a1-c655-4487-aa47-e121b77b6f0a.jpg)
