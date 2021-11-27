@@ -16,7 +16,7 @@ iii.	Marks and Attendance Management.
 ## Requirements
 Hardware : 
 
-    CPU: Intel Pentium Dual Core
+            CPU: Intel Pentium Dual Core
 		Minimum RAM: 2 GB
 		Recommended RAM: 4 GB
 		HDD: 200 MB
