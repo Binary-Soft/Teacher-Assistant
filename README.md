@@ -23,6 +23,7 @@ Hardware :
 
 Software:
  		OS: Windows (32 & 64 bit)
+
 Tools:
 
 		i) Visual Studio
