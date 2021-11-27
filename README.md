@@ -1,5 +1,7 @@
 # Teacher Assistant
 
+## Developed By Partho Debnath , Fayzur Rahman , Jack Pritom Soren
+
 ## Introduction
   Teacher Assistant is software which is helpful for instructor as well as the school/college/university authorities. In the current system all the activities are done manually. It is very time consuming and costly. Our Teacher Assistant deals with the various activities related to the teachers.
 
