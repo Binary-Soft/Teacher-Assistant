@@ -74,8 +74,3 @@ Tools:
 ![Recovory Account](https://user-images.githubusercontent.com/58485174/143671330-ecf5c51b-160f-4517-ad05-53aa2be83417.jpg)
 
 ![Change Password](https://user-images.githubusercontent.com/58485174/143671334-5ed1182d-403f-492f-94a1-3aab203c1bd7.jpg)
-
-
-testing 
-
-
