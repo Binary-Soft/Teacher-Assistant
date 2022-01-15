@@ -1,0 +1,184 @@
+CREATE DATABASE teacher_assistant;
+
+
+CREATE TABLE Admin(
+    Admin_ID varchar(30),
+    Email varchar(30),
+    Phone_No varchar(20),
+    Address varchar(60),
+    Name varchar(30),
+    Password varchar(30),
+    Security_Key varchar(30),
+    PRIMARY KEY (Admin_ID, Email, Phone_No)
+);
+
+
+
+
+CREATE TABLE Department(
+	ID int AUTO_INCREMENT not null,
+	Dept_Name varchar(60),
+    PRIMARY KEY (ID, Dept_Name)
+);
+
+
+CREATE TABLE Dept_Intake(
+    Dept_ID int,
+    Intake int,
+    PRIMARY key(Dept_ID, Intake),
+    FOREIGN KEY (Dept_ID) REFERENCES department(ID)
+);
+
+
+
+
+CREATE TABLE Dept_Intake_Section(
+    Dept_ID int,
+    Intake int,
+    Section int,
+    PRIMARY key (Dept_ID, Intake, Section),
+    FOREIGN KEY (Dept_ID, Intake) REFERENCES Dept_Intake(Dept_ID, Intake)
+);
+
+
+
+CREATE TABLE Semesters(
+    Semester varchar(20),
+    PRIMARY KEY(Semester)
+);
+
+
+CREATE TABLE Years(
+	Year int,
+    PRIMARY KEY (Year)
+);
+
+
+CREATE TABLE Students(
+    Student_ID varchar(20),
+    Name varchar(30),
+    Email varchar(30),
+    Dept_ID int ,
+    Intake int, 
+    Section int ,
+    Phone_No varchar(20),
+    Address varchar(60),
+    Years int ,
+    Semester varchar(20),
+    PRIMARY KEY (Student_ID, Email, Phone_No),
+    FOREIGN key (Semester) REFERENCES semesters(Semester),
+    FOREIGN KEY (Dept_ID, Intake, Section) REFERENCES dept_intake_section(Dept_ID, Intake, Section)
+);
+
+
+
+
+CREATE TABLE Instructor(
+    Ins_ID varchar(20),
+    Email varchar(30),
+    Phone_No varchar(20),
+    Name varchar(30),
+    Dept_ID int,
+    Password varchar(30),
+    Security_Key varchar(20),
+    PRIMARY KEY (Ins_ID, Email, Phone_No),
+    FOREIGN KEY (Dept_ID) REFERENCES department(ID)
+);
+
+
+
+
+
+CREATE TABLE Courses(
+	Course_ID varchar(20),
+	Course_Title varchar(80),
+	Total_Class int,
+	Dept_ID int,
+    PRIMARY KEY (Course_ID, Course_Title, Semester_No),
+    FOREIGN KEY (Dept_ID) REFERENCES department(ID)
+);
+
+
+
+CREATE TABLE Course_Prefer(
+    Dept_ID int,
+    Intake int,
+    Course_ID varchar(20),
+    Year int,
+    Semester varchar(20),
+    Is_Complete BOOLEAN DEFAULT FALSE,
+    PRIMARY KEY (Dept_ID, Intake, Course_ID, Year),
+    FOREIGN KEY (Semester) REFERENCES semesters(Semester),
+    FOREIGN KEY (Year) REFERENCES years(Year),
+    FOREIGN KEY (Dept_ID, Intake) REFERENCES dept_intake_section(Dept_ID, Intake),
+    FOREIGN KEY (Course_ID) REFERENCES Courses(Course_ID)
+);
+
+
+CREATE TABLE Ins_Selection(
+	Dept_ID int,
+    Intake int,
+    Section int,
+    Course_ID varchar(20),
+    Ins_ID varchar(20),
+    Semester varchar(20),
+    Starting_Time Date,
+    Ending_Time Date,
+    PRIMARY KEY (Dept_ID, Intake, Section, Course_ID),
+    FOREIGN key(Dept_ID, Intake, Section) REFERENCES dept_intake_section(Dept_ID, Intake, Section),
+    FOREIGN KEY(Course_ID) REFERENCES course_prefer(Course_ID),
+    FOREIGN key(Ins_ID) REFERENCES instructor(Ins_ID),
+    FOREIGN KEY(Semester) REFERENCES semesters(Semester)
+);
+
+
+
+CREATE TABLE Attendance(
+    Student_ID varchar(20),
+    Course_ID varchar(20),
+    Present_Or_Not Boolean ,
+    Year Date,
+    Semester varchar(20),
+    FOREIGN KEY(Student_ID) REFERENCES students(Student_ID),
+    FOREIGN KEY(Course_ID) REFERENCES courses(Course_ID),
+    FOREIGN KEY(Semester) REFERENCES semesters(Semester)
+);
+
+
+
+CREATE TABLE Marks(
+    Student_ID varchar(20),
+    Course_ID varchar(20),
+    Year Date,
+    Semester varchar(20),
+    Assignment_1 float DEFAULT 0.0,
+    Class_Test_1 float DEFAULT 0.0,
+    Lab_Performance_1 float DEFAULT 0.0,
+    Mid_Exam float DEFAULT 0.0,
+    Assignment_2 float DEFAULT 0.0,
+    Class_Test_2 float DEFAULT 0.0,
+    Lab_Performance_2 float DEFAULT 0.0,
+    Final_Exam float DEFAULT 0.0,
+    FOREIGN KEY (Student_ID) REFERENCES students(Student_ID),
+    FOREIGN KEY (Course_ID) REFERENCES course_prefer(Course_ID),
+    FOREIGN KEY (Semester) REFERENCES semesters(Semester)
+);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
